@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>네이버 요약뉴스</title>
     <!-- title : 브라우저 탭메뉴 타이틀 -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Risque&display=swap" rel="stylesheet">
+
     <style>
     header{text-align: center; /* tac */}
     header a{color: rgb(83, 83, 83);
@@ -24,7 +26,95 @@ address{font-style: normal;}
 
 #top, #info{background-color: rgb(96, 255, 109);}
 
-.nav a{}
+.nav a, address{color: rgb(70, 70, 70);
+font-weight: bold;}
+/* [ 글자 관련 속성 ] 
+1. 글자크기->font=size
+    값-> 절대단위: px, pt
+    상eo단위: em, rem, %, vw, vh ... ...
+2. 글자두께->font-weight
+    값-> bold, bolder(더 두껍게, 글자체마다 지원하는게 다름),lighter, 100~900
+    보통 글자체에 따라 지원여부에 달림
+3. 글자체->font-family
+    값-> 기본적으로 로컬체를 적용함
+    순서대로 콤마로 구분함
+    예) font-family: 궁서체, 굴림체, Verdana
+    ->최근에 웹폰트가 대세
+    브라우저에서 다운로드 지원하는 글씨체
+4. 글자색->color
+    값->색상명, 해시코드, rgb, hsl 등
+        [ 웹 색상표기법 ]
+
+        1. 해시코드 : #6자리숫자
+            (두자리가 같을 경우 3자리로 축약표현가능)
+            - 16진수로 표기함(0~f)
+            - 해시코드로 투명도를 주려면 뒤에 2자리 추가하여
+            8자리 숫자로 투명도를 표현함
+
+        2. RGB 코드 : rgba(red,green,blue,알파값)
+        - 0~255 까지 숫자중 사용
+        - red, green, blue
+        - 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
+        (0~1사이의 소숫점값들 사용)
+
+        [ rgba 2가지 표기법 ]
+        1. rgba(red색,green색,blue색,alpha값)
+        - alpha값은 투명도 (0~1)
+        2. rgb(red색 green색 blue색 / alpha값%)
+        - alpha값은 투명도 (0%~100%)
+
+        3. HSL 코드 : hsla(hue,saturation,lightness,알파값)
+        - hue(색상), saturation(채도), lightness(명도)
+        - hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용
+        - 마지막은 alpha값 -> 역시 없으면 생략!
+
+        4. 웹색상명: 지정된 컬러명으로 색생을 셋팅
+        예) red, green, blue, pink, navy, 등
+        - 모든 색상은 w3schools.com의 색상참조로 가서확인!
+        https://www.w3schools.com/cssref/css_colors.asp
+
+5. 글자자간-> letter-spacing
+6. 글자줄간격->line-height
+7. 글자단어간격-> word-spacing
+8. 글자스타일-> font-style
+    ->이탤릭일 때 사용 : italic
+    ->이텔릭 해제시 : normal
+9. 글자 데코레이션->text-decoration
+->글자에 줄긋기
+underline 밑줄
+overline 윗줄
+linethrough 중간줄
+none
+*/
+
+h1{
+    font-size: 2.5em;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(44, 44, 44);
+    letter-spacing: -80px;
+    line-height: 1;
+    word-spacing: 400px;
+}
+
+a:hover{text-decoration: underline;
+color: rgb(0, 0, 0);}
+/* :hover 가상클래스 */
+
+    img{vertical-align: -4px;}
+/* 인라인 요소간 세로정렬
+: top, bottom, baseline, middle, 수치
+->인라인요소 진행방향인 오른쪽에 영향을 준다! (보통 이미지와 글자의 세로위치를 조정할 때 사용한다.) */
+
+
+
+/* 메뉴 중 로고이미지 */
+    .nav a img{
+
+    }
+
+
+
+a{margin: 0 3px;}
 
 
 
@@ -33,7 +123,7 @@ address{font-style: normal;}
 
 
 
-    
+
     </style>
 </head>
 <body>
@@ -111,6 +201,15 @@ address{font-style: normal;}
     5. 직계자식선택자 : > (예: div>a)
     6. 그룹선택자 : , (예: p, div)
     7. 종속선택자: 태그명+아이디/ 클래스명 (예: div#top / a.my)
+    8. 형제선택자: + (예: a+a)
+    ->해석: 앞에 지정요소가 있는 형제요소
+    a+a:hover: 앞에 a요소가 있는 a요소 모두 선택. 결과저긍로 첫번째 a만 제외됨!
+    9. 다중형제선택자: ~(틸드)
+    ->해석: 선택된 형제요소 뒤의 모든 형제요소들
+    (예: list-style(2)~li: ;)
+    10. 속성선택자: [] (예: a[href=#])
+    ->특정속성을 가진요소를 선택
+
 
 
     박스크기윧지 속성! : 패딩과 보더크기 포함
@@ -165,10 +264,10 @@ address{font-style: normal;}
 /* 2. 메인 여역 */
 #cont img{ width: 100%;}
 /* 이미지는 가로크기를 주면 세로크기는 비율유지함 */
+
 </style>
 
     </header>
-
     <!-- 2. 메인영역 -->
     <main class="bxc" id="cont">
         <!-- 메인이미지 -->
