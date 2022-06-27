@@ -99,9 +99,9 @@ h1 {
     font-size: 2.5em;
     font-family: 'Bebas Neue', cursive;
     color: rgb(44, 44, 44);
-    letter-spacing: -80px;
+    /* letter-spacing: -80px; */
     line-height: 1;
-    word-spacing: 400px;
+    /* word-spacing: 400px; */
 }
 
 a:hover {
