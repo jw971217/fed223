@@ -243,7 +243,7 @@
     
     ->박스모델에서 width, height 크기 지정시 내부 컨텐츠 영역의 크기를 지정한 것임 따라서 패딩, 보더의 크기는 바깥쪽으로 확장됨! 이런 박스를 이름하여 "content-box"*/
 
-/* 
+            /* 
 html 서식 요소들
 1. 두꺼운 글자
 <b>- 굵은 텍스트  (bold text)
@@ -297,8 +297,11 @@ html 서식 요소들
             -> 인라인 요소임!
         (3) <cite> 작품명 인용할 때 쓰임
 
-
-        --> 
+        4. 글자역순표시 (Bi-Directional Override)
+        <bdo> 오른쪽부터 출력이 필요한 경우 속성으로 셋팅
+            dir="rtl"
+            ->right th left 즉, 오른쪽에서 왼쪽으로 표시
+        
 
 
 
@@ -384,55 +387,65 @@ html 서식 요소들
          -->
         <!-- 2-4. 기사내용 -->
         <section class="arti">
-            <p><b>태양계 행성</b> 8개가 모두 담긴 사진이 공개돼 관심을 모으고 있다. <strong>‘오늘의 천체사진’(APOD)</strong> 25일자에 따르면, 낭만적인 분위기의 새벽 하늘 풍경을 담은 이 사진은 <i>카메라 4대가 동시
-                촬영한 이미지</i>를 합쳐 만들었다.</p>
+            <p><b>태양계 행성</b> 8개가 모두 담긴 사진이 공개돼 관심을 모으고 있다. <strong>‘오늘의 천체사진’(APOD)</strong> 25일자에 따르면, 낭만적인 분위기의 새벽 하늘
+                풍경을 담은 이 사진은 <i>카메라 4대가 동시
+                    촬영한 이미지</i>를 합쳐 만들었다.</p>
 
             <p>이 아름다운 천체 파노라마 사진은 지난 24일 해돋이 직전, <em>태양계의 모든 행성</em>을 담고 있다.</p>
 
             <p>안개가 자욱한 아침, 가장 안쪽에 있는 행성인 수성은 지평선에 바짝 붙어 있는데 아침놀을 배경으로 <mark>찬연하게 빛나는 금성</mark>의 왼쪽 아래에서 볼 수 있다.
-            
-            <del>하지만 나는 볼 수 없었다.</del></p>
 
-            <p>맨눈으로 볼 수 있는 행성들인 화성<sub>Mars</sub>, 목성<sub>Jupiter</sub>, 토성<sub>Saturn</sub> 은 이울어가는 초승달의 오른쪽으로 큰 호를 그리며 황도 근처에서 <ins>아름답게</ins> 빛나고 있다. <q>사진작가 다니엘은 찍는데 너무 힘들었지만 보람이 있습니다.</q> 라고 말했다.
+                <del>하지만 나는 볼 수 없었다.</del></p>
+
+            <p>맨눈으로 볼 수 있는 행성들인 화성<sub>Mars</sub>, 목성<sub>Jupiter</sub>, 토성<sub>Saturn</sub> 은 이울어가는 초승달의 오른쪽으로 큰 호를 그리며
+                황도 근처에서 <ins>아름답게</ins> 빛나고 있다. <q>사진작가 다니엘은 찍는데 너무 힘들었지만 보람이 있습니다.</q> 라고 말했다.
             </p>
 
-            <p>이들보다 훨씬 희미한 행성인 천왕성과 해왕성은 발견하는 데 쌍안경이 필요했을 것이다. 비록 두 행성은 하늘의 황도를 따라 있지만 말이다. <abbr title="누구나 다 볼 수 있다!">누다볼이다!</abbr>
+            <p>이들보다 훨씬 희미한 행성인 천왕성과 해왕성은 발견하는 데 쌍안경이 필요했을 것이다. 비록 두 행성은 하늘의 황도를 따라 있지만 말이다. <abbr
+                    title="누구나 다 볼 수 있다!">누다볼이다!</abbr>
 
             </p>
 
-            <p>태양계<sup>①</sup> 행성<sup>㉭</sup> 8개는 이 사진에 100% 출석했다. 앞서 나온 일곱 행성 외의 지구는 바로 사진작가의 발 아래 있기 때문이다. 사진을 촬영한 위치는 이탈리아의 마리나 디 산 니콜라 근처에
-                있는 고대 로마 빌라의 유적지인 것으로 알려졌다.</p>
+            <p>태양계<sup>①</sup> 행성<sup>㉭</sup> 8개는 이 사진에 100% 출석했다. 앞서 나온 일곱 행성 외의 지구는 바로 사진작가의 발 아래 있기 때문이다. 사진을 촬영한 위치는
+                이탈리아의 마리나 디 산 니콜라 근처에
+                있는 고대 로마 빌라의 유적지인 것으로 알려졌다.
+                <br>
+                <hr>
+                <bdo dir="rtl">우리나라대한민국만세!</bdo>
+
+
+            </p>
         </section>
         <!-- p요소: paragraph 문단요소
         -> 문단을 나눙 때 사용하는 요소
         -> 주의 : p요소 내부에 다른 불록요소를 못씀. -->
-<hr>
-<!-- 블록인용구 박스 -->
-<div class="bquote">
-    <h3>태양계의 발견과 탐험</h3>
-    <blockquote cite="https://ko.wikipedia.org/wiki/%ED%83%9C%EC%96%91%EA%B3%84">
-오랜 시간동안 인류는 (몇몇 주목할 만한 예가 있지만) 
-    </blockquote>
-</div>
+        <hr>
+        <!-- 블록인용구 박스 -->
+        <div class="bquote">
+            <h3>태양계의 발견과 탐험</h3>
+            <blockquote cite="https://ko.wikipedia.org/wiki/%ED%83%9C%EC%96%91%EA%B3%84">
+                오랜 시간동안 인류는 (몇몇 주목할 만한 예가 있지만)
+            </blockquote>
+        </div>
 
 
 
-<hr><!-- 가로구분선: horizontal line -->
+        <hr><!-- 가로구분선: horizontal line -->
 
 
-<!-- 주해표시 -->
+        <!-- 주해표시 -->
 
 
-<div class="desc">
-    <h3>※주해: </h3>
-    <small>
-        ① 가나다, 태양계는 태양계다.
-        <br><br>
-        ② 마바사: 여러분 이제 키워드만 잘 아시면 프로그램 소스 만들기에 정말 좋아요. 행성만 넣고 . 행상에 대한 태양계 정보
-        이거 지금 집어 넣은게 바로 그거에요. 화면에 나오는 거 잠깐 볼게요.
-    </small>
-</div>
-<hr>
+        <div class="desc">
+            <h3>※주해: </h3>
+            <small>
+                ① 가나다, 태양계는 태양계다.
+                <br><br>
+                ② 마바사: 여러분 이제 키워드만 잘 아시면 프로그램 소스 만들기에 정말 좋아요. 행성만 넣고 . 행상에 대한 태양계 정보
+                이거 지금 집어 넣은게 바로 그거에요. 화면에 나오는 거 잠깐 볼게요.
+            </small>
+        </div>
+        <hr>
 
         <!-- 2-5. 기자정보 -->
         <div class="rinfo">
@@ -444,22 +457,181 @@ html 서식 요소들
             <a href="https://n.news.naver.com/mnews/article/081/0003282618?sid=105" target="_blank">기사원문</a>
         </h5>
 
-       
+
         <div class="work">
             <h3>
-                 오늘의 작품 & 느낌
-            </h3><figure>
-                    <img src="./images/thescream.jpg" alt="뭉크의 절규">
-                </figure>
-                <figcaption>뭉크의 &lt;<cite>절규</cite>&gt;</figcaption>
-                오늘의 작품 &amp; 느낌
-                <!-- html 특수문자 처리 -->
-<!--                 &앤퍼센드 &amp;
+                오늘의 작품 & 느낌
+            </h3>
+            <figure>
+                <img src="./images/thescream.jpg" alt="뭉크의 절규">
+            </figure>
+            <figcaption>뭉크의 &lt;<cite>절규</cite>&gt;</figcaption>
+            오늘의 작품 &amp; 느낌
+            <!-- html 특수문자 처리 -->
+            <!--                 &앤퍼센드 &amp;
                 <여는 꺽쇠 &lt;
                 >닫는 꺽쇠 &gt;
 
             -->
+            <hr>
+            <!-- IT 돋보기 기사모음 (순서없는 리스트 ul) -->
+            <div class="itmag">
+                <h3>IT 돋보기
+                </h3>
+                <ul>
+                    <li>
+                        <a href="https://n.news.naver.com/mnews/article/031/0000681111?sid=105" target="_blank">PCS 사업자
+                            확정…‘한국통신·LG·한솔’ [김문기의 아이씨테크]</a>
+                    </li>
+                    <li>
+                        <a href="https://n.news.naver.com/mnews/article/031/0000679748?sid=105" target="_blank">‘LG텔레콤
+                            vs 에버넷’…‘한솔PCS vs 글로텔 vs 그린텔’ [김문기의 아이씨테크]</a>
+                    </li>
+                    <li>
+                        <a href="https://n.news.naver.com/mnews/article/031/0000679720?sid=105" target="_blank">제3 이동통신사
+                            찾아라…新 PCS 선정 개막 [김문기의 아이씨테크]</a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="rank">
+                <h3>랭킹뉴스</h3>
+                <ol>
+                    <li><a href="https://n.news.naver.com/mnews/ranking/article/088/0000764038?ntype=RANKING&sid=001"
+                            target="_blank">"러시아, 104년 만에 디폴트…1억달러 이자 못내"</a></li>
+                    <li><a href="https://n.news.naver.com/mnews/ranking/article/277/0005108712?ntype=RANKING&sid=001"
+                            target="_blank">"내년 최저임금 1만원으로 올리면 일자리 16.5만개 증발"</a></li>
+                    <li><a href="https://n.news.naver.com/mnews/ranking/article/015/0004716864?ntype=RANKING&sid=001"
+                            target="_blank">"김건희 여사, 우리 꽈배기 먹어줬으면…" 벼랑 끝 상인의 한탄 [하수정의 티타임]</a></li>
+                </ol>
+            </div>
+
+
+
+
+
+
+
         </div>
+        <!-- [ 그룹요소: ul - 순서없는 리스트
+    (1) ul- 순서없는 리스트
+    ul > li
+    -> 앞에 블릿은 css로 변경할 수 있음
+    참고)https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css
+    (2) ol- 순서있는 리스트 ]
+    ol > li
+    -> 앞에 숫자는 css로 혹은 type 속성으로 변경가능함
+    참고)https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css
+    - start 속성: 시작번호 지정
+    - reversed 속성: 일련번호를 거꾸로 진행 
+
+
+    (공통)
+    ->직계자식으로 li만 올 수 있다.
+    ->블릿 없애기 -> list-style:none;
+    ->기본 마진, 패딩이 있으므로 변형사용시 이것을 없애는 것이 일반적이다.
+
+-->
+<hr>
+<!-- 분야별 뉴스 -->
+<div class="secnews">
+    <h3>분야별 뉴스</h3>
+    <dl>
+        <dt>경제</dt>
+        <dd>
+            <a href="https://n.news.naver.com/mnews/article/025/0003205317?sid=101" target="_blank">고물가·고금리 등 악재 지속…"최저임금 최소 동결해야"</a>
+            <a href="https://n.news.naver.com/mnews/article/018/0005253154?sid=101" target="_blank">노동자 33% "내년 최저임금 1만530원~1만1480원 적정"</a>
+        </dd>
+        <dt>사회</dt>
+        <dd>
+            <a href="https://n.news.naver.com/mnews/article/021/0002519353?sid=102" target="_blank">“포기하지 않도록”…오세훈 표 ‘청년 서울’ 정책에 박차</a>
+        </dd>
+        <dd>
+            <a href="https://n.news.naver.com/mnews/article/011/0004069213?sid=102" target="_blank">서울시, ‘저소득층 긴급생활지원금’ 지급… 총 1682억 편성</a>
+        </dd>
+        <dt>연예</dt>
+        <dd>
+            <a href="https://entertain.naver.com/read?oid=312&aid=0000555158&cid=1073787" target="_blank">박해일 "탕웨이, 경기도 전원주택서 텃밭 가꾸고 토끼·닭 키워…수수한 면도"('정희')</a>
+        </dd>
+        <dd>
+            <a href="https://entertain.naver.com/read?oid=311&aid=0001467407&cid=1073787" target="_blank">[단독] 옥주현, '엘리자벳' 상견례 참석…"찾아뵙게 되어 기뻐" (엑's 현장)</a>
+        </dd>
+
+    </dl>
+</div>
+
+<!-- 
+    [ 그룹요소 - 용어정의리스트 dl ]
+    dl > dt + dd
+    ___________________
+
+    dl: 용어리스트
+    (defines the description list)
+    dt: 용어정의
+    (defines the term)
+    dd: 용어설명
+    (describes each term)ㄹ
+    ___________________
+
+    주의사항 -dl은 반드시 자식요소로 dt, dd를 한 번 이상 사용해야함!
+ -->
+
+<hr>
+<div class="pnews">
+    <h3>사진뉴스</h3>
+    <table>
+        <!-- 첫째줄 -->
+        <tr>
+            <td><a href="https://entertain.naver.com/read?oid=112&aid=0003568911&cid=1073788" target="_blank">
+                '마녀2', 개봉 2주차 전체 박스오피스 2위..
+                <br> 손익분기점 달성(공식)
+            </a></td>
+            <td><a href="https://entertain.naver.com/read?oid=112&aid=0003568911&cid=1073788" target="_blank">
+<img src="./images/td1.jpg" alt="마녀 포스터">
+            </a></td>
+            
+        </tr>
+        <!-- 둘째줄 -->
+        <tr>
+            <td><a href="https://entertain.naver.com/read?oid=477&aid=0000367601&cid=1073788" target="_blank">
+                사위 사랑은 장모라더니…홍현희 母, 
+                <br> 제이쓴 다정함에 감동 "태어나줘서 고마워"
+            </a></td>
+            <td><a href="https://entertain.naver.com/read?oid=477&aid=0000367601&cid=1073788" target="_blank">
+<img src="./images/td2.jpg" alt="사람 사진">
+            </a></td>
+            
+        </tr>
+        <!-- 셋째줄 -->
+        <tr>
+            <td><a href="https://entertain.naver.com/read?oid=052&aid=0001756593&cid=1073788" target="_blank">
+                장나라, 본식 사진 공개…
+                <br> "좋은 아내·성실한 연기자로 행복하게 잘 살겠다"
+            </a></td>
+            <td><a href="https://entertain.naver.com/read?oid=052&aid=0001756593&cid=1073788" target="_blank">
+<img src="./images/td3.jpg" alt="장나라 사진">
+            </a></td>
+            
+        </tr>
+    </table>
+</div>
+
+<!-- 
+    [ 그룹요소: 테이블 table]
+    table tr td
+    table > tbody > tr >td
+
+    table 테이블 박스 부모
+    tr: 테이블 행요소 (table row)
+    td: 테이블 데이터 (table data)
+    참고) table tr td 로만 코딩구성한 경우
+    브라우전 분석기로 보면 table > tbody가 있다.
+    이는 테이블 본문 파트를 나타낸다.
+    안써도 기본코딩으로 자동추가됨.
+    (원래 table은 thead, tbody, tfood 세부분으로 구성됨)
+    
+
+ -->
 
 
 
