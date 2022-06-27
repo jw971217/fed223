@@ -9,7 +9,7 @@
     <title>네이버 요약뉴스-IT/과학-IT/과학</title>
     <!-- title : 브라우저 탭메뉴 타이틀 -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Risque&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="./css/sub.css">
     <style>
         header {
             text-align: center;
@@ -134,8 +134,6 @@
         /* 메뉴 중 로고이미지 */
         .nav a img {}
 
-
-
         a {
             margin: 0 3px;
         }
@@ -149,7 +147,8 @@
         <h1>네이버 요약뉴스-IT/과학</h1>
         <!-- 1-2 메뉴(GNB: Global Navigation Bar) -->
         <nav class="nav">
-            <a href="index.html"><img src="./images/KakaoTalk_20220624_103314248.png" alt="네이버 로고" style="width: 20px;"></a> |
+            <a href="index.html"><img src="./images/KakaoTalk_20220624_103314248.png" alt="네이버 로고"
+                    style="width: 20px;"></a> |
             <!-- style 속성
             -어느요소나 사용가능
             -css를 각 요소에 직접 코딩하는 방식
@@ -244,6 +243,36 @@
     
     ->박스모델에서 width, height 크기 지정시 내부 컨텐츠 영역의 크기를 지정한 것임 따라서 패딩, 보더의 크기는 바깥쪽으로 확장됨! 이런 박스를 이름하여 "content-box"*/
 
+/* 
+html 서식 요소들
+1. 두꺼운 글자
+<b>- 굵은 텍스트  (bold text)
+<strong>- 중요한 텍스트  (important text)
+    ->시멘틱 요소 (의미있는요소)
+<i>- 기울임꼴 텍스트 (italic text)
+<em>- 강조된 텍스트  (emphasized text)
+    -> 시멘틱 요소 (의미있는요소)
+    :strong, em
+    3. 눈에 띄게 색상표시
+<mark>- 표시된 텍스트(노란색 배경-marked text)
+
+    4. 작은글자표시
+<small>- 더 작은 텍스트 (smaller text -> h5 글자크기)
+
+    5. 지움표시
+<del>- 삭제된 텍스트  (deleted text)
+    -> text-decoration: line-through
+
+    6. 삽입표시
+<ins>- 삽입된 텍스트  (inserted text)
+    -> text-decoration: underline
+
+    7. 윗첨자, 아랫첨자
+<sub>- 아래 첨자 텍스트  (subscript text)
+<sup>- 위 첨자 텍스트   (superscript text)  */
+
+
+
             /* 공통 클래스 */
             /* box center의 의미로 bxc */
             .bxc {
@@ -275,9 +304,9 @@
 
 
             /* 2. 메인 여역 */
-            #cont img {
+            /* #cont img {
                 width: 100%;
-            }
+            } */
 
             /* 이미지는 가로크기를 주면 세로크기는 비율유지함 */
             address {
@@ -292,21 +321,70 @@
     <main class="bxc" id="cont">
         <!-- 메인이미지 -->
         <!-- 2-1. 언론사 로고 -->
-        <div class="prlogo"></div>
+        <div class="prlogo">
+            <a href="https://www.seoul.co.kr/" target="_blank">
+                <img src="./images/pr4.png" alt="서울신문사 로고">
+            </a>
+        </div>
         <!-- 2-2. 기사제목 -->
-        <h2 class="atit"></h2>
+        <h2 class="atit">
+            [우주를 보다] 태양계 ‘8개 행성’ 모두 담긴 희귀 사진 공개
+        </h2>
         <!-- 2-3. 기사사진(+사진설명) -->
-        <figure class="afig"></figure>
+        <figure class="afig">
+            <img src="./images/arti4.png" alt="IT/과학기사이미지">
+            <figcaption>
+                <!-- 이미지 설명 -->
+                <small>한 이미지에 담겨 있는 태양계 8개 행성. / APOD NASA</small>
+            </figcaption>
+            <!-- 이미지설명 하단에 다른 태그 못씀! -->
+        </figure>
         <!-- 
             figure 요소: 이미지나 표, 그림 등을 넣는 요소
             - figcaption 요소 : 이미지 설명박스(옵션)
             ->주의: 하단에 다른 태그 사용불가함. 
          -->
         <!-- 2-4. 기사내용 -->
-        <section class="arti"></section>
-        <!-- 2-5. 기자정보 -->
-        <div class="rinfo"></div>
+        <section class="arti">
+            <p><b>태양계 행성</b> 8개가 모두 담긴 사진이 공개돼 관심을 모으고 있다. <strong>‘오늘의 천체사진’(APOD)</strong> 25일자에 따르면, 낭만적인 분위기의 새벽 하늘 풍경을 담은 이 사진은 <i>카메라 4대가 동시
+                촬영한 이미지</i>를 합쳐 만들었다.</p>
 
+            <p>이 아름다운 천체 파노라마 사진은 지난 24일 해돋이 직전, <em>태양계의 모든 행성</em>을 담고 있다.</p>
+
+            <p>안개가 자욱한 아침, 가장 안쪽에 있는 행성인 수성은 지평선에 바짝 붙어 있는데 아침놀을 배경으로 <mark>찬연하게 빛나는 금성</mark>의 왼쪽 아래에서 볼 수 있다.
+            
+            <del>하지만 나는 볼 수 없었다.</del></p>
+
+            <p>맨눈으로 볼 수 있는 행성들인 화성<sub>Mars</sub>, 목성<sub>Jupiter</sub>, 토성<sub>Saturn</sub> 은 이울어가는 초승달의 오른쪽으로 큰 호를 그리며 황도 근처에서 <ins>아름답게</ins> 빛나고 있다.</p>
+
+            <p>이들보다 훨씬 희미한 행성인 천왕성과 해왕성은 발견하는 데 쌍안경이 필요했을 것이다. 비록 두 행성은 하늘의 황도를 따라 있지만 말이다.</p>
+
+            <p>태양계<sup>①</sup> 행성<sup>㉭</sup> 8개는 이 사진에 100% 출석했다. 앞서 나온 일곱 행성 외의 지구는 바로 사진작가의 발 아래 있기 때문이다. 사진을 촬영한 위치는 이탈리아의 마리나 디 산 니콜라 근처에
+                있는 고대 로마 빌라의 유적지인 것으로 알려졌다.</p>
+        </section>
+        <!-- p요소: paragraph 문단요소
+        -> 문단을 나눙 때 사용하는 요소
+        -> 주의 : p요소 내부에 다른 불록요소를 못씀. -->
+
+<hr><!-- 가로구분선: horizontal line -->
+<h3>※주해: </h3>
+<small>
+    ① 가나다, 태양계는 태양계다.
+    <br><br>
+    ② 마바사: 여러분 이제 키워드만 잘 아시면 프로그램 소스 만들기에 정말 좋아요. 행성만 넣고 . 행상에 대한 태양계 정보
+    이거 지금 집어 넣은게 바로 그거에요. 화면에 나오는 거 잠깐 볼게요.
+</small>
+<hr>
+
+        <!-- 2-5. 기자정보 -->
+        <div class="rinfo">
+            이광식 과학 칼럼니스트 joand999@naver.com
+        </div>
+
+
+        <h5>
+            <a href="https://n.news.naver.com/mnews/article/081/0003282618?sid=105" target="_blank">기사원문</a>
+        </h5>
     </main>
 
     <!-- 3. 하단영역 -->
