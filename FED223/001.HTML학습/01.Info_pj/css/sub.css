@@ -13,6 +13,11 @@ html파일에서 link요소로 호출할 경우 http request( 웹요청) 이 많
 /* @import url(파일주소) */
 @import url(common.css);
 
+/* 메인영역박스 */
+#cont{
+    padding: 20px;
+}
+
 
 
 /* 2-1. 언론사 로고 */
@@ -34,7 +39,7 @@ html파일에서 link요소로 호출할 경우 http request( 웹요청) 이 많
     word-spacing: 10;
     /* 줄바꿈 방지: 보통 박스는 자동으로 줄바꿈 처리하여 글자가 떨어지는데
     nowrap으로 설정하면 글자가 줄바꿈안되고 밖으로 나감 */
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 /* 제목 중 특정 글자만 변경 */
@@ -83,20 +88,64 @@ html파일에서 link요소로 호출할 경우 http request( 웹요청) 이 많
     font-size: 17px;
     /* 줄간격: 숫자만 쓰면 배수 */
     line-height: 1.6;
+    padding: 0 10px;
 }
 
 /* 기타 타이틀 h3 */
 #cont h3{
     font-family: 'Bebas Neue', cursive;
+    /* 글자두깨 얇게 */
+    font-weight: bold;
+    /* 글자크기 */
+    font-size: 25px;
+    /* 패딩왼쪽 */
+    /* padding-left: 20px; */
+
+}
+
+main #lalala{
+    width: 100%;
+}
+
+/* 공통박스 */
+#cont article {
+    border-top: 2px dashed #ccc;
+    margin-top: 40px;
+    padding: 103px;
 }
 
 
+.arti, .bquote{
+    text-align: justify;
+}
 
+/* 블록인용구박스 */
+.bquote blockquote{
+    margin: 0px;
+    padding: 5px;
+    text-align: justify;
+    font-family: gulim;
+    font-size: 14px;
+    line-height: 1.8;
+}
 
+/* 메인컨텐츠 아래 a요소 */
+/* 글자색, 밑줄은 반드시 a요소에서 할것! */
 
+#cont a{
+    /* 글자색 */
+    color: #222;
+    /* 글자데코: 밑줄없앰 */
+    text-decoration: none;
+    /* 글자크기 */
+    font-family: 14px;
+    font-family: 'Bebas Neue', cursive; 
+    line-height: 2.5;
+}
 
+/* 마우스 오버시 */
 
-
-
-
-
+#cont a:hover{
+color: chocolate;
+text-decoration: dashed underline;
+}
