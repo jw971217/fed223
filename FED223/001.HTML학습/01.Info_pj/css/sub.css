@@ -138,14 +138,134 @@ main #lalala{
     /* 글자데코: 밑줄없앰 */
     text-decoration: none;
     /* 글자크기 */
-    font-family: 14px;
     font-family: 'Bebas Neue', cursive; 
     line-height: 2.5;
+    /* 자간 */
+    letter-spacing: -1;
+    transition: 0.5s;
+
 }
 
-/* 마우스 오버시 */
+/* 마우스 오버시 
+:hover   가상클래스*/
 
 #cont a:hover{
-color: chocolate;
+color: rgba(210, 42, 30, 0.658);
+/* 글자데코: 밑줄 */
 text-decoration: dashed underline;
+letter-spacing: -10;
+/* ul 블릿타입변경 */
+
 }
+
+#cont ul{
+        list-style-type: armenian;
+}
+
+#cont ol{
+    list-style-type: georgian;
+}
+
+.scenews dt{
+    border-top: 2px dashed #ccc;
+    margin-top: 40px;
+    /* padding: 103px; */
+    padding-left: 10px;
+}
+
+/* dt순서별 글자색 변경 */
+.secnews dt:first-child{
+    color: rgb(255, 0, 0);
+}
+.secnews dt:nth-child(2){
+    color: rgb(0, 255, 85);
+}
+.secnews dt:last-child{
+    color: rgb(0, 4, 255);
+}
+
+/* [ 자식요소 순번선택하기 ]
+-> 태그가 여러종류 섞인 경우
+:first-of-type
+같은 종류중 첫번째 요소
+:nth-of-tyoe(n)
+같은 종류중 n번째 요소
+:last-of-type
+같은 종류중 마지막째 요소
+
+
+:first-type
+형제요소 중 첫번째 요소
+:nth-tyoe(n)
+형제요소 중 n번째 요소
+:last-type
+형제요소 중 마지막째 요소
+*/
+
+/*  */
+article.work{
+    text-align: center;
+    background-color: rgb(255, 251, 0);
+}
+
+/* 작품설명박스 */
+article.work figcaption cite{
+    font-style: normal;
+    font-family: "궁서";
+    font-weight: bold;
+}
+
+table{
+    margin: 0px auto;
+}
+
+.pnews table{
+    margin: 0px auto;
+}
+/* 블럭요소와 같이 table도 마영오 적용한다. */
+
+
+/* 사진뉴스 박스
+    첫번째 td- 숫자td
+*/
+.pnews table td:first-child {
+    color: #e74545;
+    width: 50px;
+    background-color: #ccc;
+    text-align: center;
+}
+
+
+/* 두번째 td - 뉴스제목 */
+.pnews td:nth-child(2){
+    background-color: rgba(0, 255, 255, 0.055);
+    padding-left: 20px ;
+    padding-right: 120px ;
+}
+
+.pnews img {
+    width: 151px;
+    height: 103px;
+    vertical-align: middle;
+}
+/* 사진뉴스 테이블 설정 */
+.pnews table {
+    /* 기본 사이 간극: 
+    collapse 주면 간극없앰 */
+    border-collapse: separate;
+    /* 사이간격 설정: 주의-seperate상태에서만 설정됨. */
+    border-spacing: 7px;
+}
+
+#cont h5, .rinfo{
+padding-left: 10px;
+padding-top: 20px;
+font-size: 20px !important;
+}
+
+
+
+
+
+
+
