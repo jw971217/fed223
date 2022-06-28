@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* 외부 css파일은 상단에 반드시 인코딩형식 utf-8 지정 필수! */
 
+/* 구글 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Risque&display=swap');
+
+/* 웹폰트 적용예
+font-family: 'Bebas Neue', cursive;
+*/
+
 header {
     text-align: center;
     /* tac */
