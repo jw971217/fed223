@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>웹폰트 CDN방식으로 적용하기</title>
+    <!-- 웹폰트 CDN : link방식 -->
+
+
+
     <style>
         /* 
             [ CDN 방식으로 웹폰트 불러오기 ]
@@ -40,26 +44,40 @@
              */
 
         /* import방식 CDN 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Orbitron&family=Pacifico&family=Splash&display=swap');
+
+
+        /* 
+        font-family: 'Libre Barcode 39 Text', cursive;
+        font-family: 'Orbitron', sans-serif;
+        font-family: 'Pacifico', cursive;
+        font-family: 'Splash', cursive;
+         */
+
 
         /* CDN 웹폰트 적용하기 */
         .cdn1 {
             color: darkviolet;
             font-weight: normal;
+            font-family: 'Libre Barcode 39 Text', cursive;
         }
 
         .cdn2 {
             color: darkgreen;
             font-weight: normal;
+            font-family: 'Orbitron', sans-serif;
         }
 
         .cdn3 {
             color: darkred;
             font-weight: normal;
+            font-family: 'Pacifico', cursive;
         }
 
         .cdn4 {
             color: darkcyan;
             font-weight: normal;
+            font-family: 'Splash', cursive;
         }
     </style>
 </head>
