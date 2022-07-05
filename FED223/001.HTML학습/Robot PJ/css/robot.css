@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* 로봇 PJ css - robot.css */
+
+/* 공사중표시 */
+body *{
+    outline: 2px dashed lime;
+}
+
+
+/* 초기화 */
+html, body, h1, h2, h3, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 3000px;
+    /* 배경: 색이반고윙/크 */
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공통class */
+.mt1{
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+    border-radius: 100px;
+}
+.mt2{
+    background: url(../images/metal02.jpg) no-repeat center/cover;
+}
+
+
+
+
+
+
+
+
+
+/************************************** 1. 상단영역 **************************************/
+
+/************************************** 2. 메인영역 **************************************/
+
+/************************************** 2-1. 로봇박스 **************************************/
+.robx{
+    padding-top: 200px;
+}
+/************************************** 2-1-1. 로봇 머리 **************************************/
+.head{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    /* 마영오는 블록가로중앙 */
+    position: relative;
+    /* 부모자격 */
+}
+
+/* 눈공통 */
+.eye{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    /* 배경공통설정 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    border-radius: 50%;
+    /* 둥근모서리 */
+    /* 보더 이중선 */
+    border: 4px double #000;
+
+}
+
+/* 왼눈 */
+.e1{
+    background-image: url(../images/e1.jpg);
+    top: 50px;
+    left: 50px;
+}
+
+/* 오른눈 */
+.e2{
+    background-image: url(../images/e2.jpg);
+    top: 50px;
+    right: 50px;
+}
+
+/************************************** 2-1-2. 로봇몸 **************************************/
+.body{
+    width: 250px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/************************************** 2-2. 로봇 설명박스 **************************************/
+
+/************************************** 3. 하단영역 **************************************/
+
+
+
+
+
+
+
+
+
+
