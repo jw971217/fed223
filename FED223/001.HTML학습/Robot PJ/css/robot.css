@@ -65,7 +65,7 @@ body{
     background-position: center;
     background-size: cover;
     position: absolute;
-    border-radius: 50%;
+    border-radius: 50% 50% 30% 30%;
     /* 둥근모서리 */
     /* 보더 이중선 */
     border: 4px double #000;
@@ -79,7 +79,7 @@ body{
     left: 50px;
 }
 
-/* 오른눈 */
+/* 오른눈 */  
 .e2{
     background-image: url(../images/e2.jpg);
     top: 50px;
