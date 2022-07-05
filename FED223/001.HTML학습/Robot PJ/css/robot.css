@@ -108,19 +108,19 @@ body{
     top: 110px;
     left:85px;
     width: 30px;
-    height: 40px;
-    background-image: url(../images/nose.jpg);
+    height: 30px;
+    background-image: url(../images/nosenose.jpg);
     border-radius: 15px;
-    background-position-x: -3px !important;
+    background-position-x: 0px !important;
 }
 
 /* 입 */
 .mouth{
-    background-image: url(../images/mouth.png);
-    width: 40px;
-    height: 20px;
-    bottom: 35px;
-    left: 80px;
+    background-image: url(../images/mouthmpoo.jpg);
+    width: 60px;
+    height: 40px;
+    bottom: 30px;
+    left: 70px;
 }
 
 /* 귀공통 */
@@ -180,15 +180,17 @@ body{
     border-radius: 50%;
     background-color: rgb(185, 185, 185);
     bottom: -30px;
-
+    border: 1px solid #333;
 
 /* css3 그라데이션 */
 /* background-image: linear-gradient(45deg, black, rgb(145, 145, 221) 70%, gray); */
-background-image: radial-gradient(circle, rgb(255, 255, 255), gray, black);
+/* background-image: radial-gradient(circle, rgb(255, 255, 255), gray, black); */
+
+background-image: radial-gradient(farthest-side at 20px 20px, rgb(255, 255, 255), rgb(128, 128, 128));
+
+
 }
-/* 원형 그라데이션 */
-
-
+/* [배경이미지에 있다. 뭐가? 그라데이션 */
 /* [ 선형 그라데이션 ]
 예)
 linear-gradient(방향, 각도, 색 비율%, 색2 비율%, ... ...);
@@ -205,30 +207,17 @@ background-image: radial-gradient(circle, rgb(255, 255, 255), gray, black);
 radial-gradient(옵션, 색1 비율%, 색2 비율%);
 -옵션: circle - 원형, 안쓰면 박스에 맞춤
 -세밀한 옵션주기
+(특정위치를 중심으로 빛반사효과)
     ->>> 세부옵션 at 가로위치 세로위치
     ->>> 세부옵션 종류 4가지:
     1) closest-side / 2)farthest-side
     3) closest-corner / 4)farthest-corner
 예) radial-gradient(closest-corner at 30px 15px, white, blue)
 
-
-
-
-
-
+-> 가로, 세로 위치는 px, % 단위 사용가능
 -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
 -> 색상 뒤 비율을 안 쓰면 등분할 됨.
-
-
-
-
 */
-
-
-
-
-
-
 
 /* 왼팔가상요소 */
 .a1::before{
@@ -238,6 +227,28 @@ radial-gradient(옵션, 색1 비율%, 색2 비율%);
 /* 오른팔가상요소 */
 .a2::before{
     right: -13px;
+}
+
+/* 가상요소로 손 그림자 주기 */
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+    bottom: -30px;
+    border-radius: 10px 10px 5px 5px ;
+}
+
+/* 왼팔가상요소 */
+.a1::after{
+    left: 8px;
+}
+
+/* 오른팔가상요소 */
+.a2::after{
+    right: 8px;
 }
 
 
