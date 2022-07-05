@@ -235,11 +235,21 @@ radial-gradient(옵션, 색1 비율%, 색2 비율%);
     display: block;
     position: absolute;
     width: 20px;
-    height: 40px;
+    height: 35px;
     background-color: #000;
     bottom: -30px;
     border-radius: 10px 10px 5px 5px ;
+
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
+
+/* 클리핑기법을 사용하여 그림자를 삼각형으로 만들자
+-> 다각형 클리핑 
+clip-path: polygon(x1 y1, x2 y2, ...)
+-> 소괄호 안은 비울 수 없다.
+-> 각 좌표값은 px, %로 대상 내부영역임
+예컨데 삼각형은 점을 3개 찍는다. 
+*/
 
 /* 왼팔가상요소 */
 .a1::after{
@@ -273,6 +283,30 @@ left: -30px;
     border-radius: 20%;
 }
 
+/* 가상요소로 발 만들기 */
+
+/* 발 공통 */
+.leg::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background-image: radial-gradient(farthest-side at 20px 20px, rgb(255, 255, 255), rgb(128, 128, 128));
+    border-radius: 30px 30px 0 0;
+    /* 위쪽만 둘글게 보라보라 */
+    bottom: -10px;
+    border-bottom: 15px solid #333;
+    left: -7px;
+}
+
+/* 왼발 */
+
+/* 오른발 */
+
+
+
+
 /* 왼다리 */
 .l1{
     top: 300px;
@@ -305,12 +339,37 @@ left: -30px;
     top: -5px;   
 }
 
+/* TV */
 .tv{
-    width: 50px;
-    height: 50px;
-    display: none;
+    width: 220px;
+    height: 150px;
+    top: 80px;
+    left: 15px;
+    border-radius: 10px;
+    background-image: url(../images/tv.jpg);
 }
 
+.tv .screen{
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    width: 152px;
+    height: 118px;
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* 아이프레임 */
+.screen iframe{
+    position: absolute;
+    top: -40px;
+    left: -62px;
+    width: 187%;
+    height: 170%;
+    border: none;
+
+}
 
 /************************************** 2-2. 로봇 설명박스 **************************************/
 
