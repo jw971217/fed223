@@ -5,9 +5,9 @@
 /* 웹폰트 CDN */
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Ma+Shan+Zheng&display=swap');
 
-font-family: 'Dokdo', cursive;
+/* font-family: 'Dokdo', cursive;
 font-family: 'Ma Shan Zheng', cursive;
-
+ */
 
 
 /* 속박스 class */
@@ -19,3 +19,13 @@ font-family: 'Ma Shan Zheng', cursive;
     margin: 0 auto;
 }
 
+/* float설정 class */
+.fll>li{
+    float: left;
+}
+/* clear설정 class */
+.fll::after{
+    content: '';
+    display: block;
+    clear: both;
+}

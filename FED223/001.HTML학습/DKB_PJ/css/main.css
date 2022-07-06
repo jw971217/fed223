@@ -55,6 +55,8 @@ body{
     margin: 0 .5%;
     /* 보통 0.5%와 같이 0.소수점은 앞에 0생략가능 */
     /* 가로, 세로 크기나 마진값으로 %를 쓰면 기준은 싸고 있는 부모박스다. */
+    position: relative;
+    /* 부모자격 */
 }
 
 /* 캐릭터 이미지 */
@@ -120,6 +122,7 @@ body{
     */
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: height .3s ease-out;
+    position: absolute;
 }
 
 /* .cat 개별박스에 오버시 .cd보이기 */
@@ -175,10 +178,11 @@ transition: 속성 시간 이지 지연 -> 속시이지 라고 하신다고 한�
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-    font-size: 30px;
+    font-size: min(2.2vw,30px);
+    /* 최대글자는 30px, 이하는 유동적 */
     padding: 15px 10px 5px;
     /* 줄바꿈 방지 */
-    /* white-space: nowrap; */
+    white-space: nowrap;
     font-weight: normal;
     letter-spacing: -1px;
     font-family: 'Ma Shan Zheng', 'Dokdo', cursive;
@@ -197,7 +201,8 @@ transition: 속성 시간 이지 지연 -> 속시이지 라고 하신다고 한�
 
 /* 캐릭터 설명 문단 */
 .cd p{
-    font-size: 20px;
+    font-size: min(2.2vw,20px);
+    /* 최대글자크기 16px, 이하는 유동적 */
     line-height: 1.7;
     padding: 10px;
     text-align: justify;
