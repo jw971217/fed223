@@ -129,13 +129,17 @@ outline: 두깨, 종류, 색상; */
 }
 
     /* 상위메뉴 li마우스 오버시 서브메뉴 보이기 */
-.gnb>ul>li:nth-child(1):hover .smenu{
+    /* +서브메뉴 가상요소 배경 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu, 
+.gnb>ul>li:nth-child(1):hover::after{
     height: 120px;
 }
-.gnb>ul>li:nth-child(3):hover .smenu{
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after{
     height: 150px;
 }
-.gnb>ul>li:nth-child(4):hover .smenu{
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after{
     height: 90px;
 }
 
@@ -153,18 +157,11 @@ outline: 두깨, 종류, 색상; */
     left를 줬으믈 보이는 화면기준 top은 안줘서 젠틀함. a요소 아래위치.
     */
     height: 0px;/* 오버시 각수치로 만들겠다. */
-    background: red;
+    background: rgb(255, 255, 255);
         /* 트렌지션: 속시이지 */
     transition: height .4s ease-out;
     border-radius: 0 0 5px 5px;
 }
-
-/* 상위메뉴 li마우스 오버시 서브메뉴 가상요소 배경 보이기 */
-.gnb>ul>li:hover::after{
-    height: 200px;
-}
-
-
 
     /* 서브메뉴 a */
 .smenu a{
