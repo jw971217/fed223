@@ -67,7 +67,7 @@ body{
 }
 /* .cat에 오버시 .ci 변경 */
 .cat:hover .ci{
-    margin-top: -53%;
+    margin-top: -57%;
 }
 
 /* .ci의 직계자식 img만 선택 */
