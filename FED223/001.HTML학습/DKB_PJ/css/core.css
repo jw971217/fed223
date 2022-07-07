@@ -14,6 +14,9 @@
 /* 전체 웹폰트 일반적용 */
 html{
     font-size: 10px;
+    /* 글자체나 글자크기는 하위요소 상속됨
+    10px로 html에 설정한 이유는 상대단위인 rem으로 설정시 계산하기 쉽게하기 위함이다.
+    */
 }
 
 body{
@@ -39,4 +42,33 @@ body{
     content: '';
     display: block;
     clear: both;
+}
+
+/* IR(image replacement) 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 밴더사명(크롬, 사파리) 접두어
+(참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스)
+*/
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
 }
