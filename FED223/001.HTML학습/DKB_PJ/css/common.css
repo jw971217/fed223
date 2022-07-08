@@ -4,9 +4,9 @@
 
 /* 공사중 표시 */
 /* 별표(*)는 모든 요소 선택 */
-body *{
+/* body *{
     outline: 1px dashed gray;
-}
+} */
 /* 외곽선 -  박스요소의 외곽선만 표현
 박스 바깥쪽으로 생성됨
 */
@@ -28,11 +28,11 @@ outline: 두깨, 종류, 색상; */
 
 /* 속박스 */
 
-.top{
+/* .top{ */
     /* height: 125px; */
     /* position: relative; */
     /* 부모자격 없앰. 이유는 서브메뉴배경 li 가상요소가 끝까지 가야해서. */
-}
+/* } */
 
 /* 1-1. 메인로고 */
 .logo{
@@ -235,5 +235,103 @@ outline: 두깨, 종류, 색상; */
 
 /*************************************** 3. 하단영역 ***************************************/
 .info{
-    height: 240px;
+    min-height: 240px;
+    /* outline: 2px dashed red; */
+    /* 부모자격 */
+    position: relative;
 }
+
+/*************************** 3-1. 하단링크 ***************************/
+.blink{
+    padding-top: 5px;
+
+}
+
+.blink ul{
+    margin: 0 auto;
+    width: 804px;
+    /* 마영오는 width가 있는 블록요소 */
+    /* outline: 2px solid green; */
+    max-width: 804px;
+}
+
+.blink li{
+    padding: 0 15px;
+}
+
+.blink li a{
+    /* padding: 10px 0px; */
+}
+
+
+/* 겉박스 */
+#info{
+    background-color: rgba(255, 255, 255, 0.774);
+}
+
+
+
+
+/* 속박스 */
+.blink a{
+    /* 글자세팅 */
+    color: #222;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2.8;
+}
+
+/* 마우스 오버시 a요소 */
+.blink a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+
+
+/*************************** 3-2. 회사정보 ***************************/
+.addr{
+    padding: 1rem;
+}
+
+.addr address{
+    font-size: 1.4rem;
+    font-style: normal;
+    text-align: center;
+    line-height: 2;
+    max-width: 804px;
+    margin: 0 auto;
+    border: 4px double #222;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/*************************** 3-3. 하단로고 ***************************/
+
+.blogo{
+    text-align: center;
+}
+
+/*************************** 3-4. 바로가기 ***************************/
+.brand{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    /* 부모는? .info */
+}
+
+.brand select{
+    /* 글자셋팅 */
+    color: #222;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2.8;
+    
+    padding: 0.5rem;
+}
+
+
+
+
+
+
