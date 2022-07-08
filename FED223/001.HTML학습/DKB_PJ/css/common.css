@@ -261,6 +261,7 @@ outline: 두깨, 종류, 색상; */
 
 .blink li a{
     /* padding: 10px 0px; */
+    margin: 0 10px;
 }
 
 
