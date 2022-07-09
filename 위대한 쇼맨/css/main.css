@@ -18,6 +18,7 @@ body{
 
 *{
     outline: 2px dashed lightblue;
+    box-sizing: border-box;
 }
 
 /* 중앙 속박스 */
@@ -36,13 +37,13 @@ header{
 
 /* 쇼맨 로고 */
 header .showlogo{
-    height: 90%;
+    transform: translateX(calc(50% - 30%));
+    width: 230px;
 }
 
 header .showlogo a img{
-    width: 230px;
+    width: 100%;
     object-fit: cover;
-    transform: translateX(calc(50% - 30%));
 }
 
 /* 네비게이션 */
@@ -177,46 +178,42 @@ header .nav ul li{
 
 /* 세번째 페이지 */
 .char{
-    height: 330px;
+    height: 350px;
 }
 
 
 
-
-
-
-
+/* *************************************안됨***************************** */
 
 
 /* 캐릭터 개별박스 공통 */
 .cat{
-    width: 98%;
-    overflow: hidden;
-    margin: 0 1%;
+    height: initial;
 }
 
 /* .ci의 직계자식 img만 선택 */
 .ci >img{
-    width: 100%;
-    height: 100%;
+    width: 96%;
+    margin: 0 2%;
 }
 
 /* 캐릭터 설명박스 */
 .cd{
-    padding-top: 10px;
-    display: none;
-    margin-top: -50%;
+    margin-top: -48%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.75);
-    height: 100px;
+    width: 96%;
+    margin-left: 2%;
     height: 100%;
+    background-color: rgb(0, 0, 0);
     display: none;
 }
 
 /* .cat 개별박스에 오버시 .cd보이기 */
 .cat:hover .cd{
-    display: inline-block;
+    display: block;
 }
+
+
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
@@ -224,7 +221,6 @@ header .nav ul li{
     /* 최대글자는 30px, 이하는 유동적 */
     /* 줄바꿈 방지 */
     white-space: nowrap;
-    font-weight: normal;
     font-family: PT Serif;
 }
 
@@ -258,55 +254,32 @@ header .nav ul li{
     text-shadow: 
     1px 0  #000, -1px 0  #000,
     0 1px #000, 0 -1px #000;
-} */
+} 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* *************************************안됨***************************** */
 
 /* 네번째 페이지 */
 .song{
     height: 350px;
+
+}
+
+.song iframe{
+    width: 70%;
+    height: 80%;
+    margin: 20px auto;
+    display: block;
+}
+
+.song span{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    display: block;
+    width: 214px;
+    margin: -10px auto;
+    text-align: center;
 }
 
 /* 다섯번째 페이지 */
@@ -314,14 +287,43 @@ header .nav ul li{
     height: 700px;
 }
 
+.vid iframe{
+    width: 100%;
+    height: 100%;
+}
+
 /* 푸터 */
 .info1, .info2, .add{
     height: 50px;
+    margin: 0 auto;
 }
 
+.info1, .info2{
+    height: 50px;
+}
 
+.info1{
+    width: 510px;
+}
 
+.info2{
+    width: 1031px;
+}
 
+.info a{
+    color: #fff;
+    font-size: 1.5rem;
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+
+.info address{
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 15px;
+}
 
 
 

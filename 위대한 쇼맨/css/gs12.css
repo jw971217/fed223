@@ -18,7 +18,7 @@
 /* col - 클래스 적용시 옆으로 흐름셋팅 */
 [class*="col-"] {
     float: left;
-    border: 2px dashed rgb(0, 136, 255);
+    /* border: 2px dashed rgb(0, 136, 255); */
     /* 패딩과 보더를 포함하는 박스 */
     box-sizing: border-box;
 }
