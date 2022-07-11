@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 애니메이션</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        body{
+            background-image: 
+            linear-gradient(to bottom, rgb(210, 170, 255), rgb(154, 255, 154), rgb(137, 231, 255));
+        }
+
+        /* 플렉스 박스 */
+    .wrap{
+        display: flex;
+        /* 랩핑설정 */
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    /* 내부박스 4등분*/
+    .wrap section{
+        width: 50%;
+        height: 50%;
+        outline: 1px dashed red;
+    }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 1. 아이언맨 박스 : 원 -->
+        <section>
+            <div class="cbx">
+
+            </div>
+        </section>
+            <!-- 2. 블랙 위도우 : 사각형 -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+            <!-- 3. 닥터 스트레인지 : 삼각형 -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+            <!-- 4. 완다 : 다각형(6각형) -->
+        <section>
+            <div class="cbx">
+                
+            </div>
+        </section>
+    </div>
+</body>
+</html>

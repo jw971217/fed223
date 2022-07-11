@@ -194,18 +194,20 @@ header .nav ul li{
 }
 
 /* 세번째 페이지 */
-.char{
-    height: 350px;
+.three{
+    /* display: flex; */
 }
 
-
+.char{
+    height: 30vh;
+}
 
 /* *************************************안됨***************************** */
 
 
 /* 캐릭터 개별박스 공통 */
 .cat{
-    height: initial;
+    height: 100%;
 }
 
 /* .ci의 직계자식 img만 선택 */
