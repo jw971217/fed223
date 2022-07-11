@@ -303,8 +303,9 @@ header .nav ul li{
 }
 
 .vid iframe{
-    width: 100%;
+    width: 96%;
     height: 100%;
+    margin: 0 2%;
 }
 
 /* 푸터 */
