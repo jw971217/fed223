@@ -174,11 +174,12 @@ header .nav ul li{
 
 .cbx .intro h2, h3, p{
     color: #fff;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lobster', cursive;
+
 }
 
 .cbx .intro h2{
-    font-size: 4rem;
+    font-size: 3.7rem;
     text-align: center;
 }
 
@@ -188,7 +189,8 @@ header .nav ul li{
 }
 
 .cbx .intro p{
-    font-size: 1.7rem;    
+    font-size: 1.8rem;    
+    word-spacing: 1px;
 }
 
 /* 세번째 페이지 */
@@ -338,6 +340,10 @@ footer{
     float: left;
     padding: 15px;
     text-align: center;
+}
+
+.info a:hover{
+    text-decoration: underline;
 }
 
 .info address{

@@ -40,7 +40,7 @@
         -자식요소를 flex:1 로 설정하면 등분할 됨.
         - 자식요소의 높이값은 자동으로 부모의 높이값을 채운다.
         ********************************/
-      flex-direction: row-reverse;
+      /* flex-direction: row-reverse; */
       /* flex-direction 속성 : 진행방향과 순서를 정함
         1) row: 좌-> 우(기본값)
         2) row-reverse : 우-> 좌
@@ -74,7 +74,14 @@
         3) flex-basis: 0; 설정값(px, %, em, rem, vw 등)
         ->width 가로크기를 설정하는 속성
         -> 만약 0을 쓰면 속성값 없음.
+        */
 
+        /* __________________________________________
+        [ 자식요소 속성 중 order란? ]
+        -원하는 순서로 정해서 박스가 나열되게 함.
+        단, 부모 flex 박스에 flex-direction을 주지말것.(order쓰기 때문)
+
+        소스참고: https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_order_2
         */
     }
 
@@ -288,8 +295,42 @@
 
   }
 
+  /* 타이틀박스7 */
+  .t7{
+    top: 50px;
+    right: 50px;
+    left: auto;
+    /* 기존 left 셋팅해제 */
+    width: 450px;
+    height: 200px;
 
+    /* 플랙스박스 */
+    display: flex;
+    /* 랩핑박스 */
+    flex-wrap: wrap;
 
+    /* 수평정렬 */
+    justify-content: space-evenly;
+    /* 수직정렬(여러줄) */
+    align-content: center;
+  }
+
+  /* brk뒤의 li 마진탑 */
+  .t7 li.brk~li{
+    margin-top: 20px;
+  }
+  
+  /* 자체 응용 - 줄바꿈을 위한 li */
+  /* 원리는 줄바꿈을 할 부분에서 가로크기 100%를 차지하게 해서 줄바꿈 효과를 준다. */
+  .t7 li.brk{
+    /* width: 100%; */
+    flex-basis: 100%;
+    /* flex-basis는 width와 같다. */
+
+    /* 기존디자인을 없애고 안보이게 처리함 */
+    height: 0;
+    border: none;
+  }
 
 
 
@@ -300,11 +341,11 @@
   <div id="wrap">
     <!-- 파티션박스 -->
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li style="order: 5;"></li>
+      <li style="order: 4;"></li>
+      <li style="order: 1;"></li>
+      <li style="order: 2;"></li>
+      <li style="order: 3;"></li>
     </ul>
 
     <!-- 타이틀박스1 -->
@@ -364,6 +405,24 @@
       <li>R</li>
       <li>L</li>
       <li>D</li>
+
+      <li>W</li>
+      <li>O</li>
+      <li>R</li>
+      <li>L</li>
+      <li>D</li>
+    </ol>
+
+    <!-- 타이틀박스7 -->
+    <ol class="tit t7">
+      <li>L</li>
+      <li>O</li>
+      <li>T</li>
+      <li>T</li>
+      <li>E</li>
+
+      <!-- 줄바꿈요소 -->
+      <li class="brk"></li>
 
       <li>W</li>
       <li>O</li>
