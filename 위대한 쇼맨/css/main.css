@@ -3,11 +3,14 @@
 @import url(gs12.css);
 @import url(reset.css);
 @import url(tablet.css);
+@import url(mobile.css);
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=PT+Serif&display=swap');
 
 /* font-family: 'Dancing Script', cursive;
 font-family: 'Lobster', cursive;
 font-family: 'PT Serif', serif; */
+
+@media screen and (min-width:1025px){
 
 html{
     font-size: 10px;
@@ -125,14 +128,14 @@ header .nav ul li{
 /* 첫번쩨 페이지 */
 /* 큰 그림 */
 .wall{
-    height: 750px;
+    height: 100%;
     position: relative;
 }
 
 .one .wall img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* 스트리밍 */
@@ -338,7 +341,7 @@ header .nav ul li{
 }
 
 .song iframe{
-    width: 70%;
+    width: 90%;
     height: 80%;
     margin: 20px auto;
     display: block;
@@ -361,9 +364,9 @@ header .nav ul li{
 }
 
 .vid iframe{
-    width: 96%;
+    width: 98%;
     height: 100%;
-    margin: 0 2%;
+    margin: 0 1%;
 }
 
 /* 푸터 */
@@ -434,4 +437,5 @@ footer{
 
 .top a:hover{
     background-color: rgb(255, 255, 255);
+}
 }

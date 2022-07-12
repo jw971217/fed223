@@ -1,26 +1,427 @@
 @charset "utf-8";
-@media screen and (max-width: 1364px) {
-    /***************** 1364px 이하 *****************/
+
+@media screen and (min-width:701px) and (max-width:1024px) {
+
+    *{
+        /* outline: 2px dashed lightblue;
+        box-sizing: border-box; */
+    }
+
+    html{
+        font-size: 10px;
+        scroll-behavior:smooth;
+    }
+
+    /* 임의의 영역 생성 */
+    .scrollBar { 
+        height: 200px;
+        overflow-y: scroll;
+    }
+
+    .scrollBar1 { 
+        height: 200px;
+        overflow-y: scroll;
+    }
+    
+    /* 아래의 모든 코드는 영역::코드로 사용 */
+    
+    .scrollBar::-webkit-scrollbar {
+        width: 5px;  /* 스크롤바의 너비 */
+    }
+
+    .scrollBar1::-webkit-scrollbar {
+        width: 0px;  /* 스크롤바의 너비 */
+    }
+    
+    .scrollBar::-webkit-scrollbar-thumb {
+        height: 30%; /* 스크롤바의 길이 */
+        background: #525252; /* 스크롤바의 색상 */
+        
+        border-radius: 10px;
+    }
+    
+    .scrollBar::-webkit-scrollbar-track {
+        background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+    }
+
+    body{
+        background-color: rgb(0, 0, 0);
+    }
+
+/* 헤더 */
+header{
+    background-color: black;
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    height: 80px;
+    border-bottom: 2px solid #fff;
+}
+
+/* 쇼맨 로고 */
+header .showlogo{
+    width: 180px;
+    margin: 0 auto;
+}
+
+header .showlogo a img{
+    width: 100%;
+    object-fit: cover;
+}
 
 
+/* 네비게이션 */
+header .nav{
+    height: 80px;
+    width: 50%;
+}
+
+header .navi{
+    width:  349px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+header .nav a{
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 80px;
+    font-family: 'Lobster', cursive;
+}
+
+header .nav ul li{
+    float: left;
+    padding: 0 15px;
+}
+
+/* 20세기 로고 */
+.foxlogo{
+    width: 90px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.foxlogo img{
+    height: 80px;
+    width: 90px;
+    object-fit: fill;
+}
+
+.pos{
+    height: 90px;
+}
+
+/* 첫번쩨 페이지 */
+/* 큰 그림 */
+.wall{
+    height: 100%;
+    position: relative;
+}
+
+.one .wall img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* 스트리밍 */
+.wall a, .wall span{
+    height: 100px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
+}
+
+.wall .dvd{
+    position: relative;
+    bottom: 25%;
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+.wall .str{
+    width: 407px;
+    height: 40px;
+    margin: 0;
+    top: -20%;
+    margin: 0 auto;
+    /* 글자테두리 */
+    text-shadow: 
+    1px 0  #000,
+    -1px 0 #000,
+    0 1px  #000,
+    0 -1px #000;
+}
+
+.wall .dis{
+    height: 40px;
+    width: 290px;
+    border-radius: 10px;
+    top: -20%;
+    margin: 0 auto;
+}
+
+.wall .dis a{
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    line-height: 40px;
+    color: #000;
+    display: block;
+    text-align: center;
+    height: 40px;
+}
 
 
+/* 두번쨰 페이지 */
+.pos2{
+    width: 100%;
+    height: 85px;
+}
+
+.pos2 h2{
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    line-height: 80px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.story{
+    height: 800px;
+    padding: 1%;
+}
+
+.intro{
+    height: 100%;
+}
+
+.cbx .story img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.cbx .intro h2, h3, p{
+    color: #fff;
+    font-family: 'Lobster', cursive;
+
+}
+
+.cbx .intro h2{
+    font-size: 3.9rem;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.cbx .intro h3{
+    font-size: 3.2rem;
+    text-align: center;
+}
+
+.cbx .intro p{
+    font-size: 2rem;    
+    word-spacing: 1px;
+}
+
+/* 세번째 페이지 */
+.char{
+    height: 40vh;
+    padding: 1%;
+    width: 50%;
+}
+
+/* 캐릭터 개별박스 공통 */
+.cat{
+    position: relative;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    height: 100%;
+}
+
+.ci{
+    width: 100%;
+    height: 100%;
+}
+
+/* .ci의 직계자식 img만 선택 */
+.ci >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* margin-top: 0%; */
+    overflow: auto;
+    width:100%;
+    height: 100%;
+    opacity: 0;
+    /* display: none; */
+    transition: .4s;
+}
+
+/* .cat 개별박스에 오버시 .cd보이기 */
+.cat:hover .cd{
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.685);
+}
 
 
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+    font-size: 2.2rem;
+    /* 최대글자는 30px, 이하는 유동적 */
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+    font-family: PT Serif;
+    text-align: center;
+    padding-top: 8px;
+}
 
+    /* 가상요소로 설명타이틀 앞에 도깨비 아이콘 넣기 */
+    .cd h3::before{
+        content: '';
+        display: inline-block;
+        width: 15px;
+        height: 30px;
+        vertical-align: -5px;
+        background: url(../images/bg_logo_a_01.png) no-repeat right -183px;
+        
 
+    }
 
+/* 캐릭터 설명 문단 */
+.cd p{
+    font-size: 1.8rem;
+    /* 최대글자크기 16px, 이하는 유동적 */
+    line-height: 1.3;
+    padding-top: 5px;
+    text-align: justify;
+    font-family: 'PT Serif';
+    padding: 0 3%;
 
+}
 
+/* 케릭터 설명 첫번째 p요소의 첫번째 글자 가상요소로 변경하기 */
+.cd p:first-of-type::first-letter{
+    font-size: 2.6rem;
+    color: rgb(245, 245, 245);
+    /* 글자그림자로 테두리 만들기 */
+    text-shadow: 
+    1px 0  #000, -1px 0  #000,
+    0 1px #000, 0 -1px #000;
+} 
 
+/* 네번째 페이지 */
+.song{
+    height: 350px;
 
+}
 
+.song iframe{
+    width: 90%;
+    height: 80%;
+    margin: 20px auto;
+    display: block;
+}
 
+.song span{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    display: block;
+    width: 214px;
+    margin: -10px auto;
+    text-align: center;
+}
 
+/* 다섯번째 페이지 */
+.vid{
+    height: 400px;
+}
 
+.vid iframe{
+    width: 96%;
+    height: 100%;
+    margin: 0 2%;
+}
 
+/* 푸터 */
+footer{
+    width: 100%;
+    height: 100%;
+}
 
+.info1, .info2, .add{
+    height: 30px;
+}
 
+.info1 ul{
+    margin: 0 auto;
+    width: 364px;
+}
 
+.info2 ul{
+    margin: 0 auto;
+    width: 717px;
+}
 
+.info li{
+    white-space: nowrap;
+}
+
+.info li a{
+    color: #fff;
+    font-size: 1rem;
+    float: left;
+    padding: 13px;
+    text-align: center;
+}
+
+.info a:hover{
+    text-decoration: underline;
+}
+
+.info address{
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 15px;
+    font-style: normal;
+}
+
+.top{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    text-align: center;
+    border: 5px solid #fff;
+}
+
+.top a{
+    transition: .2s;
+    color: rgb(126, 126, 126);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 60px;
+    display: block;
+    border-radius: 50%;
+}
+
+.top a:hover{
+    background-color: rgb(255, 255, 255);
+}
 }
