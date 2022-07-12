@@ -147,8 +147,8 @@ header .nav ul li{
 .wall .dvd{
     position: relative;
     bottom: 20%;
-    left: 65%;
     width: 500px;
+    margin: 0 auto;
 
 }
 
@@ -158,6 +158,12 @@ header .nav ul li{
     margin: 0;
     top: -20%;
     margin: 0 auto;
+    /* 글자테두리 */
+    text-shadow: 
+    1px 0  #000,
+    -1px 0 #000,
+    0 1px  #000,
+    0 -1px #000;
 }
 
 .wall .dis{
