@@ -10,15 +10,48 @@ font-family: 'PT Serif', serif; */
 
 html{
     font-size: 10px;
+    scroll-behavior:smooth;
 }
+
+/* 임의의 영역 생성 */
+.scrollBar { 
+    height: 200px;
+    overflow-y: scroll;
+  }
+
+.scrollBar1 { 
+    height: 200px;
+    overflow-y: scroll;
+  }
+  
+  /* 아래의 모든 코드는 영역::코드로 사용 */
+  
+  .scrollBar::-webkit-scrollbar {
+      width: 5px;  /* 스크롤바의 너비 */
+  }
+
+  .scrollBar1::-webkit-scrollbar {
+      width: 0px;  /* 스크롤바의 너비 */
+  }
+  
+  .scrollBar::-webkit-scrollbar-thumb {
+      height: 30%; /* 스크롤바의 길이 */
+      background: #525252; /* 스크롤바의 색상 */
+      
+      border-radius: 10px;
+  }
+  
+  .scrollBar::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+  }
 
 body{
     background-color: rgb(0, 0, 0);
 }
 
 *{
-    outline: 2px dashed lightblue;
-    box-sizing: border-box;
+    /* outline: 2px dashed lightblue;
+    box-sizing: border-box; */
 }
 
 /* 중앙 속박스 */
@@ -180,12 +213,12 @@ header .nav ul li{
 }
 
 .cbx .intro h2{
-    font-size: 3.7rem;
+    font-size: 3.9rem;
     text-align: center;
 }
 
 .cbx .intro h3{
-    font-size: 3rem;
+    font-size: 3.2rem;
     text-align: center;
 }
 
@@ -201,6 +234,7 @@ header .nav ul li{
 
 .char{
     height: 30vh;
+    padding: 1%;
 }
 
 /* *************************************안됨***************************** */
@@ -212,7 +246,6 @@ header .nav ul li{
     /* top: 50%;
     transform: translateY(-50%); */
     height: 100%;
-
 }
 
 .ci{
@@ -371,5 +404,28 @@ footer{
     font-style: normal;
 }
 
+.top{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    text-align: center;
+    border: 5px solid #fff;
+}
 
+.top a{
+    transition: .2s;
+    color: rgb(126, 126, 126);
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 60px;
+    display: block;
+}
 
+.top a:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
