@@ -191,6 +191,7 @@ header .nav ul li{
     font-size: 5rem;
     line-height: 80px;
     text-align: center;
+    padding-top: 10px;
 }
 
 .story, .intro{
@@ -215,6 +216,7 @@ header .nav ul li{
 .cbx .intro h2{
     font-size: 3.9rem;
     text-align: center;
+    padding-top: 10px;
 }
 
 .cbx .intro h3{
@@ -223,7 +225,7 @@ header .nav ul li{
 }
 
 .cbx .intro p{
-    font-size: 1.8rem;    
+    font-size: 2rem;    
     word-spacing: 1px;
 }
 
@@ -236,9 +238,6 @@ header .nav ul li{
     height: 30vh;
     padding: 1%;
 }
-
-/* *************************************안됨***************************** */
-
 
 /* 캐릭터 개별박스 공통 */
 .cat{
@@ -289,6 +288,7 @@ header .nav ul li{
     white-space: nowrap;
     font-family: PT Serif;
     text-align: center;
+    padding-top: 8px;
 }
 
     /* 가상요소로 설명타이틀 앞에 도깨비 아이콘 넣기 */
@@ -310,6 +310,7 @@ header .nav ul li{
     padding-top: 5px;
     text-align: justify;
     font-family: 'PT Serif';
+    padding: 0 3%;
 
 }
 
@@ -322,8 +323,6 @@ header .nav ul li{
     1px 0  #000, -1px 0  #000,
     0 1px #000, 0 -1px #000;
 } 
-
-/* *************************************안됨***************************** */
 
 /* 네번째 페이지 */
 .song{
@@ -423,9 +422,9 @@ footer{
     font-weight: bold;
     line-height: 60px;
     display: block;
+    border-radius: 50%;
 }
 
 .top a:hover{
     background-color: rgb(255, 255, 255);
-    border-radius: 50%;
 }
