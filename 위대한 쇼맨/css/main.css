@@ -204,7 +204,7 @@ header .nav ul li{
 .story, .intro{
     height: 800px;
     padding-right: 50px;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .cbx .story img{
