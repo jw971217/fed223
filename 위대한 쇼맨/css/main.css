@@ -108,6 +108,36 @@ header .nav ul li{
     padding: 0 20px;
 }
 
+      /* 상단 메뉴 글자에 밑줄 애니 */
+      .navi>ul>li>a>span{
+        position: relative;
+        /* 부모자격 */
+      }
+      /* 가상요소로 밑줄 */
+      .navi>ul>li>a>span::after{
+        content: '';
+        display: block;
+        position: absolute;
+        /* 부모는 span */
+        bottom: -4px;
+        left: 0;
+        width: 0; /* 마우스 오버 시 100% */
+        height: 2px;
+        background-color: #fff;
+        /* 돌아올때 지연시간 없음 */
+        transition: width .2s ease-out;
+        /* transition: 0.4s; */
+      }
+
+      /* 상위매뉴 오버시가상요소 밑줄 애니 */
+      .navi>ul>li:hover>a>span::after{
+        width: 100%;
+        /* 오버시에 기다리는 시간 0.4초 */
+        transition: 0.3s ease-out;
+      }
+
+
+
 /* 20세기 로고 */
 .foxlogo{
     width: 120px;
