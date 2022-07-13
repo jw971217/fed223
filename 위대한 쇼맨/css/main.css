@@ -149,8 +149,8 @@ header .nav ul li{
 
 .wall .dvd{
     position: relative;
-    bottom: 20%;
     width: 500px;
+    bottom: 120px;
     margin: 0 auto;
 
 }
