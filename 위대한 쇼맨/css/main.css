@@ -336,13 +336,13 @@ header .nav ul li{
 
 /* 네번째 페이지 */
 .song{
-    height: 350px;
+    height: 600px;
 
 }
 
 .song iframe{
     width: 90%;
-    height: 80%;
+    height: 90%;
     margin: 20px auto;
     display: block;
 }
@@ -354,7 +354,7 @@ header .nav ul li{
     font-family: 'Lobster', cursive;
     display: block;
     width: 214px;
-    margin: -10px auto;
+    margin: -2vh auto;
     text-align: center;
 }
 

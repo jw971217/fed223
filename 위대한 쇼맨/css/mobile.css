@@ -179,7 +179,7 @@ header .nav ul li{
     color: #fff;
     font-family: 'Dancing Script', cursive;
     font-size: 5rem;
-    line-height: 80px;
+    line-height: 40px;
     text-align: center;
     padding-top: 10px;
 }
@@ -332,13 +332,13 @@ header .nav ul li{
     font-family: 'Lobster', cursive;
     display: block;
     width: 214px;
-    margin: -10px auto;
+    margin: -2.4vh auto;
     text-align: center;
 }
 
 /* 다섯번째 페이지 */
 .vid{
-    height: 400px;
+    height: 600px;
 }
 
 .vid iframe{
@@ -354,7 +354,7 @@ footer{
 }
 
 .info1, .info2, .add{
-    height: 30px;
+
 }
 
 .info1 ul{
@@ -363,7 +363,7 @@ footer{
 }
 
 .info2 ul{
-    margin: 0 auto;
+    margin: -30px auto;
     width: 500px;
 }
 
@@ -377,6 +377,12 @@ footer{
     float: left;
     padding: 13px;
     text-align: center;
+}
+
+.info .add{
+    position: relative;
+    top: 20px;
+    padding-bottom: 15px;
 }
 
   /* 타이틀박스7 */
@@ -424,7 +430,7 @@ footer{
     color: #fff;
     font-size: 0.8rem;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 10px;
     font-style: normal;
 }
 
