@@ -359,6 +359,8 @@ footer{
 .info1 ul{
     margin: 0 auto;
     width: 364px;
+    position: relative;
+    top: 27px;
 }
 
 .info2 ul{
