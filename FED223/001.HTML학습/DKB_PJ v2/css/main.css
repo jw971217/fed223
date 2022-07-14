@@ -49,8 +49,8 @@ body{
     /* 가로크기 : 4등분(25%)-양쪽마진(1%)=24% */
     width: 24%;
     /* 블록요소 옆으로 흐르게 */
-    float: left;
-    /* 나는 왼쪽, 너는 오른쪽에 와라 */
+    /* float: left; */
+    /* 나는 왼쪽, 너는 오른쪽에 와라 float을 flex로 전환 */
     /* 양쪽마진 */
     margin: 0 .5%;
     /* 보통 0.5%와 같이 0.소수점은 앞에 0생략가능 */
@@ -64,6 +64,8 @@ body{
 /* 캐릭터 이미지 */
 .ci{
     transition: .4s ease-in-out;
+    /* 부모자격: .ci span */
+    position: relative;
 }
 /* .cat에 오버시 .ci 변경 */
 .cat:hover .ci{
@@ -80,7 +82,7 @@ body{
     text-align: center;
     /* 블록요소 내부의 인라인 컨텐츠를 중앙에 오게함 */
     position: absolute;
-    bottom: 10%;
+    bottom: 1%;
     width: 100%;
     /* 부모는? .cat */
     /* 마진탑으로 위치이동하기 X -> 포지션으로 변경 */
@@ -128,6 +130,8 @@ body{
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: height .4s ease-out;
     position: absolute;
+    /* 상자 둥글게 둥글게 */
+    border-radius: 15px 5px 5px 20px;
 }
 
 /* .cat 개별박스에 오버시 .cd보이기 */

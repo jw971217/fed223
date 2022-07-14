@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유형8.숨긴네비 고정전체창형</title>
     <style>
+        /* 웹폰트 CDN */
+        @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+
+
         html,
         body {
             margin: 0;
@@ -13,6 +17,7 @@
         }
 
         body {
+            font-family: 'Six Caps', sans-serif;
             height: 3000px;
             background-image: linear-gradient(to bottom, #e0ffb7, #ffcea7, #e9c8ff);
             /* 
@@ -40,6 +45,7 @@
         /* flex 설정 클래스 */
         .fll {
             display: flex;
+            flex-direction: column;
         }
 
         /* body *{
@@ -48,24 +54,8 @@
 
         /* GNB메뉴 */
         .gnb {
-            position: fixed;
-            top: -100%;
-            /* 위에 올라가있음(숨김) */
-            left: 0;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
-            background-color: #000;
-
-            /* 트랜지션: 속시이지 */
-            transition: top 1s ease-in-out;
-
-            z-index: 9999;
-            /* 가장위! */
-        }
-
-        /* GNB메뉴 보이게 하는 class */
-        .gnb.on {
-            top: 0;
         }
 
         .gnb>ul {
@@ -74,10 +64,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
             /* 정중앙 위치이동 */
-
-            width: 800px;
-            margin: 0 auto;
-            /* 크기를 가진 블록박스 가로중앙 */
 
             border: 4px dotted rgb(0, 247, 255);
             border-radius: 20px;
@@ -113,14 +99,14 @@
 
         /* 서브메뉴 */
         /* .smenu { */
-            /* position: absolute;
+        /* position: absolute;
             height: 0;
             overflow: hidden; */
-            /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
-            /* background-color: #d5eeff; */
+        /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
+        /* background-color: #d5eeff; */
 
-            /* 트랜지션: 속시이지 */
-            /* transition: height .4s ease-out; */
+        /* 트랜지션: 속시이지 */
+        /* transition: height .4s ease-out; */
         /* } */
 
         /* 상위 li메뉴에 마우스 오버시 서브메뉴 보이기 */
@@ -178,134 +164,207 @@
             padding: 0;
         }
 
+        /* 숨김 네이게이션 박스 */
+        .gbx{
+            position: fixed;
+            top: 5vh;
+            right: 5vh;
+            z-index: 99999;
+            width: 70px;
+            height: 90vh;
+            /* border: 3px solid #333; */
+            border-radius: 7px;
+            background-color: #ccc;
+            transition: .3s;
+        }
+
+        /* 액션상태일떄 가로크기 확장 */
+        .gbx.on{
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 100vh;
+            transition: .3s ease-out .2s;
+        }
+
         /* 햄버거버튼 */
-        #ham{            
+        #ham {
             position: fixed;
         }
+
         /* 닫기버튼 */
-        #cbtn{
+        #cbtn {
             position: absolute;
         }
 
         /* 버튼공통 */
-        .btns {
-            top: 5vh;
-            right: 1vw;
+        .ham {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 70px;
-            height: 90vh;
-            border-radius: 5px;
-            border: 2px solid #000;
+            height: 100%;
+            border-radius: 7px;
+            border: none;
+            /* 버튼요소는 기본보더가 있음 */
             background-color: #fff;
             font-size: 50px;
             line-height: 66px;
             padding: 0;
             margin: 0;
             cursor: pointer;
-            z-index: 1;
             /* 오버시 손가락모양 */
+            transition: .2s .2s, left .2s;
+            
         }
 
-        /* 가상요소 검정원 */
-        .btns::before {
-            content: '';
+
+
+        /* 버튼 오버시 스케일 변경 */
+        .ham:hover{
+            transform: scale(.9, .99);
+        }
+
+        /* 햄버거 막대 */
+        .ham span{
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            /* border-radius: 5px; */
-            /* 원 */
-            transform: scale(0);
-            /* 스케일이 0이면 중앙에 사라짐! */
-            transition: transform .2s ease-out;
-        }
-
-        /* 오버시 가상요소 커짐 */
-        .btns:hover::before {
-            transform: scale(1);
-        }
-
-        /* 글자옆으로 늘리기 */
-        .btns span {
-            position: relative;
-            /* 위치관계때문에 설정함! */
-            transform: scaleX(2);
+            left: 30%;
             display: block;
-            /* 트랜스폼 적용위해 블록으로!(또는 인라인블록) */
+            width: 40%;
+            height: 4px;
+            background-color: #000;
+            border-radius: 2px;
+            transition: .2s .2s;
         }
 
-        /* 오버시 글자색 */
-        .btns:hover span {
-            color: #fff;
+        /* 막대1 */
+        .ham span:first-child{
+            transform: translateY(-4px);
+
         }
+        /* 막대2 */
+        .ham span:last-child{
+            transform: translateY(4px);
+
+        }
+
+        /* 액션상태일떄 x버튼으로 변경 */ 
+        /* 막대1 */
+        .gbx.on .ham span:first-child{
+            transform: translateY(0) rotate(45deg) scaleX(.8);
+        }
+        /* 막대2 */
+        .gbx.on .ham span:last-child{
+            transform: translateY(0) rotate(-45deg) scaleX(.8);
+        }
+
+        /* 메뉴확장 액션 상태 클래스 */
+        /* 클래스 이름 명명법 : 기존이름.on */
+        .gbx.on .ham{
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%) scale(.9);
+            height: 70px;
+            border-radius: 50%;
+            transition: .2s, left .2s .2s;
+        }
+
+        /* 액션상태에서 햄버거 오버시 */
+        .gbx.on .ham:hover{
+        transform: translateY(-50%) scale(1);            
+        }
+        
+
+        /* 메뉴박스 내부 컨텐츠 박스 */
+        .gcont{
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            right: 10px;
+            bottom: 20px;
+            /* 부모는? .gbx */
+            border-radius: 15px;
+            background-color: gray;
+            box-shadow: inset 20px 20px 50px 30px rgba(0, 0, 0, 0.315);
+            /* 넘치는 자식요소 숨기기 */
+            overflow: hidden;
+        }
+
     </style>
-   
+
 </head>
 
 <body>
     <h1>유형8.숨긴네비 고정전체창형</h1>
 
     <!-- GNB 네비게이션 -->
-    <nav class="gnb">
-        <ul class="fll">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">웹개발</a>
-                <div class="smenu">
-                    <ol>
-                        <li>
-                            <a href="#">웹디자인</a>
-                        </li>
-                        <li>
-                            <a href="#">HTML5+CSS3</a>
-                        </li>
-                        <li>
-                            <a href="#">jQuery</a>
-                        </li>
-                        <li>
-                            <a href="#">웹+모바일</a>
-                        </li>
-                    </ol>
-                </div>
-            </li>
-            <li>
-                <a href="#">게시판</a>
-                <div class="smenu">
-                    <ol>
-                        <li>
-                            <a href="#">Q&amp;A</a>
-                        </li>
-                        <li>
-                            <a href="#">방명록</a>
-                        </li>
-                    </ol>
-                </div>
-            </li>
-            <li>
-                <a href="#">프로필</a>
-            </li>
-        </ul>
-
-        <!-- 닫기버튼 -->
-        <button id="cbtn" class="btns" onclick="document.querySelector('.gnb').classList.remove('on')">
-            <span>×</span>
+    
+    
+    <!-- 숨김 네비게이션 박스 -->
+    <section class="gbx">
+        <!-- 햄버거버튼 -->
+        <button class="ham" onclick="document.querySelector('.gbx').classList.toggle('on')">
+            <span></span>
+            <span></span>
         </button>
+        <!-- 컨텐츠박스 -->
+        <div class="gcont">
 
-    </nav>
+            <nav class="gnb">
+                <ul class="fll">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">웹개발</a>
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">웹디자인</a>
+                                </li>
+                                <li>
+                                    <a href="#">HTML5+CSS3</a>
+                                </li>
+                                <li>
+                                    <a href="#">jQuery</a>
+                                </li>
+                                <li>
+                                    <a href="#">웹+모바일</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">게시판</a>
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">Q&amp;A</a>
+                                </li>
+                                <li>
+                                    <a href="#">방명록</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">프로필</a>
+                    </li>
+                </ul>
+        
+            </nav>
 
-    <!-- 햄버거버튼 클릭시 .gnb에 .on을 넣기! 
+        </div>
+    </section>
+
+    <!-- 햄버거버튼 클릭시 .gbx에 .on을 넣기! 
         [ JS코드에 classList 객체사용! ]
         (( classList 메서드 3가지 ))
         1. add(클래스명) - 클래스넣기
         2. remove(클래스명) - 클래스빼기
         3. toggle(클래스명) - 클래스넣기/빼기
     -->
-    <button id="ham" class="btns" onclick="document.querySelector('.gnb').classList.add('on')">
-        <span>＝</span>
-    </button>
+    
 
     <!-- 글자출력 -->
     <h2 class="tit">Show Me The Menu!!!</h2>
