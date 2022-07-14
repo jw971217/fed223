@@ -111,6 +111,8 @@
         width: 100vw;
         height: 100vh;
         background-color: #000000b3;
+        /* 처음에 안보임 */
+        display: none;
     }
 
     .gnb ul{
@@ -126,6 +128,7 @@
         /* 메뉴 6개 - 보이는 화면 높이값의 60% 차지 */
         text-align: center;
         color: #fff;
+        z-index: 9999;
     }
 
     /* 서브메뉴, 서브배경 모두 없앰 */
@@ -138,6 +141,15 @@
         border-bottom-color: transparent;
     }
 
+    /* 10. 햄버거 버튼 보이기 */
+    .ham{
+        display: block;
+    }
+
+    /* 11. GNB메뉴 보이기 */
+    .top.on .gnb{
+        display: block;
+    }
 
 
 }

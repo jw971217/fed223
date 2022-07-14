@@ -24,6 +24,7 @@ outline: 두깨, 종류, 색상; */
     background-color: #fff;
     /* 하단 구붐선 */
     border-bottom: 1px solid rgb(255, 0, 0);
+    position: relative;
 }
 
 /* 속박스 */
@@ -222,6 +223,38 @@ outline: 두깨, 종류, 색상; */
 /* 페이스북 오버시 */
 .sns li:nth-child(3):hover{
     background-position: -60px -30px;
+}
+
+/* 햄버거 버튼 */
+/* 햄버거버튼 */
+.ham{
+    position: absolute;
+    top: 50%;
+    transform: 
+    translateY(-130%) scaleX(1.2);
+    right: 5vw;
+    border: none;
+    background-color: transparent;
+    font-size: 10vw;
+    padding: 0;
+    margin: 0;
+  
+    /* 처음에 안보임 */
+    display: none;
+}
+
+/* 햄버거 가상요소 */
+.ham::before{
+    content: '≡';
+}
+
+/* GNB메뉴 보이는 상태일 때 햄버거 버튼 */
+.top.on .ham{
+    transform: translateY(-130%) scaleX(1);    
+    color: #fff;
+}
+.top.on .ham::before{
+    content: '⨉';
 }
 
 
