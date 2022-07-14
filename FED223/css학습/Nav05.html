@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>유형4. 세로네비 서브별 드롭다운 세로형</title>
+    <title>유형5. 세로네비 서브별 드롭다운 사이드형</title>
     <style>
       /* 초기화 */
       html,
@@ -61,6 +61,7 @@
         text-align: center;
         /* height: 40px; */
         /* box-sizing: border-box; */
+        position: relative;
       }
       
 
@@ -133,10 +134,10 @@
 
       /* 서브메뉴 */
       .smenu{
-        /* position: absolute; */
-        /* -> 앱솔루트가 아니면 자리를 차지한다.
-        서브메뉴가 밀고 나가도록 주석처리
-        */
+        position: absolute;
+        left: 100%;
+        top: 0;
+        /* 부모는? 싸고있는 li */
         width: 200px;
         /* 서브메뉴박스 숨기기 */
         height: 0; /* 1 */
@@ -197,15 +198,12 @@
         text-align: center;
         line-height: 50;
         width: calc(100% - 200px);
-        /* 가로크기를 채울 때 특정 px를 뺀 나머지 %만들기는 calc() 함수로 계산한다.
-        계산원리: 
-        calc(전체100% - 왼쪽메뉴 200px)
-        */
+        /* 가로크기를 채울 때 특정 px를 뺀 나머지 %만들기는 calc() 함수로 계산한다. */
       }
     </style>
   </head>
   <body>
-    <h1>유형4. 세로네비 서브별 드롭다운 세로형</h1>
+    <h1>유형5. 세로네비 서브별 드롭다운 사이드형</h1>
     <div class="wrap">
       <!-- GNB 네비게이션 -->
       <nav class="gnb">

@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>유형4. 세로네비 서브별 드롭다운 세로형</title>
+    <title>유형5. 세로네비 서브별 드롭다운 사이드형</title>
     <style>
       /* 초기화 */
       html,
@@ -61,6 +61,7 @@
         text-align: center;
         /* height: 40px; */
         /* box-sizing: border-box; */
+        position: relative;
       }
       
 
@@ -83,7 +84,6 @@
         /* a요소 확장 */
         width: 100%;
         height: 100%;
-        display: block;
         color: #000;
         text-decoration: none;
         font-size: 17px;
@@ -133,30 +133,32 @@
 
       /* 서브메뉴 */
       .smenu{
-        /* position: absolute; */
-        /* -> 앱솔루트가 아니면 자리를 차지한다.
-        서브메뉴가 밀고 나가도록 주석처리
-        */
+        position: absolute;
+        left: 100%;
+        top: 0;
+        /* 부모는? 싸고있는 li */
         width: 200px;
+        display: none;
+        /* 서브메뉴를 디스플레이 none으로 숨기고 보일 때는 height:0; 숨기기 코드가 필요없다 */
+        /* display: none; */
         /* 서브메뉴박스 숨기기 */
-        height: 0; /* 1 */
-        overflow: hidden; /* 2 */
+        /* height: 0; */
+         /* 1 */
+        /* overflow: hidden; */
+         /* 2 */
         background-color: darkblue;
         border-radius: 0 0 5px 5px;
         /* 주의사항 : 높이값 0으로 숨기는 박스는 위아래 패딩, 보더는
         숨겨지지 않으므로 쓰지 않는다
         디자인은 하위요소에서 할것 */
-        /* 트랜지션 */
-        transition: 0.4s;
+        /* 트랜지션 - 불필요 */
+        /* transition: 0.4s; */
       }
 
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
-      .gnb>ul>li:nth-child(2):hover .smenu{
-        height: 155px;
-      }
-      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
-      .gnb>ul>li:nth-child(3):hover .smenu{
-        height: 85px;
+      /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+      .gnb>ul>li:hover .smenu{
+        display: block;
+        /* 한번에 바로 보이기 */
       }
 
       /* 서브메뉴 ol */
@@ -197,15 +199,12 @@
         text-align: center;
         line-height: 50;
         width: calc(100% - 200px);
-        /* 가로크기를 채울 때 특정 px를 뺀 나머지 %만들기는 calc() 함수로 계산한다.
-        계산원리: 
-        calc(전체100% - 왼쪽메뉴 200px)
-        */
+        /* 가로크기를 채울 때 특정 px를 뺀 나머지 %만들기는 calc() 함수로 계산한다. */
       }
     </style>
   </head>
   <body>
-    <h1>유형4. 세로네비 서브별 드롭다운 세로형</h1>
+    <h1>유형5. 세로네비 서브별 드롭다운 사이드형</h1>
     <div class="wrap">
       <!-- GNB 네비게이션 -->
       <nav class="gnb">
