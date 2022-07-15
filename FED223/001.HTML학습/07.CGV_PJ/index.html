@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
          함수명: 멍멍
          기능: 포스터메뉴 클릭시 유튜브 iframe src속성값 변경하여 영화바꾸기
          **************************************************/
-        function 멍멍(먹이){ // 먹이 - 전달값을 담는 변수
+        function 멍멍(먹이) { // 먹이 - 전달값을 담는 변수
             // -> 먹이 변수에 영화 고유코드를 담는다.
             // 1. 호출 및 전달값확인.
             console.log("먹이줘", 먹이)
@@ -21,8 +22,8 @@
 
             // 3. 변경내용 : 아이프레임의 src 속성값 변경하기
             아이.src =
-             "https://www.youtube.com/embed/"+먹이+
-             "?autoplay=1";
+                "https://www.youtube.com/embed/" + 먹이 +
+                "?autoplay=1";
 
             // 이퀄(=)을 만나는 순간
             // 이퀄 오른쪽의 값을 만든후
@@ -32,22 +33,11 @@
             // 합쳐서 하나의 문자로 만들어 준다.
             // +는 문자를 합치는 연산자!
 
-        }////////////////////////멍멍 함수/////////////////////////////
+        } ////////////////////////멍멍 함수/////////////////////////////
         //////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
 </head>
+
 <body>
     <!-- 1. 상단영역 -->
     <div id="top">
@@ -82,7 +72,8 @@
             <!-- 2-1. 스크린박스 -->
             <div id="screen">
                 <!-- 유튜브 아이프레임 -->
-                <iframe src="https://www.youtube.com/embed/1FWr9f9ZhcI?autoplay=1&mute=1&loop=1&playlist=1FWr9f9ZhcI" allow="autoplay"></iframe>
+                <iframe src="https://www.youtube.com/embed/1FWr9f9ZhcI?autoplay=1&mute=1&loop=1&playlist=1FWr9f9ZhcI"
+                    allow="autoplay"></iframe>
             </div>
 
             <!-- 2-2. 예고편 선택메뉴 -->
@@ -151,7 +142,7 @@
                                 <li>스파이더맨:노웨이홈</li>
                                 <li>톰 홀랜드</li>
                                 <li>액션,모험</li>
-                            </ol>  
+                            </ol>
                         </a>
                     </li>
                 </ul>
@@ -162,6 +153,41 @@
     <!-- 3. 하단영역 -->
     <div id="info">
         <footer class="info ibx">
+            <!-- 3-1. 회사정보 -->
+            <address>
+                <img src="./003.구현소스/images/blogo.png" alt="하단로고">
+                <span>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)
+                    <br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 
+                    <br>
+                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                </span>
+            </address>
+            <!-- 3-2. sns박스 -->
+            <ol class="sns fbx">
+                <li>
+                    <a href="#" title="페이스북 바로가기">
+                        <span class="ir">
+                            페이스북 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="트위터 바로가기">
+                        <span class="ir">
+                            트위터 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="인스타그램 바로가기">
+                        <span class="ir">
+                            인스타그램 바로가기
+                        </span>
+                    </a>
+                </li>
+            </ol>
 
         </footer>
     </div>
@@ -174,4 +200,5 @@
 
 
 </body>
+
 </html>

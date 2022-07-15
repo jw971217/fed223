@@ -216,10 +216,67 @@ body *{
 /* 속박스 */
 .info{
     height: 100px;
+    /* 부모자격 - .sns */
+    position: relative;
 }
 
+/* 3-1. 회사정보 */
+.info address{
+    color: #c3c3c3;
+    /* address 기본 이텔릭 해제 */
+    font-style: normal;
+    font-family: 'Cute Font', serif;
+    line-height: 20px;
+    font-size: 18px;
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
 
+/* 하단로고 이미지 */
+.info img{
+    float: left;
+    /* 이미지 자신은 왼쪽, 글자는 오른쪽 */
+    margin-right: 20px;
+}
 
+/* 3-2. sns 박스 */
+.sns{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    /* 플렉스박스 */
+    display: flex;
+}
+
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat ;
+    margin: 0 2px;
+    /* 필터: 흑백 */
+    filter: grayscale(100%);
+    /* 손가락모양 */
+    cursor: pointer;
+}
+
+/* 오버시 칼라 */
+.sns li:hover{
+    filter: grayscale(0);
+}
+
+/* 페이스북 */
+.sns li:first-child{
+    background-position: -510px -430px;
+}
+/* 트의터 */
+.sns li:nth-child(2){
+    background-position: -551px -430px;
+}
+/* 인스타 */
+.sns li:nth-child(3){
+    background-position: -593px -430px;
+}
 
 
 
