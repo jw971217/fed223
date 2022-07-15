@@ -25,15 +25,49 @@ body *{
 .top{
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x ;
+    position: relative;
+    /* 부모자격 - .gnb */
 }
 
+/* 1-1. 로고 */
+.tit{
+    font-family: 'Jua', sans-serif;
+    color: aquamarine;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    /* 그림자를 이용한 Glow 효과 */
+    text-shadow: 0 0 4px aquamarine;
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni .5s ease-in infinite alternate;
+}
 
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni{
+    to{
+        text-shadow: 0 0 18px aquamarine;
+    }
+}/* 키프레임 */
 
+/* 1-2. GNB메뉴 */
+.gnb{
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    /* 부모는? .top */
+}
 
+/* GNB ul */
+.glist{
+    display: flex;
+}
+/* GNB li 리스트 */
+.glist> li{
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    padding: 0 10px;
 
-
-
-
+}
 
 
 
@@ -42,7 +76,23 @@ body *{
 .cont{
     height: 788px;
     background: url(../images/bg.jpg) no-repeat 0/100%;
+    position: relative;
 }
+
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 17%;
+    left: 21%;
+    width: 59.2%;
+    height: 51%;
+    /* 부모는? .cont */
+    background-color: red;
+    
+}
+
+
+
 
 
 
