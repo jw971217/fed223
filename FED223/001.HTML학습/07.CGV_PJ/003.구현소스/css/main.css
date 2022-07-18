@@ -290,6 +290,8 @@ body *{
 /* 예고편 ul */
 .mlist ul{
     display: flex;
+    /* 원근 설정 */
+    perspective: 480px;
 }
 
 /* 예고편 li */
@@ -302,11 +304,19 @@ body *{
     /* 부모자격 */
     overflow: hidden;
     /* 부모자격이 있는 요소에서 숨기기가 적용됨 중간에 자격이 없으면 숨기기 줘도 소용없음. */
+
+    /* x축 회전 */
+    transform: rotateX(45deg);
+    transform-origin: bottom;
+    /* 트랜지션: 속시이지 */
+    transition: transform .4s ease-out;
 }
 
 /* 오버시 아웃라인 보이기 */
 .mlist>ul>li:hover{
     outline: 1px solid aqua;
+    transform: rotateX(0deg);
+    z-index: 1;
 }
 
 /* 두번째 li부터 끝까지만 왼쪽 마진 */
