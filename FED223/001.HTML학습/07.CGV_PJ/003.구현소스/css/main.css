@@ -11,7 +11,7 @@ body{
 
 /* 공사중표시 */
 body *{
-    outline: 1px dotted lime;
+    /* outline: 1px dotted lime; */
 }
 
 /* 공통클래스 */
@@ -55,20 +55,185 @@ body *{
     bottom: 5px;
     right: 15px;
     /* 부모는? .top */
+    z-index: 999;
+    /* 메인영역보다 위. */
 }
 
 /* GNB ul */
 .glist{
     display: flex;
+    position: relative;
+    z-index: 3;
 }
 /* GNB li 리스트 */
 .glist> li{
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
-
+    position: relative;
+    /* 부모자격 - .smenu */
+    padding-bottom: 10px;
+    /* 서브메뉴와 이어지게 하단공간 확장 */
 }
 
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+
+    /* 부모는? 싸고있는 li */
+    left: 50%;
+    transform: translate(-50%, 10px);
+    /* 가로방향 중앙이동, 세로 5px 이동 */
+    /* 처음에 안 보임 */
+    display: none;
+}
+
+/* 상위메뉴 오버시 서브메뉴 보임 */
+.glist>li:hover .smenu{
+    display: block;
+}
+
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+
+    /* 삼각형 만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid rgba(255, 0, 0, 0);
+    border-right: 10px solid rgba(255, 0, 0, 0);
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* 서브메뉴 a요소 */
+.smenu a{
+    /* li요소 끝까지 차지함 */
+    display: block;    
+    transition: .2s;
+}
+
+/* 서브메뉴 li에 마우스 오버시 글자색 빨강 */
+.smenu a:hover{
+    color: red;
+}
+
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+/* 이모지는 윈도우 키 + 세미콜론(;) 단축키임 */
+/* "영화" 하위 메뉴 이모지 */
+.glist>li:nth-child(1) .smenu li a:hover::after{
+    content: '🎃';
+    float: right;
+}
+
+/* "예매" 하위 메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '💎';
+    float: right;
+}
+
+/* "극장" 하위 메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🎪';
+    float: right;
+}
+
+/* "이벤트&컬쳐" 하위 메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '🎄';
+    float: right;
+}
+
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: -9px;
+    right: -50px;
+}
+
+/* 영사기 이미지 */
+#cam img{
+    width: 50px;
+    position: relative;
+    z-index: 1;
+    /* 빔박스 보다 위.
+    포지션이 static이 아니여야 적용됨.
+    */
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 트랜지션 : 속시이지 - 돌아올 때 0.3초 */
+    transition: .2s ease-out .3s;
+}
+
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시엔 트랜지션 지연시간 없음 */
+    transition-delay: .2s;
+}
+
+
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    width: 0px;/*  -> 오버시 */
+    height: 70px;
+    /* outline: 1px dotted yellow; */
+    background: url(../images/bim.png) no-repeat ;
+    background-position: right center;
+    background-size: auto 100%;
+    /* 트랜지션 */
+    transition: width .3s linear;
+    /* linear은 등속도*/
+}
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 트랜지션 지연시간 세팅 */
+    transition-delay: .3s;
+    /*  애니메이션 : 이시이지반방마*/
+    animation: beamAni .00001s infinite alternate;
+}
+
+
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+}/* 키프레임 */
 
 
 /******************************************* 2. 메인영역 *******************************************/
@@ -205,8 +370,35 @@ body *{
     letter-spacing: -1;
 }
 
+/* 영화보러 가는 길 애니박스 */
+.goMV{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 80px;
+    outline: 1px dashed yellow;
+}
+
+.cover{
+    /* 글자커버 */
+    background: url(../images/curtain.jpg) no-repeat;
+    
+    /* 글자설정 */
+    font-family: 'cute font', sans-serif;
+    color: #fff;
+    font-size: 22px;
+    line-height: 80px;
+    text-align: center;
 
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
 
 
 
