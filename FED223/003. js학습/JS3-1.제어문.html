@@ -33,7 +33,7 @@
             console.log("입력된 값:", score);
 
             //// 숫자여부 판별 및 숫자범위 판별 공통코드 함수///
-            // 변수에 이름 없는 함수를 넣으면 넣을 수 있다.  넣어서 코드를 저장할 수 이싿.
+            // 변수에 이름 없는 함수를 넣으면 넣을 수 있다.  넣어서 코드를 저장할 수 있다..
             // 이것도 함수다.
 
             /* //////////////////////////////////////////////////////////////
@@ -415,10 +415,26 @@
     <!-- switch case문 연습 -->
     <h2>switch case문 연습</h2>
     <h3 id="info">국번문의</h3>
-    <label for="local">점수입력</label>
+    <label for="local">지역 입력</label>
     <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요! " maxlength="10"
         onkeypress="if(event.keyCode===13)local()">
+    <button class="sbtn" onclick="local()">국번문의</button>
 
+
+
+
+
+
+
+
+
+
+    <!-- 로그인문 연습 -->
+    <h2>switch case문 연습</h2>
+    <h3 id="info">닉네임 문의</h3>
+    <label for="local">아이디 입력</label>
+    <input type="text" id="local" placeholder="아이디를 입력하세요." maxlength="12"
+        onkeypress="if(event.keyCode===13)local()">
     <button class="sbtn" onclick="local()">국번문의</button>
 
 </body>
