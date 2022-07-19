@@ -25,6 +25,19 @@ outline: 두깨, 종류, 색상; */
     /* 하단 구붐선 */
     border-bottom: 1px solid rgb(255, 0, 0);
     position: relative;
+    /* 처음에 위로 올라가서 안보임 */
+    /* 자신의 높이값 만큼 위쪽방향으로 이동. */
+    transform: translateY(-100vh);
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: topAni 1s ease-out 3s   forwards;
+
+}
+/* 상단영역 키프레임 */
+@keyframes topAni {
+    to{
+        transform: translateY(0%);
+    }
 }
 
 /* 속박스 */
@@ -229,7 +242,7 @@ outline: 두깨, 종류, 색상; */
 /* 햄버거버튼 */
 .ham{
     position: absolute;
-    top: 50%;
+    bottom: -120%;
     transform: 
     translateY(-130%) scaleX(1.2);
     right: 5vw;
@@ -255,7 +268,9 @@ outline: 두깨, 종류, 색상; */
 }
 .top.on .ham::before{
     content: '⨉';
+
 }
+
 
 
 /*************************************** 2. 메인영역 ***************************************/

@@ -59,7 +59,33 @@ body{
     /* 부모자격 */
     padding-bottom: 10px;
     /* 영역보정값(자식요소 마진변동에 의한 불일치 부분을 값으로 보정함. */
+
+    /* 처음에 위로 올라가서 안보임
+    - 보이는 화면 높이만큼 위쪽으로 이동
+    */
+    transform: translateY(-150vh);
+
+    animation: catAni 1s ease-out 1s   forwards;
 }
+
+/* 캐릭터박스별 애니메이션 지연시간 차이주기 */
+.cat:nth-child(2){
+    animation-delay: 1.5s;
+}
+.cat:nth-child(3){
+    animation-delay: 2s;
+}
+.cat:nth-child(4){
+    animation-delay: 2.5s;
+}
+
+/* 캐릭터박스 키프래임 */
+@keyframes catAni {
+    to{
+        transform: translateY(0);
+    }
+}/* 키프레임 */
+
 
 /* 캐릭터 이미지 */
 .ci{
