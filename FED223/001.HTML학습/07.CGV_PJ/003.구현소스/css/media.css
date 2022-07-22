@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CGV PJ 미디어 쿼리 */
+/********************** 미디어 쿼리 1310PX 이하 끝 **********************/
+@media screen and (max-width:1310PX) {
+    /* GNB메뉴 */
+    .gnb{
+        right: 70px;
+    }
+}/********************** 미디어 쿼리 1310PX 이하 끝 **********************/
+
+/********************** 미디어 쿼리 1050px 이하 끝 **********************/
+@media screen and (max-width:1050px) {
+    /* GNB메뉴리스트 */
+    .glist {
+        position: absolute;
+        top: 20px;
+        right: -62px;
+        flex-direction: column;
+        white-space: nowrap;
+        text-align: right;
+        /* 처음에 숨기기 */
+        display: none;
+    }
+
+    /* GNB박스에 오버시 메뉴 리스트 보이기 */
+    .gnb:hover .glist{
+        display: block;
+        top: 10px;
+    }
+
+    /* 상위메뉴 마우스 오버시 서브메뉴 숨기기 */
+    .glist>li:hover .smenu{
+        display: none;
+    }
+
+}/********************** 미디어 쿼리 1050px 이하 끝 **********************/
+
+/********************** 미디어 쿼리 780 이하 끝 **********************/
+@media screen and (max-width:780) {
+    /* 하단영역 */
+    .info{
+        height: auto;
+
+    }
+
+    /* 주소박스 */
+    .info address{
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* 하단로고 이미지 */
+    .info img{
+        float: none;
+    }
+
+    /* 주소박스 */
+    .info span{
+        display: block;
+    }
+    
+    
+}/********************** 미디어 쿼리 780 이하 끝 **********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************** 미디어 쿼리 1111px 이하 끝 **********************/
+@media screen and (max-width:1111px) {
+
+    
+}/********************** 미디어 쿼리 1111px 이하 끝 **********************/
+
+
+
+
+
+
+
