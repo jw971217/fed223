@@ -7,6 +7,83 @@ window.addEventListener("DOMContentLoaded", ()=>{
     // 호출확인
     console.log("로딩완료");
 
+
+//////////////////////////////////////////////////
+// 포스터 메뉴 클릭시 예고편 변경 및 클래스 on주기 //
+//////////////////////////////////////////////////
+
+// 영화정보 셋팅하기
+const minfo = [
+    // 닥터스트레인지
+    "mI9oyFMUlfg",
+
+    // 쥬라기 월드 도미니언
+    "DSEfRVqjbFA",
+
+    // 브로커
+    "DpVAb7Bi5UQ",
+
+    // 범죄도시2
+    "aw9j_23nORs",
+
+    // 몬스터 싱어
+    "wXWiVmTEzkA",
+
+    // 스파이더맨
+    "W7edvITC9g4"
+];//////////minfo 배열 /////
+
+
+
+
+
+// 대상선정(포스터메뉴 a링크): .mlist a
+const mlist = document.querySelectorAll(".mlist a");
+// console.log(mlist);
+
+// 대상선정(포스터메뉴 최상위 li만):
+const mli = document.querySelectorAll(".mlist>ul>li")
+
+// 대상 컬렉션의 개수만큼 돌면서 
+// 예고편 변경함수(멍멍함수) 호출
+mlist.forEach((ele, idx)=>{ // ele-요소, idx-순번
+    // console.log(minfo[idx]);
+    
+    // 각요소에 click 이벤트 설정!
+    ele.onclick = ()=>{
+        
+            // 1. 멍멍함수 호출! -> 예고편 변경
+            멍멍(minfo[idx])
+
+            // 2. 모든 li 요소의 클래스 지우기(일괄삭제)
+            mli.forEach((eli)=>eli.classList.remove("on"));
+            // eli는 각 최상위 li임!
+
+            // 3. 클릭된 요소의 부모(li)에 클래스 on 넣기
+            ele.parentElement.classList.add("on");
+            // ele.parentElement -> a자신의 부모요소로 이동!
+            // console.log(ele.parentElement);
+
+
+        // console.log(minfo[idx]);
+    };////////////////// click //////////////////
+
+});/////////////////////// forEach////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //////////////////////////////////////////////////
     // 극장가는길 클릭시 구글맵 보이기//////////////////
     /////////////////////////////////////////////////
