@@ -312,9 +312,11 @@ body *{
     transition: transform .4s ease-out;
 }
 
-/* 오버시 아웃라인 보이기 */
-.mlist>ul>li:hover{
-    outline: 1px solid aqua;
+/* 오버시 + 클래스 on일 때 
+   아웃라인 보이기 / 일어나기 */
+.mlist>ul>li:hover,
+.mlist>ul>li.on{
+    /* outline: 1px solid aqua; */
     transform: rotateX(0deg);
     z-index: 1;
 }
@@ -387,7 +389,7 @@ body *{
     left: 0;
     width: 144px;
     height: 80px;
-    outline: 1px dashed yellow;
+    /* outline: 1px dashed yellow; */
 
     /* 원근설정 */
     perspective: 480px;
@@ -405,6 +407,9 @@ body *{
     line-height: 80px;
     text-align: center;
     white-space: nowrap;
+    z-index: 1;
+    /* 애니메이션보다 위에 위치 */
+
 
     /* 애니메이션 변경 속성 - 들여쓰기 */
     text-indent: -150%;
@@ -428,8 +433,9 @@ body *{
     box-sizing: border-box;
 }
 
-/* 오버시 x축 회전하기 */
-.goMV:hover .cover{
+/* 오버시 클래스 on 일 때 + x축 회전하기  */
+.goMV:hover .cover,
+.goMV.on .cover{
     transform: rotateX(90deg);
     border: 1px solid aquamarine;
     /* 손가락 모양 */
@@ -483,7 +489,7 @@ body *{
 .ani{
     width: 30%;
     height: 100%;
-    outline: 2px dashed coral;
+    /* outline: 2px dashed coral; */
     margin: 0 auto;
     display: block;
     background-image: url(../images/spAni03.png);
@@ -538,7 +544,7 @@ body *{
     right: 0;
     width: 40px;
     height: 40px;
-    outline: 2px dashed coral;
+    /* outline: 2px dashed coral; */
     margin: 0 auto;
     display: block;
     background-image: url(../images/spAni02.png);
@@ -567,9 +573,38 @@ body *{
 }
 
 
+/* 구글맵박스 */
+.gmap{
+    position: fixed;
+    /* 처음에 위에 있음 (숨김) */
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    z-index: 999;
+    border: 20px  solid rgb(116, 255, 135);
+    border-radius: 20px;
+
+    /* 트랜지션 */
+    transition: top .8s ease-out;
+}
+
+/* 클래스 on 위치이동설정 */
+.gmap.on{
+    top: 50%;
+}
 
 
-
+/* 닫기 버튼 */
+.gmap .cbtn{
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    right: 0vw;
+    top: -2vh;
+    color: rgb(41, 41, 41);
+}
 
 
 
