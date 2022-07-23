@@ -81,6 +81,17 @@
         min-height: auto;
         padding-bottom: 10px;
     }
+
+
+
+
+
+
+
+
+
+
+
     /* 9. GNB메뉴 변경 */
     .gnb {
         position: fixed;
@@ -132,6 +143,28 @@
     /* 13. GNB메뉴 보일때 스크롤 없앰! */
     body.on{
         overflow: hidden;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    /* 14. 도깨비 문구 없앰 */
+    .dtxt{
+        display: none;
+    }
+
+    /* 15. 배경이미지 타이틀 없애기 */
+    body {
+        background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
     }
 
 
