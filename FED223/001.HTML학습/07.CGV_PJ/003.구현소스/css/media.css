@@ -103,20 +103,32 @@
     .goMV{
         display: none;
     }
-
+    /* 예고편 선택메뉴 */
     .mlist{
         width: 90%;
         bottom: 4%;
     }
 
+    /* 예고편 ul */
     .mlist>ul{
         flex-wrap: wrap;
     }
 
+    /* 예고편 li */
     .mlist ul>li{
         flex-basis: 29.73%;
     }
 
+    /* 영화정보박스 */
+    .movtxt{
+        font-size: 4.5vw;
+        line-height: 1.5;
+    }
+
+    /* 첫번째 li 영화제목 */
+    .movtxt li:first-child{
+        font-size: 5vw;
+    }
 
 
 
