@@ -104,7 +104,18 @@
         display: none;
     }
 
-    /*  */
+    .mlist{
+        width: 90%;
+        bottom: 4%;
+    }
+
+    .mlist>ul{
+        flex-wrap: wrap;
+    }
+
+    .mlist ul>li{
+        flex-basis: 29.73%;
+    }
 
 
 
