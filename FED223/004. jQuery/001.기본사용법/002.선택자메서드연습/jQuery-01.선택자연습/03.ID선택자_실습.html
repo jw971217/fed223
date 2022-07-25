@@ -33,34 +33,41 @@
              // 배경노란색, 글자색파랑,보더1px solid green,
              // 글자크기 42px, 트랜지션 0.8초
 
-            $("#sub").text("이승기")
+            $("#sub").text("이승기").css({border:"0px double red"})
             .animate({////////////////animate에서는 트랜지션 안 줌!!!
               backgroundColor:"yellow",
               color:"blue",
-              fontSize:"42px"
+              fontSize:"42px",
+              borderWidth:"2px",
+              borderColor:"green"
             },800);
 
             // 아이디가 #main 는 글자를 "공유"로 바꾸고
             // 배경파랑, 글자색흰색,보더3px solid yellow,
             // 글자크기 52px, 트랜지션 0.8초 -> 1초후
 
-            $("#main").text("공유")
+            $("#main").text("공유").css({border:"0px dashed red"})
             .delay(1000)//애니메이션 앞 지연시간
             .animate({////////////////animate에서는 트랜지션 안 줌!!!
               backgroundColor:"blue",
               color:"white",
-              fontSize:"52px"
+              fontSize:"52px",
+              borderWidth:"3px",
+              borderColor:"yellow"
             },800);
 
             // 아이디가 #total 는 글자를 "싸랑해요~!"로 바꾸고
             // 배경검정, 글자색빨강,보더2px solid purple,
             // 글자크기 152px, 트랜지션 0.8초 -> 2초후
-            $("#total").text("싸랑해요~!")
+            $("#total").text("싸랑해요~!").css({border:"0px dotted red"})
+            // animate에서 보더는 초기값 셋팅 후 개별 속성으로 줌!
             .delay(2000)//애니메이션 앞 지연시간
             .animate({////////////////animate에서는 트랜지션 안 줌!!!
               backgroundColor:"black",
               color:"red",
-              fontSize:"152px"
+              fontSize:"152px",
+              borderWidth:"10px",
+              borderColor:"blue"
             },800);
            });/////////////////click////////////////////////////////
 }); /////////////////// jQB ///////////////////////////
