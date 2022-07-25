@@ -1,19 +1,25 @@
 @charset "utf-8";
 /* CGV PJ 미디어 쿼리 */
-/********************** 미디어 쿼리 1310PX 이하 끝 **********************/
-@media screen and (max-width:1310PX) {
+
+/********** 미디어쿼리 1310px 이하 시작 **********/
+@media screen and (max-width:1310px) {
+
     /* GNB메뉴 */
-    .gnb{
+    .gnb {
         right: 70px;
     }
-}/********************** 미디어 쿼리 1310PX 이하 끝 **********************/
+}
 
-/********************** 미디어 쿼리 1050px 이하 끝 **********************/
+/********** 미디어쿼리 1310px 이하 끝 **********/
+
+
+/********** 미디어쿼리 1050px 이하 시작 **********/
 @media screen and (max-width:1050px) {
-    /* GNB메뉴리스트 */
+
+    /* GNB 메뉴리스트 */
     .glist {
         position: absolute;
-        top: 20px;
+        top: 10px;
         right: -62px;
         flex-direction: column;
         white-space: nowrap;
@@ -23,44 +29,82 @@
     }
 
     /* GNB박스에 오버시 메뉴 리스트 보이기 */
-    .gnb:hover .glist{
+    .gnb:hover .glist {
         display: block;
-        top: 10px;
     }
 
     /* 상위메뉴 마우스 오버시 서브메뉴 숨기기 */
-    .glist>li:hover .smenu{
+    .glist>li:hover .smenu {
         display: none;
     }
+}
 
-}/********************** 미디어 쿼리 1050px 이하 끝 **********************/
+/********** 미디어쿼리 1050px 이하 끝 **********/
 
-/********************** 미디어 쿼리 780 이하 끝 **********************/
-@media screen and (max-width:780) {
+/********** 미디어쿼리 780px 이하 시작 **********/
+@media screen and (max-width:780px) {
+
     /* 하단영역 */
-    .info{
+    .info {
         height: auto;
-
+        padding-bottom: 20px;
     }
 
     /* 주소박스 */
-    .info address{
+    .info address {
         text-align: center;
         padding: 20px;
     }
 
     /* 하단로고 이미지 */
-    .info img{
+    .info img {
         float: none;
+        margin: 0;
+        margin-bottom: 15px;
     }
 
     /* 주소박스 */
-    .info span{
+    .info span {
         display: block;
     }
-    
-    
-}/********************** 미디어 쿼리 780 이하 끝 **********************/
+
+    /* sns */
+    .sns {
+        position: static;
+        justify-content: center;
+    }
+
+}
+
+/********** 미디어쿼리 780px 이하 끝 **********/
+
+
+/********** 미디어쿼리 600px 이하 시작 **********/
+@media screen and (max-width:600px) {
+    /* 메인영역 비율변경 */
+    .cont::before{
+        padding-top: 150%;
+    }
+
+    /* 메인 배경이미지 크기 조정 */
+    .cont{
+        background-size: 130%;
+    }
+
+    /* 스크린 위치, 크기조정 */
+    #screen{
+        top: 9.8%;
+        left: 12.8%;
+        width: 76.1%;
+        height: 28.8%;
+    }
+
+    /* 극장가는 길 없앰 */
+    .goMV{
+        display: none;
+    }
+
+    /*  */
 
 
 
@@ -70,20 +114,6 @@
 
 
 
+}
 
-
-
-
-
-/********************** 미디어 쿼리 1111px 이하 끝 **********************/
-@media screen and (max-width:1111px) {
-
-    
-}/********************** 미디어 쿼리 1111px 이하 끝 **********************/
-
-
-
-
-
-
-
+/********** 미디어쿼리 600px 이하 끝 **********/
