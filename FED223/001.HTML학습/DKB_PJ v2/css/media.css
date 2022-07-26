@@ -73,7 +73,7 @@
     }
 
     /* 7. 사라질요소들 : .tmenu, .blink */
-    .tmenu, .blink{
+    .blink{
         display: none;
     }
     /* 8. 하단영역 */
@@ -145,18 +145,6 @@
         overflow: hidden;
     }
 
-
-
-
-
-
-
-
-
-
-
-    
-
     /* 14. 도깨비 문구 없앰 */
     .dtxt{
         display: none;
@@ -166,6 +154,34 @@
     body {
         background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
     }
+
+    /* 탑메뉴 숨기기 + bpdy.on일 때 보이기 */
+    .tmenu{
+        display: none;
+    }
+
+    body.on .tmenu{
+        display: block;
+    }
+
+    /* 17. 탑메뉴 전체메뉴에 보이게하기 */
+    .tmenu>ul{
+        position: fixed;
+        z-index: 9999;
+        top: 87vh;
+        right: 50%;
+        transform: translateX(50%);
+        }
+    
+    .tmenu>ul>li>a {
+        color: #fff;
+        white-space: nowrap;
+    }
+
+
+
+
+
 
 
 }

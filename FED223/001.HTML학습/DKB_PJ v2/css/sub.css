@@ -10,7 +10,11 @@
 #top{
     transform: translateY(0);
     animation: none;
+    z-index: 99999;
+    /* 하당박스보다 위 (모바일 GNB메뉴 때문) */
+    position: relative;
 }
+
 /* 메인영역 배경색 */
 #cont{
     background-color: #ddd;
