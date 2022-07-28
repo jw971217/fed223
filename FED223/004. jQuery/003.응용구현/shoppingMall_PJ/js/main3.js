@@ -72,7 +72,7 @@ $(() => {
         // console.log("통과:",prot);
 
         // 자동넘김 지우기함수 호출!
-        // clearAuto();
+        clearAuto();
 
         // 1. 오른쪽여부
         // is(클래스/아이디명) -> 선택요소해당여부 리턴
@@ -88,7 +88,7 @@ $(() => {
             // eq(순번) -> 해당순번 선택
 
             //현재 슬라이드 숨기기
-            slide.eq(sno).fadeOut(aniT);
+            slide.eq(sno).fadeOut(aniT,aniE);
             // 슬라이드 순번 1증가
             sno++; 
             // 슬라이드 한계값 체크 처음으로 변경!
@@ -96,7 +96,7 @@ $(() => {
             // slide.length는 li갯수 
             console.log("현재 슬번",sno);
             // 다음 순번 슬라이드 보이기
-            slide.eq(sno).fadeIn(aniT);
+            slide.eq(sno).fadeIn(aniT,aniE);
 
 
         } /////////// if ///////////
@@ -106,7 +106,7 @@ $(() => {
             // eq(순번) -> 해당순번 선택
 
             //현재 슬라이드 숨기기
-            slide.eq(sno).fadeOut(aniT);
+            slide.eq(sno).fadeOut(aniT,aniE);
             // 슬라이드 순번 1감소
             sno--; 
             // 슬라이드 한계값 체크 처음으로 변경!
@@ -114,12 +114,15 @@ $(() => {
             // slide.length는 li갯수 
             console.log("현재 슬번",sno);
             // 다음 순번 슬라이드 보이기
-            slide.eq(sno).fadeIn(aniT);
+            slide.eq(sno).fadeIn(aniT,aniE);
 
         } /////////// else ///////////
 
         // 3. 등장슬라이드와 같은 순번의 블릿변경하기
-        indic.eq(sno).addClass("on").siblings().removeClass("on");
+        // 현재 술라이드번호 (sno)와 같은 순번의 블릿 클래스 on
+        indic.eq(sno).addClass("on")
+        // 다른 형제들 블릿 클래스 제거
+        .siblings().removeClass("on");
         
 
     }); /////////// click /////////////
@@ -140,13 +143,31 @@ $(() => {
     let autoT;
 
     // 인터발 최초호출!
-    // autoSlide();
+    autoSlide();
 
     // 인터발 호출함수 ///////
     function autoSlide() {
 
         autoI = setInterval(() => {
 
+            // fadeIn으로 다음 순번 보이기
+            // eq(순번) -> 해당순번 선택
+
+            //현재 슬라이드 숨기기
+            slide.eq(sno).fadeOut(aniT,aniE);
+            // 슬라이드 순번 1증가
+            sno++; 
+            // 슬라이드 한계값 체크 처음으로 변경!
+            if(sno===slide.length) sno=0;
+            // slide.length는 li갯수 
+            console.log("현재 슬번",sno);
+            // 다음 순번 슬라이드 보이기
+            slide.eq(sno).fadeIn(aniT,aniE);
+ // 3. 등장슬라이드와 같은 순번의 블릿변경하기
+        // 현재 술라이드번호 (sno)와 같은 순번의 블릿 클래스 on
+        indic.eq(sno).addClass("on")
+        // 다른 형제들 블릿 클래스 제거
+        .siblings().removeClass("on");
             
 
         }, 3000); ///// 인터발함수 ///
