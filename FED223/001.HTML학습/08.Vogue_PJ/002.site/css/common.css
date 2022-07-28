@@ -22,6 +22,60 @@
     /* 등분할 자동 높이 채움! */
 }
 
+/* 1-1-1. sns 박스 */
+.sns a{
+    width: 16px;
+    height: 16px;
+    /* .fi에 이미 inline-block되어 있음 */
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+
+    /* 위치조정 */
+    margin-top: 14px;
+    margin-right: 17px;
+    line-height: 16px;
+
+    /* 속시이지 */
+    transition: opacity .2s;
+
+    /* 커서 변경 */
+    /* cursor: url(이미지 경로), 대체커서; */
+    /* 
+        -> 이미지가 표시 안될 경우 콤마 뒤의 대체커서가 표시됨
+        -> 이미지는 대체로 jpg, png등 사용하는데 적합치 않은 경우 안 나올 수 있다.
+    */
+    /* 예)
+        cursor: url(),default 혹은 move 등;
+    */
+}
+
+.sns a:hover{
+    opacity: .8;
+}
+
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter{
+    font-size: 13px;
+}
+
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play{
+    font-size: 11px;
+}
+
+/* 유튜브 가상요소 세부 조정 */
+.sns a .fi-youtube-play:before {
+    display: inline-block;
+    transform: scale(1.2);
+}
+/* inline은 트랜스폼 적용안됨! */
+
+/* 카카오 스토리 배경이미지 넣기 */
+.sns a:last-child{
+    background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
+}
+
 /***************************** 1-2. 로고박스  *****************************/
 .logo{
     text-align: center;
