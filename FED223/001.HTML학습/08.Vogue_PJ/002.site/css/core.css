@@ -33,7 +33,7 @@ font-family: 'Roboto Condensed', sans-serif;
 
 /* 공사중 표시 */
 body *{
-  outline: 1px dashed coral;
+  /* outline: 1px dashed coral; */
 }
 
 /************* 2. 공통 class *************/
@@ -180,6 +180,20 @@ body *{
 }
 
 /* 공통 적용 배경색 클래스 */
-
+.bgc{
+  background-color: #f9f9f9;
+}
 
 /* 등장액션 클래스 */
+.scAct{
+  transform: translateY(10%);
+  opacity: 0;
+  transition: .5s ease-in-out;
+}
+
+/* 등장클래스(on추가) */
+/* 등장액션 클래스 */
+.scAct.on{
+  transform: translateY(0);
+  opacity: 1;
+}
