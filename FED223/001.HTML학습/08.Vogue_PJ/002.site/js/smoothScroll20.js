@@ -4,7 +4,7 @@
 
 // startSS()함수를 호출하여 사용
 function startSS() {
-    new SmoothScroll(document, 130, 12)
+    new SmoothScroll(document, 200, 12)
     // new SmoothScroll(전체문서객체, 스크롤 이동속도, 남은 동작시간)
 }
 
