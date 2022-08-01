@@ -1,4 +1,3 @@
-
 // 무한이동 클릭형 배너 JS - index.js
 
 
@@ -215,7 +214,7 @@ $(() => {
 
             // 블릿변경하기
             let sseq =
-            slide.find("li").eq(1).attr("data-seq");
+                slide.find("li").eq(1).attr("data-seq");
 
             indic.eq(sseq).addClass("on")
                 .siblings().removeClass("on");
@@ -227,14 +226,14 @@ $(() => {
 
 
     //// 인터발 지우기 함수 ///////
-    function clearAuto(){
+    function clearAuto() {
         // 인터발지우기
         clearInterval(autoI);
         // 타임아웃지우기(실행쓰나미방지!)
         clearTimeout(autoT);
 
         // 일정시간후 다시 인터발호출!
-        autoT = setTimeout(autoSlide,4000);
+        autoT = setTimeout(autoSlide, 4000);
 
     } ///////// clearAuto함수 ///////////
 
@@ -256,43 +255,100 @@ $(() => {
         - 대상 : #indic li -> indic변수
         - 이벤트 : click -> click() 메서드
     *****************************************************************/
-   indic.click(function(){
+    indic.click(function () {
 
 
 
-    // 1. 클릭된 블릿 li 순번
-    let idx = $(this).index();
-    console.log("블번:", idx)
+        // 1. 클릭된 블릿 li 순번
+        let idx = $(this).index();
+        console.log("블번:", idx)
 
-    // 2. 현재 슬라이드 순번(첫번째 슬라이드 'data-seq' 값)
-    let sidx = slide.find("li")
-    .first().attr("data-seq");
-    
-    console.log("슬번:", sidx)
+        // 2. 현재 슬라이드 순번(첫번째 슬라이드 'data-seq' 값)
+        let sidx = slide.find("li")
+            .first().attr("data-seq");
 
-    // 3. 블릿 순번 - 슬라이드 순번 : 두 순번의 차이값
-    let diff = idx - sidx;
+        console.log("슬번:", sidx)
 
-    console.log("차이:", diff)
-    // 해석: 양수면 오른쪽에서 들어옴, 음수면 왼쪽에서 들어옴
+        // 3. 블릿 순번 - 슬라이드 순번 : 두 순번의 차이값
+        let diff = idx - sidx;
+
+        console.log("차이:", diff)
+        // 해석: 양수면 오른쪽에서 들어옴, 음수면 왼쪽에서 들어옴
+
+        // 차이수의 절대값 
+        let absd = Math.abs(diff);
+        // Math.abs(숫자) -> 양수로 결과변환!
+        console.log("차이절대값:", absd);
+
+
+        // 4. 이동분기하기 
+        if (diff > 0) { // 양수는 오른쪽에서 들어옴
+
+            // 기본 이동이 오른쪽버튼과 동일함!
+
+            slide.animate({
+                    left: (-100*absd)+"%"
+                    // 절대 차이값 만큼 절대값 이돈동
+                }, // CSS설정
+                aniT, // 시간
+                aniE, // 이징
+                function () { // 이동후 실행함수
+
+                    // 절대차이수만큼 반복한다!
+                    // 임시변수 (감소하는 left값)
+                    let temp = absd;
+                    for(let i=0;i<absd;i++){
+                        temp--;// 1씩 감소
+                        $(this) // slide
+                            .append($("li", this).first())
+                            .css({
+                                left: (-100*temp)+"%"
+                            });
+                    }//////// for ///////////
+
+                }); ///////// animate ///////
+
+        } ///////// if ////////////////////
+        else if (diff < 0) { // 음수는 왼쪽에서 들어옴
+
+            // 공통 블릿 변경하기!
+            // $(this) 클릭된 블릿 li
+            // sliblings() -> 다른 블릿 li 형제들
+            let temp = 0; // left에 적용할 증가값
+            for(let i=0;i<absd;i++){
+                temp++; // 1씩 증가
+
+                slide
+                .prepend(slide.find("li").last())
     
-    // 4. 이동분기하기 
-    if(diff > 0){// 양수는 오른쪽에서 들어옴
-        
-    }///////// if ////////////////////
-    
-    else if(diff < 0){ // 음수는 왼쪽에서 들어옴
-    
-    }/////////// else if ///////////////////
-    
-    
-    
-    
-    
-    
-    
-    
-})////////////click
+                .css({
+                    left: (-100*temp)+"%"
+                })
+
+            }////////// for //////
+
+            // 맨뒤요소를 맨앞에 이동
+            // 그후 left값 0으로 애니메이션
+            slide.animate({
+                    left: "0"
+                },
+                aniT, //시간
+                aniE // 이징
+            ); ////// animate //////
+
+        } /////////// else if ///////////////////
+
+
+        $(this).addClass("on").siblings().removeClass("on");
+
+
+
+
+
+
+
+
+    }) ////////////click
 
 }); ////////////////// jQB ////////////////////
 ///////////////////////////////////////////////
