@@ -41,8 +41,11 @@ $(()=>{
      // 애니메이션 시간 변수
      const aniT = 600;
  
+     // 왼쪽이동시 드래그 할 경우 위치보정값
+     let tval = 0;
+
      // 애니메이션 이징 변수
-     const aniE = "easeInOutQuint";
+     const aniE = "easeOutQuint";
  
      $(".abtn").click(function () {
  
@@ -99,8 +102,10 @@ $(()=>{
                  // last() 마직막요소
  
                  // 동시에 left값 -100%
+                 // 부모박스 sbx의 가로크기 마이너스는 -110%와 동일하다.
+                 // 보정값ㅇ로 드래그 이동시 위치 맞추기
                  .css({
-                     left: "-100%"
+                     left: -(sbx.width()+tval)+"px"
                  })
                  // 그후 left값 0으로 애니메이션
                  .animate({
@@ -348,8 +353,14 @@ $(()=>{
          대상: 슬라이드 - #viewer ul -> slide변수
          -> 이벤트: dragstop 
      *******************************************/
+
+         // 광드래그 막기요소
+         let cover = $(".cover");
+
          slide.on("dragstop",function(){
- 
+
+        // 광드래그 막기 작동!
+        cover.show();
         // 1. left위치값 읽어오기
         let spos = slide.position().left;
         // offset().left 는 보이는 화면 왼쪽선 기준함
@@ -358,14 +369,25 @@ $(()=>{
         console.log("슬위:",spos);
  
         // 2-1. 50px보다 클때 왼쪽에서 들어옴!
-        if(spos > 50) 
+        if(spos > 50) {
+        // 드래그한 만큼 위치값 보정하기 (tval에 보정!)
+            tval = -spos;
              $(".lb").trigger("click");
+             setTimeout(()=>{
+                cover.hide();//커버해제
+             },aniT);
+            }
         // 2-2. -50px보다 작을때 오른쪽에서 들어옴!
-        else if(spos < -50) 
+        else if(spos < -50) {
              $(".rb").trigger("click");
+             setTimeout(()=>{
+                cover.hide();//커버해제
+             },aniT);
+            }
          // 2-3. 기준값 사이일때는 제자리!
          else
-             slide.animate({left:0},300,"easeOutQuint");
+             slide.animate({left:0},300,"easeOutQuint",
+             ()=>cover.hide());
          
              
  
