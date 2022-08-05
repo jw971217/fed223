@@ -85,12 +85,13 @@
             // 이벤트 종류 : mousemove touchmove //////////
             // -> DT & Mobile
             cbx.on('mousemove touchmove', e=>{
-
-                // 이벤트 횟수 조절하기!!!!
+                // 이벤트 횟수 조절하기 ////////////
                 if(prot) return;
-                prot = 1; // 막기
-                setTimeout(()=>prot=0,40);
-                ////////////// 0.04초 간격으로 문을 열어줌!
+                prot = 1;
+                setTimeout(() => {
+                    prot = 0;
+                }, 20);
+                //// 0.02초 간격으로 문을 열어줌 //////////////////
 
                 // 1. x축 위치값
                 let pos = e.pageX;
@@ -110,7 +111,7 @@
                     //dir 값에 따라 방향 찍어보기
                     // console.log("방향:", dir? "왼쪽":"오른쪽")
 
-                    // 이미지 변경함수 호출하기!
+                    // 이미지변경함수 호출하기
                     rotCar(dir);
 
 
@@ -127,6 +128,10 @@
                 drag = 1;
                 // x축 처음 위치값 담기
                 point = e.pageX;
+                // 커서 주먹
+                cbx.css({
+                    cursor:"grabbing",
+                })
             })/////////////mousedown////////////////////////////////    
 
 
@@ -135,6 +140,10 @@
             cbx.on('mouseup mouseout', (e)=>{
                 // 드래그 상태변경
                 drag = 0;
+                // 커서 손바닥
+                cbx.css({
+                    cursor:"grab",
+                })
             })/////////mouseup mouseout///////      
 
             // 참고: 마우스 오버/아웃 이벤트 비교
@@ -151,34 +160,35 @@
             기능 : 자동차 이미지를 순서대로 변경함
             */
 
-            const rotCar = dir => { // dir - 방향전달변수
+            const rotCar = (dir) => { // dir - 방향전달변수
                 // dir 값이 0이면 오른쪽, 1이면 왼쪽
-                console.log('방향', dir);
+                // console.log('방향', dir)
 
-                // 1. 왼쪽 방향 처리: dir === 1
-                // 이미지 순번 증가 -> 연속이미지를 보고 판단!
-                if(dir){
-                    fnum ++;
-                    if(fnum === 50) fnum = 0;//한계값
-                }//////////// if //////////////////
+                // 1. 왼쪽 방향 처리 : dir===1
+                // 이미지 순번증가 -> 연속이미지를 보고 판단
+                if(dir) {
+                    fnum++;
+                    if(fnum === 50) fnum = 0; // 한계값
+                }///if////////////////////////////////
 
-                
-                // 2. 오른쪽 방향 처리: dir===0
-                // 이미지 순번 감소 -> 연속 이미지를 보고 판단!
+                // 2. 오른쪽 방향처리 : dir===0
+                // 이미지 순번감소 -> 연속 이미지를 보고 판단
                 else{
                     fnum--;
-                    if(fnum===-1) fnum = 49; // 한계값
-                    
-                    console.log("순번:",fnum);
-                }//////////// else /////////////////
-                    
-                    // 3. 이미지를 순서대로 보이기
-                    cbx.find('img:visivle').hide();
-                    // :visible 보이는 요소 선택(display:none 아닌요소)
-                    cbx.find('img').eq(fnum).show();
-                    // 이미지 중 해당순서(eq(fnum)) 이미지는 보여라! 
-                    // eq(순번) -> 순번은 0부터~~!
-                    
+                    if (fnum === -1) fnum = 49; // 한계값
+                }//else////////////////////////////////
+
+                console.log('순번', fnum)
+
+                // 3. 이미지를 순서대로 보이기
+                cbx.find('img:visible').hide();
+                // :visible 보이는 요소 선택 (display:none이 아닌요소)
+                cbx.find('img').eq(fnum).show();
+                // 이미지중 해당순서 (eq(fnum))이미지는 보여라
+                // eq(순번) -> 순번은 0부터
+
+
+
 
             }/////////rotCar 함수/////////////
 
