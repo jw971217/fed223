@@ -124,9 +124,15 @@
 			// #mbx박스 크기의 절반(가로, 세로동일)
 			let hz = mbx.width()/2;
 
+			// 마우스 무브 멈춤 상태값
+			let mmsts=0; // 1-멈춤, 0 - 계속
 
 
 			$('body').mousemove((e)=>{
+
+				// 마우스 무브 멈추기
+				if(mmsts) return;
+
 				// 1. 마우스 위치값 알아내기
 				// x좌표: e.pageX / y좌표: .pagey
 				let posx = e.pageX;
@@ -142,7 +148,54 @@
 
 			}); ////////////// mousemove //////////////
 			
-			
+			// #mbx 클릭시 메뉴 보이기
+			// 변경대상: #menu
+			let menu = $("#menu");
+			// 변경값: 최대 사이즈 660px
+			let mw = 660;
+
+			mbx.click(()=>{
+				// 메뉴 펼치기/숨기기
+				// stop()은 애니메이션 앞에서 지움
+				menu.stop().animate({
+					width: mw + "px"
+				}//여기에 딜레이 시간 쓸 수 있음!
+				);
+				
+				// 현재 상태값 변경하기(마우스 무브 멈춤)
+				mw===660?mmsts=1:mmsts=0;
+
+				// 토글전환하기
+				mw=== 660 ? mw = 0: mw = 660;
+				// 비?집: 놀이동산
+
+			});/////////////////// click /////////////////////
+
+			// 메뉴 li에 마우스 오버시 
+			menu.find('li').hover(
+				function(){// over
+					// 1. li 자신의 opacity:1
+					$(this).stop().fadeTo(200,1);
+					// fadeTo(시간,오파)
+					// 2. 아래 span 요소 보이기
+					$('span',this).stop().fadeIn(200)
+					// 밑에 3개는 위에것과 선택하는 것이 동일
+					// 자손 선택 동일
+					// $('>span',this)
+					// 참고) 직계 자식 선택 동일, 밑에 2개 동일
+					// $(this).find('span')
+					// $(this).children('span')
+					
+				},function(){//out
+					// li 자신의 opacity:.7
+					$(this).stop().fadeTo(200,0.7);
+					// fadeTo(시간,오파)
+
+					$('span',this).stop().fadeOut(200)
+				})
+
+
+
 
 		}); //////////////////////////// jQB /////////////////////
 	</script>
