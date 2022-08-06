@@ -2,9 +2,10 @@
 // 부드러운 스크롤 2020.12 버전
 // arranged by Tom Brace Parker
 
+
 // startSS()함수를 호출하여 사용
 function startSS() {
-    new SmoothScroll(document, 60, 12)
+    new SmoothScroll(document, 120, 20)
 }
 
 // 전역변수 스크롤 위치값
