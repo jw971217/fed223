@@ -9,7 +9,9 @@ $(() => { ////////// jQB ///////////////////////
     // 변경: 대상요소 앞에 a요소 코드를 삽입한다!
     // 메서드: before(요소) -> 선택요소 앞에 형제요소 삽입
     // -> 참고) after(요소) -> 선택요소 뒤에 형제요소 삽입
-    $(".sns a, .mosns a").last()
+
+    // 선택자 :last는 제이쿼리 전용임!
+    $(".sns a:last, .mosns a:last")
         .before(`
         <a class="fi fi-laptop">
             <span class="ir">
