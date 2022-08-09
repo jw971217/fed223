@@ -94,10 +94,20 @@
             
 
             // 4. 입력 양식과 동기화하기 /////////
-           
+           new Vue({
+            el: "#app4",
+            data: {
+                msg:"여기에 입력해봐~!"
+            }
+           });///////////////////// Vue /////////////////
 
             // 5. 조건분기 ///////////////
-           
+           new Vue({
+            el:"#app5",
+            data:{
+                show: true
+            }
+           }); ///////////// Vue //////////////////
            
             
 
@@ -163,14 +173,30 @@
 
     <h2>4. 입력 양식과 동기화하기</h2>
     <div id="app4">
-      
+      <input v-model="msg">
+      <p>{{msg}}</p>
+      <!-- 
+        v-model 속성은 요소 자신의 값이 타겟값으로 반영되게 함
+        변경데이터와 뷰JS의 동기화 기능!
+       -->
     </div>
 
     <hr>
 
     <h2>5. 조건분기</h2>
     <div id="app5">
-       
+        <button v-on:click="show=!show">변경하기</button>
+        <!-- 
+            v-on:click="show=!show"
+            show가 true이면 false, false 이면 true로
+            != 연산자로 반대로 변경해줌!
+         -->
+         <p v-if="show">나는 프론트엔드 개발자다!</p>
+         <p v-if="!show">나는 백엔드 개발자다!</p>
+         <!-- 
+            v-if 속성은 값이 true일 경우에만 display를 보여준다! 
+            false는 태그 자체를 출력하지 않는다!
+          -->
     </div>
 
 
