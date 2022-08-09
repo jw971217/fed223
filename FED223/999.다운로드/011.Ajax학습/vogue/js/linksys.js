@@ -9,9 +9,8 @@ $(() => { ////////// jQB ///////////////////////
     // 변경: 대상요소 앞에 a요소 코드를 삽입한다!
     // 메서드: before(요소) -> 선택요소 앞에 형제요소 삽입
     // -> 참고) after(요소) -> 선택요소 뒤에 형제요소 삽입
-
     // 선택자 :last는 제이쿼리 전용임!
-    $(".sns a:last, .mosns a:last")
+    $(".sns a:last,.mosns a:last")
         .before(`
         <a class="fi fi-laptop">
             <span class="ir">
@@ -29,6 +28,8 @@ $(() => { ////////// jQB ///////////////////////
             </span>
         </a>
    `); /////////// before ///////////
+
+     console.log('나야나! 확인!');
 
     ///// sns 파트 a요소들에 툴팁넣기 ////////
     $('.sns a').each((idx, ele) => {
@@ -75,13 +76,13 @@ $(() => { ////////// jQB ///////////////////////
                 url = "https://www.youtube.com/user/VogueKorea?sub_confirmation=1";
                 break;
             case "로그인":
-                url = "login.html";
+                url = "login.php";
                 break;
             case "회원가입":
-                url = "member.html";
+                url = "member.php";
                 break;
             case "갤러리":
-                url = "gallery.html";
+                url = "gallery.php";
                 break;
             case "카카오스토리":
                 url = "https://story.kakao.com/ch/voguekr";
@@ -99,11 +100,14 @@ $(() => { ////////// jQB ///////////////////////
 
     }); ///////// click //////////////////
 
+    // 모바일 sns메뉴 4번째 a요소 뒤에 줄바꿈넣기!
+    $(".mosns a").eq(3).after('<br>');
+
     /************************************ 
             메인로고 링크 셋팅하기
     ************************************/
     $(".logo a").click(() =>
-        location.href = 'index.html');
+        location.href = 'index.php');
 
     /************************************ 
         GNB 메뉴 파트 링크 셋팅하기
@@ -123,7 +127,7 @@ $(() => { ////////// jQB ///////////////////////
 
         // 2. 서브페이지 이동하기
         if (txt !== "search") // 검색이 아니면!
-            location.href = 'category.html?cat=' +
+            location.href = 'category.php?cat=' +
             encodeURIComponent(txt);
 
         // 카테고리를 구분하기 위한 파라미터 키=값 쌍을 보냄
@@ -141,4 +145,4 @@ $(() => { ////////// jQB ///////////////////////
 
 
 
-}); ////////////// jQB ///////////////////////4017
+}); ////////////// jQB ///////////////////////

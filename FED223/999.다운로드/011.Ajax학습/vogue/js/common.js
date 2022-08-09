@@ -3,16 +3,12 @@
 // 현재 페이지명을 알아내어 제어에 활용한다!
 // 페이지명 변수
 let pname = location.pathname;
-// location.pathname 페이지명이 포함된 전체 경로
-// split(자를 문자열) -> 배열에 담는다!
+// location.pathname 페이지명이 포함된 전체경로
+// split(자를문자열) -> 배열에 담는다!
 pname = pname.split('/');
-pname = pname[pname.length-1];//마지막 배열
-pname = pname.split('.')[0];// 첫배열
-console.log("페이지이름:",pname);
-
-
-
-
+pname = pname[pname.length - 1]; //마지막배열
+pname = pname.split('.')[0]; //첫배열
+console.log('페이지이름:', pname);
 
 ///////////// 제이쿼리 블록 ///////////////////
 $(() => {
@@ -23,7 +19,6 @@ $(() => {
     /// 부드러운 스크롤 호출!(제이쿼리 아님!)
     startSS();
 
-
     /************************************** 
         모바일 버튼 클릭시 검색 / GNB 보이기
     **************************************/
@@ -32,7 +27,7 @@ $(() => {
         // GNB 박스 슬라이딩 보임/숨김
         // slideToggle() -> slideUp/slideDown
         // 대상: 모바일 GNB
-        $('#mobx').slideToggle(400,resetH);
+        $('#mobx').slideToggle(400, resetH);
         // 애니후 높이값 재설정 호출!
     }); ////////// click /////////
 
@@ -41,7 +36,7 @@ $(() => {
         // GNB 박스 슬라이딩 보임/숨김
         // slideToggle() -> slideUp/slideDown
         // 대상: 모바일 GNB
-        $('.mos').slideToggle(200,resetH);
+        $('.mos').slideToggle(200, resetH);
         // 애니후 높이값 재설정 호출!
     }); ////////// click /////////
 
@@ -56,24 +51,24 @@ $(() => {
         );
 
         // 검색박스 높이는 block일때 넣어줌!
-        let temp = $('.mos').css('display')==='none'?
-        0:$('.mos').innerHeight();
+        let temp = $('.mos').css('display') === 'none' ?
+            0 : $('.mos').innerHeight();
 
         // 변경할 높이
-        let Hval = 
-        $('.top').innerHeight() + temp;
+        let Hval =
+            $('.top').innerHeight() + temp;
         // innerHeight()는 패딩포함높이
         // height()는 순수높이(컨텐츠만)
         // 017문서참조
 
         console.log('.top높이:',
-        $('.top').innerHeight());
+            $('.top').innerHeight());
 
         console.log('.mos높이:',
-        $('.mos').css('display')==='none'?
-        0:$('.mos').innerHeight());
+            $('.mos').css('display') === 'none' ?
+            0 : $('.mos').innerHeight());
 
-        console.log('보정높이:',Hval);
+        console.log('보정높이:', Hval);
 
         // 동적으로 변경하기
         $("#mobx").css({
@@ -167,8 +162,9 @@ $(() => {
     $(window).scroll(function (e) {
 
         // 로그인, 회원가입, 갤러리 페이지는 안함!
-        if(pname==="login"||pname==="member"||pname==="gallery") return;
-
+        if (pname === "login" ||
+            pname === "member" ||
+            pname === "gallery") return;
 
         scTop = $(this).scrollTop();
         // scrollTop() -> 세로스크롤바 위치값
@@ -293,60 +289,60 @@ $(window).scStop(function () {
 
 
 
-// $(() => {
+$(() => {
 
-//     // 제이쿼리 data(키,값) 연습
-//     let mykey = $("#top");
-//     mykey.data('헐', '고양이');
-//     mykey.data('힘', '강아지');
+    // 제이쿼리 data(키,값) 연습
+    let mykey = $("#top");
+    mykey.data('헐', '고양이');
+    mykey.data('힘', '강아지');
 
-//     // console.log(
-//     //     'data()키값:',
-//     //     mykey.data('헐'),'/',
-//     //     mykey.data('힘'));
+    // console.log(
+    //     'data()키값:',
+    //     mykey.data('헐'),'/',
+    //     mykey.data('힘'));
 
-//     // data() 삭제는 removeData(키)
-//     mykey.removeData('헐');
-
-
-//     // console.log(
-//     //     'data()키값:',
-//     //     mykey.data('헐'),'/',
-//     //     mykey.data('힘'));
+    // data() 삭제는 removeData(키)
+    mykey.removeData('헐');
 
 
-// }); ///////// jQB ///////////////
+    // console.log(
+    //     'data()키값:',
+    //     mykey.data('헐'),'/',
+    //     mykey.data('힘'));
 
 
-// ///////////////// 비교 JS Map() 메서드 /////////////
-// // -> 키,값으로 저장하는 메모리공간 생성 메서드 //////
-// // 1. 메모리 공간 생성: Map() -> new 키워드로!
-// // Map() 객체 아래 메서드: set(), get(), has(), delete()
-// const keyval = new Map();
-
-// // 2. 값셋팅: set(키,값)
-// keyval.set('한국배우', '조승우');
-// keyval.set('미국배우', '탐크루즈');
-// keyval.set('중국배우', '성룡');
-
-// // 3. 값호출 : get(키)
-// // console.log('Map()값:',
-// // keyval.get('한국배우'),'/',
-// // keyval.get('미국배우'),'/',
-// // keyval.get('중국배우')
-// // );
-
-// // 4. 키존재여부: has(키)
-// // console.log('성룡있나? 지금? ',keyval.has('중국배우'));
-
-// // 5. 값삭제 : delete(키)
-// keyval.delete('중국배우');
-
-// // console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+}); ///////// jQB ///////////////
 
 
-// // console.log('Map()값:',
-// // keyval.get('한국배우'),'/',
-// // keyval.get('미국배우'),'/',
-// // keyval.get('중국배우')
-// // );
+///////////////// 비교 JS Map() 메서드 /////////////
+// -> 키,값으로 저장하는 메모리공간 생성 메서드 //////
+// 1. 메모리 공간 생성: Map() -> new 키워드로!
+// Map() 객체 아래 메서드: set(), get(), has(), delete()
+const keyval = new Map();
+
+// 2. 값셋팅: set(키,값)
+keyval.set('한국배우', '조승우');
+keyval.set('미국배우', '탐크루즈');
+keyval.set('중국배우', '성룡');
+
+// 3. 값호출 : get(키)
+// console.log('Map()값:',
+// keyval.get('한국배우'),'/',
+// keyval.get('미국배우'),'/',
+// keyval.get('중국배우')
+// );
+
+// 4. 키존재여부: has(키)
+// console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+
+// 5. 값삭제 : delete(키)
+keyval.delete('중국배우');
+
+// console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+
+
+// console.log('Map()값:',
+// keyval.get('한국배우'),'/',
+// keyval.get('미국배우'),'/',
+// keyval.get('중국배우')
+// );

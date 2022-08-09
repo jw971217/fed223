@@ -2,9 +2,9 @@
 /* 보그 PJ 카테고리 페이지 CSS - category.css */
 
 /* 외부파일 합치기 */
-@import url(./reset.css);
-@import url(./core.css);
-@import url(./common.css);
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
 
 /* 등장액션 해제 */
 .scAct{
@@ -15,42 +15,38 @@
 /* 2-1-1. 서브타이틀 */
 .stit{
     font-family: pist;
-    font-size: 50px;
     font-weight: normal;
+    font-size: 50px;
     text-align: center;
     padding: 40px 0 20px;
 }
 
-/* 2-1-2. 서브메뉴(LNB-Local Navigation Bar) */
+/* 2-1-2. 서브메뉴(LNB) */
 .lnb{
     padding: 5px 0 50px;
 }
-
 .lnb ul{
-    /* 플렉스 박스 */
+    /* 플렉스박스 */
     display: flex;
     justify-content: center;
 }
-
 .lnb li{
     margin: 0 10px;
 }
-
 .lnb a{
     font-family: nbg;
     font-size: 18px;
-    color: 333px;
+    color: #333;
+    /* 트랜지션: 속시이지 */
     transition: color .5s;
 }
-
 /* 첫번째 메뉴 + 오버시 빨간색 */
 .lnb li:first-child a,
 .lnb a:hover{
     color: red;
 }
 
-
-/******************************* Fashion *******************************/
+/************************ fashion ************************/
 .fashion .bg1-1{
     background-image: url(../images/fashion/cont1-1a.jpg);
 }
@@ -75,7 +71,7 @@
     background-image: url(../images/fashion/cont2-3a.jpg);
 }
 
-/******************************* Beauty *******************************/
+/************************ beauty ************************/
 .beauty .bg1-1{
     background-image: url(../images/beauty/cont1-1a.jpg);
 }
@@ -100,8 +96,7 @@
     background-image: url(../images/beauty/cont2-3a.jpg);
 }
 
-
-/******************************* Living *******************************/
+/************************ living ************************/
 .living .bg1-1{
     background-image: url(../images/living/cont1-1a.jpg);
 }
@@ -126,8 +121,7 @@
     background-image: url(../images/living/cont2-3a.jpg);
 }
 
-
-/******************************* People *******************************/
+/************************ people ************************/
 .people .bg1-1{
     background-image: url(../images/people/cont1-1a.jpg);
 }
@@ -152,8 +146,7 @@
     background-image: url(../images/people/cont2-3a.jpg);
 }
 
-
-/******************************* Video *******************************/
+/************************ video ************************/
 .video .bg1-1{
     background-image: url(../images/video/cont1-1a.jpg);
 }
@@ -178,8 +171,7 @@
     background-image: url(../images/video/cont2-3a.jpg);
 }
 
-
-/******************************* Runway *******************************/
+/************************ runway ************************/
 .runway .bg1-1{
     background-image: url(../images/runway/cont1-1a.jpg);
 }
@@ -204,8 +196,7 @@
     background-image: url(../images/runway/cont2-3a.jpg);
 }
 
-
-/******************************* Shopping *******************************/
+/************************ shopping ************************/
 .shopping .bg1-1{
     background-image: url(../images/shopping/cont1-1a.jpg);
 }
@@ -230,8 +221,7 @@
     background-image: url(../images/shopping/cont2-3a.jpg);
 }
 
-
-/******************************* Time & Gem *******************************/
+/************************ time & gem ************************/
 .time-gem .bg1-1{
     background-image: url(../images/time-gem/cont1-1a.jpg);
 }
