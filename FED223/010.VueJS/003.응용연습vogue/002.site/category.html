@@ -234,12 +234,17 @@
             <!-- 
                 v-if="n===catName"
                 조건이 속성명과 파라미터값이 같은 경우에 셋팅함!
+                (특수문자가 들어간 time & gem 때문에 클래스명으로 사용될 이름은 'time-gem'로 변경 별도의 조건을 위한 변수는 pm값 그대로 사용하기 위해 catName2를 변수로 추가하였다!)
 
                 [ 클래스 추가 디렉티브 ]
                 v-bind:class="클래스명"
                 -> 데이터 바인딩 할때 클래스명을 추가함!
                 -> 클래스명은 pm 값과 동일 -> catName
              -->
+
+             <!-- 탭메뉴 타이틀 변경 메서드 호출! -->
+             {{chgTit(v.제목)}}
+             <!-- 콧수염 표시자 안에서 메서드를 호출! -->
 
 
             <!-- 2-1. 카테고리 페이지 탑영역 -->
@@ -294,8 +299,13 @@
                         <h2 v-html="v.타이틀[5]"></h2>
                     </div>
                 </div>
-            </section>
+            </section>            
         </main>
+        
+        <!-- 한글자씩 등장 애니 메서드 호출
+            호출위치: v-for를 돌리는 .cont가 아닌 전체 뷰JS 대상인 부모박스 #cont 위치에서 호출해야 자동갱신일 경우에 타이틀이 변경된다!
+        -->
+        {{callAni()}}
     </div>
     <!-- 3. 하단영역 -->
     <div class="bgc">
@@ -337,6 +347,36 @@
         <img src="images/Loading_icon.gif" alt="loading">
     </div>
 
+    
+    <!-- 뷰JS전용 GNB -->
+    <nav class="VueGnb">
+        <!-- 타이틀 -->
+        <h2>SPA 체험존!!!</h2>
+        <!-- 메뉴 -->
+        <ul>
+            <li>
+                <a href="#">FASHION</a>
+            </li>
+            <li>
+                <a href="#">BEAUTY</a>
+            </li>
+            <li>
+                <a href="#">LIVING</a>
+            </li>
+            <li>
+                <a href="#">PEOPLE</a>
+            </li>
+            <li>
+                <a href="#">VIDEO</a>
+            </li>
+            <li>
+                <a href="#">RUNWAY</a>
+            </li>
+            <li>
+                <a href="#">SHOPPING</a>
+            </li>
+        </ul>
+    </nav>
 
 </body>
 

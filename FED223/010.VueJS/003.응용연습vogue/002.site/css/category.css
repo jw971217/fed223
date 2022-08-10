@@ -6,6 +6,10 @@
 @import url(./core.css);
 @import url(./common.css);
 
+#cont{
+    min-height: 50vh;
+}
+
 /* 등장액션 해제 */
 .scAct{
     transform: translateY(0);
@@ -19,6 +23,13 @@
     font-weight: normal;
     text-align: center;
     padding: 40px 0 20px;
+}
+
+/* 타이틀 잘라 넣을 span */
+.stit span{
+    /* 처음부터 안 보임! */
+    opacity: 0;
+
 }
 
 /* 2-1-2. 서브메뉴(LNB-Local Navigation Bar) */
@@ -49,6 +60,39 @@
     color: red;
 }
 
+
+/* 뷰JS용 GNB */
+.VueGnb{
+    position: fixed;
+    top: 20vh;
+    right: 0;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.725);
+    z-index: 9999;
+    width: 15vw;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.VueGnb h2{
+    font-family: nbg;
+    text-align: center;
+    font-size: 2vw;
+    padding: 1vw 0;
+}
+.VueGnb ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.VueGnb a{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1vw;
+    display: block;
+    padding: 2vw;
+    color: #222;
+}
 
 /******************************* Fashion *******************************/
 .fashion .bg1-1{
