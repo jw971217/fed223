@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenMin University</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./css/jquery.fullPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/renmin.css">
+    <script src="../000.최신버전/jquery-3.6.0.min.js"></script>
+    <script src="../000.최신버전/jquery-ui.min.js"></script>
+    <script src="./js/jquery.fullPage.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/renmin.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#fullpage').fullpage({
+        //options here
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
+});
+    </script>
+</head>
+<body>
+
+    <!-- main -->
+    <main>
+        <div class="cont">
+    
+            
+            <!-- gnb -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide menu">
+                        
+                        <!-- logo -->
+                        <a href="#">
+                            <h1 class="logo">
+                                <img src="./img/Renmin-University-of-China-logo.png" alt="Renmin University of China logo">
+                            </h1>
+                        </a>
+
+                        <!-- search -->
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <button>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+
+                        <!-- navi -->
+                        <div class="navi">
+                            <ul>
+                                <li>
+                                    <a href="#"><span>Home</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>입학 안내</span></a>
+                                    <!-- 서브메뉴 -->
+                                    <div class="smenu">
+                                        <ol>
+                                            <li>
+                                            <a href="#">가나다</a>
+                                            </li>
+                                            <li>
+                                            <a href="#">가나다</a>
+                                            </li>
+                                            <li>
+                                            <a href="#">가나다</a>
+                                            </li>
+                                            <li>
+                                            <a href="#">가나다</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><span>도서관</span></a>
+                                    <!-- 서브메뉴 -->
+                                    <div class="smenu">
+                                        <ol>
+                                            <li>
+                                            <a href="#">Q&amp;A</a>
+                                            </li>
+                                            <li>
+                                            <a href="#">방명록</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><span>명단</span></a>
+                                </li>
+                            </ul>
+
+                            <!-- map -->
+                            <div class="map">
+                                <!-- load -->
+                                <span class="load">오시는 길</span>
+
+                                <!-- iframe -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.738175432784!2d116.31662581538242!3d39.96960617941954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f0515cd8efeee5%3A0x683ff95c7513165f!2z7KSR6rWt7J2466-864yA7ZWZ!5e0!3m2!1sko!2skr!4v1661156432469!5m2!1sko!2skr" width="90%" height="270px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        <!-- navi end -->
+                        </div>
+                            
+
+                    <!-- swiper-slide menu end -->
+                    </div>
+                    <div class="swiper-slide content">
+                        <!-- menu -->
+                        <div class="menu-button">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        
+                        <!-- fullpage area -->
+                        <div id="fullpage">
+                            
+                            <!-- intro -->
+                            <div class="section">
+                                <div class="slide slide1">
+
+                                </div>
+                                <div class="slide slide2">lololo</div>
+                                <div class="slide slide3">lilili</div>
+                            </div>
+                            <!-- school info -->
+                            <div class="section">
+                                <div class="slide slide4">lalala</div>
+                                <div class="slide slide5">lololo</div>
+                                <div class="slide slide6">lilili</div>
+                            </div>
+                            <!-- education info -->
+                            <div class="section">
+                                <div class="slide slide7">lalala</div>
+                                <div class="slide slide8">lololo</div>
+                                <div class="slide slide9">lilili</div>
+                            </div>
+                            <!-- renmin news -->
+                            <div class="section">
+                                <div class="slide slide10">lalala</div>
+                                <div class="slide slide11">lololo</div>
+                                <div class="slide slide12">lilili</div>
+                            </div>
+
+                            <!-- footer -->
+                            <div class="section footer" >
+                                <div class="slide info">
+                                    <div class="add">
+                                        <span>Copyright © 2005-2022 RUC.EDU.CN</span>
+                                        <span>Address&#58;北京市海淀区中关村大街59号 邮编&#58;100872 京公网安备110402430004号 京ICP备05066828号-1</span>
+                                    </div>
+                                    <div class="mnu">
+                                        <ul class="uli">
+                                            <li><a href="#">소식</a></li>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">개인정보 보호</a></li>
+                                        </ul>
+                                        <span>Site designed and powered by LJW & ZKM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- fullpage end -->
+                        </div>
+                    <!-- swiper-slide content end -->
+                    </div>
+                <!-- swiper-wrapper end -->
+                </div> 
+            <!-- gnb end -->
+            </div>
+        <!-- .cont end -->
+        </div>
+    </main>
+</body>
+</html>
