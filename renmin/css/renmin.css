@@ -345,7 +345,13 @@ body {
 
 /* intro */
 .slide1{
-    background: url(../img/ruc_bg_514.jpg) no-repeat top/100%;
+    background: url(../img/ruc_bg_506.jpg) no-repeat top/100%;
+}
+.slide2{
+    background: url(../img/ruc_bg_507.jpg) no-repeat top/100%;
+}
+.slide3{
+    background: url(../img/ruc_bg_510.jpg) no-repeat top/100%;
 }
 
 
