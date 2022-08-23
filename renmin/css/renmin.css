@@ -198,6 +198,8 @@ body {
 
 /* search */
 .search input{
+  text-transform: uppercase;
+  text-align: center;
     border-radius: 5px;
     border: none;
     outline: none;
