@@ -366,18 +366,28 @@ body {
 } */
 
 .slide1{
-    background: url(../img/ruc_bg_506.jpg) no-repeat center/cover;
-    /* background-image: url(../img/ruc_bg_506.jpg);
+    /* background: url(../img/ruc_bg_506.jpg) no-repeat center/cover; */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_506.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; */
+    background-size: cover;
 }
 .slide2{
-    background: url(../img/ruc_bg_507.jpg) no-repeat center/cover;
+    /* background: url(../img/ruc_bg_507.jpg) no-repeat center/cover; */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_507.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 .slide3{
-    background: url(../img/ruc_bg_510.jpg) no-repeat center/cover;
+    /* background: url(../img/ruc_bg_510.jpg) no-repeat center/cover; */
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_510.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
 
 
 .fp-slide{
