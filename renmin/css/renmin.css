@@ -14,10 +14,10 @@ html, body{
 }
 
 /* arrow unvisible */
-
+/* 
 .fp-controlArrow{
   transform: scale(1.5);
-}
+} */
 
 /* .fp-controlArrow.fp-prev {
     left: 0;
