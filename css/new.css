@@ -1,0 +1,1736 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@500&family=Press+Start+2P&family=Teko&family=Great+Vibes&family=Bebas+Neue&family=Special+Elite&family=Noto+Sans+SC&display=swap');
+
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    width: 100%;
+    font-family: 'Sunflower','Noto Sans SC',cursive;
+  }
+  
+  /* 스크롤바 설정 */
+  .scrollBar::-webkit-scrollbar {
+    width: 0px;
+  }
+
+body{
+  overflow-x: hidden;
+  padding-bottom: 200px;
+}
+
+/* 헤더 영역 */
+.head{
+    display: flex;
+    height: 5vh;
+    width: 100vw;
+    border-bottom: 2px solid #000;
+    position: fixed;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 999999;
+}
+
+/* 로고 */
+header h1 img{
+    height: 4vh;
+    margin-top: 5px;
+}
+
+header h1{
+  position: relative;
+  left: 10px;
+  z-index: 99999;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 네비게이션 */
+header ul{
+    display: flex;
+    line-height: 5vh;
+}
+
+header ul li a{
+    display: block;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* 햄버거버튼 */
+.ham{
+  position: absolute;
+  right: 5vw;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  top: calc(50% - 3px);
+  width: 30px;
+  height: 30px;
+  /* span이 대신 보임 */
+  display: none;
+  padding-top: 5px;
+}
+/* 햄버거 가상요소 */
+.ham span{
+  transition: .2s;
+  width: 25px;
+  height: 5px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  border-radius: 5px;
+}
+
+.ham span:first-child{
+  top: 5px;
+}
+.ham span:last-child{
+  top: -2px;
+}
+
+body.on .top .ham span:first-child{
+  top: 0px;
+  transform: rotate(45deg);
+}
+body.on .top .ham span:last-child{
+  top: 0px;
+  transform: rotate(-45deg);
+}
+
+/* 네비게이션 시작 */
+.gnb {
+    z-index: 999;
+    transition: .3s; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Noto Sans SC';
+  }
+
+  /* GNB 오버시 나올 전체 배경 가상요소 */
+  .gnb::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 0; /* 200px -> 오버시 */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 트랜지션 */
+    transition: 0.3s;
+    border-bottom: 2px solid #000;
+  }
+
+  /* GNB 오버시 가상요소 보이기 */
+  .gnb:hover::after{
+    height: 200px;
+  }
+
+  /* ul 초기화 */
+  .gnb ul {
+    justify-content: center;
+  }
+  
+  /* 가상요소로 clear설정하기 */
+  .gnb ul::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  /* 상위 li 리스트요소 */
+  .gnb>ul>li{
+    text-align: center;
+    width: 175px;
+  }
+  
+  /* li 하위 a요소 */
+  .gnb>ul>li>a{
+    /* a요소 확장 */
+    width: 100%;
+    height: 100%;
+    /* 트랜지션:속시이지 */
+    transition: .3s; 
+    white-space: nowrap;
+  }
+
+  /* 상단 메뉴 글자에 밑줄 애니 */
+  .gnb>ul>li>a>span{
+    position: relative;
+    /* 부모자격 */
+  }
+
+  /* 가상요소로 밑줄 */
+  .gnb>ul>li>a>span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    /* 부모는? 싸고있는 span */
+    width: 0%; /* 마우스 오버시 100% */
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    /* 트랜지션: 속시이지 - 돌아올 때 지연시간 없음 */
+    transition: width .1s ease-out;
+  }
+
+  /* 상위메뉴 오버시 가상요소 밑줄애니 */
+  .gnb>ul>li:hover>a>span::after{
+    width: 100%;
+    /* 오버시에 기다리는 시간 없애기 */
+    transition-delay: .1s;
+  }
+
+  /* 서브메뉴 */
+  .smenu{
+    position: absolute;
+    width: 175px;
+    /* 서브메뉴박스 숨기기 */
+    height: 0; /* 1 */
+    overflow: hidden; /* 2 */
+    /* 트랜지션 */
+    transition: 0.2s;
+    /* 가상요소 배경보다 위 */
+    z-index: 1;
+  }
+
+  /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+  .gnb:hover>ul>li .smenu{
+    height: 200px;
+  }
+
+  /* 서브메뉴 ol */
+  .smenu ol{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+  /*서브메뉴 li */
+  .smenu a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 35px;
+    /* 트랜지션 */
+    transition: 0.2s;
+  }
+
+  /* 서브메뉴 오버시 글자에 밑줄 애니 */
+  .smenu>ol>li>a>span{
+    position: relative;
+    /* 부모자격 */
+  }
+
+  /* 가상요소로 밑줄 */
+  .smenu>ol>li>a>span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    /* 부모는? 싸고있는 span */
+    width: 0%; /* 마우스 오버시 100% */
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    /* 트랜지션: 속시이지 - 돌아올 때 지연시간 없음 */
+    transition: width .2s ease-out;
+  }
+
+  /* 상위메뉴 오버시 가상요소 밑줄애니 */
+  .smenu>ol>li:hover>a>span::after{
+    width: 100%;
+    /* 오버시에 기다리는 시간 없애기 */
+    transition-delay: .1s;
+  }
+
+/* 상단 메뉴 글자에 밑줄 애니 */
+.head>ul>li>a>span{
+    position: relative;
+    /* 부모자격 */
+  }
+  /* 가상요소로 밑줄 */
+  .head>ul>li>a>span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    /* 부모는 span */
+    bottom: -4px;
+    left: 0;
+    width: 0; /* 마우스 오버 시 100% */
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    /* 돌아올때 지연시간 없음 */
+    transition: width .2s ease-out;
+    /* transition: 0.4s; */
+  }
+
+  /* 상위매뉴 오버시가상요소 밑줄 애니 */
+  .head>ul>li:hover>a>span::after{
+    width: 100%;
+    /* 오버시에 기다리는 시간 0.4초 */
+    transition: 0.3s ease-out;
+  }
+
+  /* 언어선택영역 */
+  .lang{
+    display: flex;
+    height: 29px;
+    width: 69px;
+    line-height: 23px;
+    position: relative;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 2px solid #000;
+    z-index: 9999;
+    transition: .3s;
+  }
+
+  .lang:hover{
+    background-color: #ff7300;
+    color: #fff;
+    border: 2px solid rgb(161, 51, 0);
+  }
+
+  select::-ms-expand { 
+    display: none;
+  }
+  .select {
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight: bold;
+    text-align: center;
+    appearance: none;
+    font-size: 16px;
+    font-family: "noto sans SC";
+  }
+  
+  .select option {
+    background: black;
+    color: #fff;
+    padding: 3px 3px;
+  }
+
+  .lan{
+    height: 100%;
+  }
+
+  .log{
+    position: absolute;
+    width: 65px;
+    right: 85px;  
+    border: 2px solid #000;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    height: 25px;
+    line-height: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 2px solid #000;
+    z-index: 9999;
+    transition: .3s;
+  }
+
+  .log:hover{
+    background-color: rgb(0, 170, 99);
+    border: 2px solid rgb(26, 70, 0);
+  }
+
+  .log:hover a{
+    color: #fff;
+  }
+  
+/* 메인영역 시작 */
+.lalala{
+  position: relative;
+  overflow: hidden;
+}
+
+/* 페이드 되는 gif */
+        #slide img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+ 
+        #container {
+          /*최상위부모*/
+          position: relative;
+          width: 100%;
+          margin: 0px auto;
+      }
+      
+      .mySwiper{
+        z-index: -1;
+      }
+
+
+
+
+
+/* 게임 스타트 버튼 */
+.lalala .start{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  bottom: -165px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 20px double #01dd77;
+  transition: .3s;
+  z-index: 9;
+}
+
+.lalala .start:hover{
+  background-color: #01dd77;
+  border: 20px double rgb(255, 187, 0);
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.lalala .start span{
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  display: block;
+  padding-top: 10px;
+  text-shadow: 2px 2px 2px rgb(218, 139, 49);
+}
+
+.cont{
+    width: 100vw;
+    overflow: hidden;
+    
+}
+
+/* 백그라운드 이미지 영역 */
+.cont .lalala{
+    width: 100%;
+    height: 74vh;
+    border-bottom: 10px solid rgb(255, 255, 0);
+}
+
+/* 게임 간단 설명글 */
+.cont .int{
+  position: relative;
+}
+
+.cont .int h2{
+    padding-top: 2vh;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* re-logic */
+.cont .int p{
+    padding: 1vh;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 3.5vh;
+}
+
+/* 아래 화살표 */
+.int h3{
+  position: absolute;
+  right: 15vw;
+  top: 9vh;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 5px 2px 4px rgb(134, 134, 134);
+  animation: motionAni 1.2s linear 0s infinite alternate;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes motionAni {
+  0% {
+    margin-top: 0px;
+    color: rgb(214, 111, 111);
+  }
+	20% {
+    margin-top: 10px;
+    color: rgb(75, 212, 137);
+  }
+	40% {
+    margin-top: 0px;
+    color: rgb(82, 104, 204);
+  }
+	60% {
+    margin-top: 10px;
+    color: rgb(200, 202, 78);
+  }
+	80% {
+    margin-top: 0px;
+    color: rgb(169, 80, 204);
+  }
+	100% {
+    margin-top: 0px;
+    color: rgb(204, 162, 83);
+  }
+}
+
+/* 라인 */
+.line{
+    width: 2px;
+    height: 8vh;
+    background-color:#000;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+/* 소개글 */
+.gint{
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* 소개글 글자 글로우 현상 */
+.dig{
+        /* 그림자를 이용한 Glow 효과 */
+        text-shadow: 0 0 4px rgb(0, 255, 34);
+        /* 애니메이션: 이시이지반방마 */
+        animation: titAni1 1s ease-in infinite alternate;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni1{
+        to{
+            text-shadow: 0 0 18px rgb(113, 253, 131);
+        }
+}/* 키프레임 */
+
+.fight{
+    /* 그림자를 이용한 Glow 효과 */
+    text-shadow: 0 0 4px rgb(255, 70, 23);
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni2 1s ease-in .8s infinite alternate;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni2{
+    to{
+        text-shadow: 0 0 18px rgb(255, 107, 70);
+    }
+}/* 키프레임 */
+
+.build{
+    /* 그림자를 이용한 Glow 효과 */
+    text-shadow: 0 0 4px rgb(255, 166, 0);
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni3 1s ease-in 1.6s infinite alternate;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni3{
+    to{
+        text-shadow: 0 0 18px rgb(255, 162, 0);
+    }
+}/* 키프레임 */
+
+.int p{
+    /* 그림자를 이용한 Glow 효과 */
+    text-shadow: 0 0 4px rgb(0, 26, 255);
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni4 .8s ease-in infinite alternate;
+    font-family: 'Press Start 2P', 'Noto Sans SC',cursive;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni4{
+    to{
+        text-shadow: 0 0 18px rgb(85, 102, 255);
+    }
+}/* 키프레임 */
+
+
+/* 글 */
+.gint .word span{
+    font-family: 'Sunflower', 'Noto Sans SC',sans-serif;
+    font-size: 5vh;
+    justify-content: center;
+    width: 40vw;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* 그림과 글 박스 */
+.gint{
+  position: relative;
+    opacity: 0;
+  transform: translateY(30%);
+  transition: 1s ease-out;
+}
+
+.gint.on{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 그림 */
+.gint img{
+  transition: .3s;
+    width: 41vw;
+    height: 43vh;
+    border-radius: 10px;
+    object-fit: cover;
+    position: relative;
+}
+
+.pic{
+  transition: .5s;
+}
+
+/* gif 보더 */
+.pic1{
+    border: 1vh solid lightgreen;
+    background-color: lightgreen;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 45vh;
+}
+
+.pic1:hover{
+  border: 1vh solid rgb(47, 163, 47);
+  background-color: rgb(47, 163, 47);
+}
+
+.word1{
+  text-shadow: 2px 2px 2px lightgreen;
+}
+
+.pic2{
+    border: 1vh solid lightskyblue;
+    background-color: lightskyblue;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 45vh;
+}
+
+.pic2:hover{
+  border: 1vh solid rgb(47, 158, 202);
+  background-color: rgb(47, 158, 202);
+}
+
+.word2{
+  text-shadow: 2px 2px 2px lightskyblue;
+}
+
+.pic3{
+    border: 1vh solid hotpink;
+    background-color: hotpink;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 45vh;
+}
+
+.pic3:hover{
+  border: 1vh solid rgb(214, 48, 131);
+  background-color: rgb(214, 48, 131);
+}
+
+.word3{
+  text-shadow: 2px 2px 2px hotpink;
+}
+
+.pic4{
+    border: 1vh solid lightcoral;
+    background-color: lightcoral;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 45vh;
+}
+
+.pic4:hover{
+  border: 1vh solid rgb(233, 109, 64);
+  background-color: rgb(233, 109, 64);
+}
+
+.word4{
+  text-shadow: 2px 2px 2px lightcoral;
+}
+
+/* 직업소개 */
+.your{
+  width: 100%;
+  height: 20vh;
+  background-color: rgb(201, 77, 77);
+  margin-top: 150px;
+  text-align: center;}
+
+.your span{
+  line-height: 20vh;
+  font-size: 12vh;
+  font-family: 'Teko', 'Noto Sans SC',sans-serif;
+  text-shadow: 1px 1px 1px rgb(255, 255, 0);
+}
+
+/* 글자가 파도치는 애니메이션 */
+@keyframes anime_textup { 0% { top: 0; } 20% { top: -0.4rem; } 40% { top: -0rem } 60% { top: 0 } 80% { top: 0 } 100% { top: 0 } }
+ 
+.test_obj span {
+    position: relative;
+    animation: anime_textup 1.8s infinite;
+}
+
+.test_obj span:nth-of-type(1) {
+    animation-delay: .1s;
+}
+
+.test_obj span:nth-of-type(2) {
+    animation-delay: .2s;
+}
+
+.test_obj span:nth-of-type(3) {
+    animation-delay: .3s;
+}
+
+.test_obj span:nth-of-type(4) {
+    animation-delay: .4s;
+}
+
+.test_obj span:nth-of-type(5) {
+    animation-delay: .5s;
+}
+.test_obj span:nth-of-type(6) {
+    animation-delay: .6s;
+}
+.test_obj span:nth-of-type(7) {
+    animation-delay: .7s;
+}
+.test_obj span:nth-of-type(8) {
+    animation-delay: .8s;
+}
+.test_obj span:nth-of-type(9) {
+    animation-delay: .9s;
+}
+.test_obj span:nth-of-type(10) {
+    animation-delay: 1s;
+}
+.test_obj span:nth-of-type(11) {
+    animation-delay: 1.1s;
+}
+.test_obj span:nth-of-type(12) {
+    animation-delay: 1.2s;
+}
+.test_obj span:nth-of-type(13) {
+    animation-delay: 1.3s;
+}
+.test_obj span:nth-of-type(14) {
+    animation-delay: 1.4s;
+}
+.test_obj span:nth-of-type(15) {
+    animation-delay: 1.5s;
+}
+.test_obj span:nth-of-type(16) {
+    animation-delay: 1.6s;
+}
+
+/* 마우스 오버시 이미지가 돌아가는 애니메이션 */
+/* 기본박스 셋팅 */
+.trans10{
+  width: 260px;
+  height: 200px;
+  perspective: 500px;
+  /* z-index: 999; */
+}
+/* 2개의 이미지를 겹치게 한다 */
+.trans10 img{
+  position: absolute;
+  width: 260px;
+  height: 340px;
+}
+
+/* 두번쨰 이미지 상하 위치 조정 */
+/* 1. 위 처음상태(돌아옴) */
+/* Y축 0도로 돌아옴 - 0.3초 기다림 */
+.trans10 img:last-child {
+  transition: transform .3s .3s;
+  transform: rotateY(0deg);
+  transition: transform .3s ease-out .3s;
+}
+/* 2. 위 오버상태 */
+/* Y축 90도회전 - 회전후 안보임*/
+.oj:hover .trans10 img:last-child {
+  transform: rotateY(-90deg);
+  transition: transform 0.3s ease-in;
+}
+/* 3. 뒷 처음상태(돌아옴) */
+/* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+.trans10 img:first-child {
+ transform: rotateY(90deg);
+ transition: transform .3s ease-in;
+}
+/* 4. 뒷 오버상태 */
+/* Y축 0도로 회전 
+- 보거미 0.3초 돌동안 기다렸가 0.3초돌기 */
+.oj:hover .trans10 img:first-child {
+ transform: rotateY(0deg);
+ transition: transform 0.3s .3s ease-out;
+}
+
+.job{
+  padding-top: 100px;
+  /* display: flex; */
+  justify-content: space-evenly;
+  padding-bottom: 50px;
+  }
+
+.wmrs{
+  font-family: 'Great Vibes','Sunflower', 'Noto Sans SC',cursive;
+  justify-content: center;
+  line-height: 1.1;
+  font-weight: bold;
+  font-size: 2.2rem;
+  display: block;
+  position: relative;
+  width: 200px;
+  height:250px;
+  text-align: center;
+  top: -50px;
+  left: 20px;
+  /* outline: 2px dashed coral; */
+  opacity: 0;
+  animation: wmrsAni 5s linear infinite alternate;
+  z-index: 99;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes wmrsAni{
+  0%{
+    text-shadow: 0 0 3px rgb(168, 255, 117);
+  }
+  20%{
+      text-shadow: 0 0 3px rgb(255, 126, 117);
+  }
+  40%{
+      text-shadow: 0 0 3px rgb(177, 117, 255);
+  }
+  80%{
+      text-shadow: 0 0 3px rgb(117, 255, 248);
+  }
+  100%{
+      text-shadow: 0 0 3px rgb(117, 126, 255);
+  }
+}/* 키프레임 */
+
+.oj{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.oj:hover .wmrs{
+  transition: .5s ease-in .4s;
+  opacity: 1;
+}
+
+/* 직업추천 하단부 */
+.fin{
+  width: 100%;
+  height: 20vh;
+  background-color: rgb(66, 194, 96);
+  text-align: center;
+  /* margin-top: 5vh; */
+}
+
+.fin span{
+  line-height: 20vh;
+  font-size: 12vh;
+  font-family: 'Teko', 'Noto Sans SC',sans-serif;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(255, 255, 0);
+}
+
+/* WARNING! 부분 */
+.www{
+  position: relative;
+  /* background: url(../balsamic/img/moonlordboss.jpg) no-repeat bottom/cover; */
+  filter:drop-shadow(50px);
+}
+
+.www img{
+  margin: 2.5vw ;
+  width: 95vw;
+  height: 55vw;
+  border-radius: 20px;
+}
+
+.www .wswsws{
+  width: 100%;
+  height: 20vh;
+  background-color: rgb(66, 126, 194);
+  text-align: center;
+  /* margin-top: 5vh; */
+}
+
+.www .wswsws span{
+  line-height: 20vh;
+  font-family: 'Teko', 'Noto Sans SC',sans-serif;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(255, 255, 0);
+  font-size: 12vh;
+}
+
+        /* 흘러가는 글자박스 */
+        .fbx{
+          position: absolute;
+          width: 150vw;
+          z-index: 999;
+          transition: .5s;
+          text-shadow: none;
+          border: 10px solid red;
+          background-color: yellow;
+          left: -25vw;
+          box-shadow: 5px 5px 10px #000;
+        }
+        
+        /* 텍스트 박스(움직일 박스) */
+        .tbx{
+          position: relative;
+          left: 0;/* 초기값 */
+          width: 100vw;
+          display: flex;
+        }
+
+        /* 텍스트박스 하위ul */
+      .tbx ul{
+          display: flex;
+          /* 직계 li옆으로 흐름 */
+          flex: 1;
+
+          /* 기본없앰 */
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+      
+      /* 하위 li */
+      .tbx li{
+          /* 등분할 설정 */
+          flex: 1;
+          text-align: center;
+          font-family: 'Bebas Neue', 'Noto Sans SC',cursive;
+          font-size: 50px;
+          color: rgb(0, 0, 0);
+          line-height: 50px;
+          padding: 5px 15px 0;
+          text-shadow: 1px 1px 1px rgb(255, 177, 59);
+      }
+
+      /* 첫번째 박스 위치 */
+      .f1{
+          top: 400px;
+          transform: rotate(-30deg);
+      }
+      .f1.on{
+        opacity: 0;
+      }
+
+      /* 애니메이션 호출 */
+      .f1 .tbx{
+          /* 애니메이션 이시이지반방마 */
+          animation: txtFlow2 9s linear infinite;
+          left: -100%;
+      }
+
+      /* 글자 흐르기 키프레임 1 */
+      @keyframes txtFlow1 {
+          to{
+              left: -100%;
+          }
+      }
+
+      /* 두번째 박스 위치 */
+      .f2{
+          top: 400px;
+          transform: rotate(15deg);
+      }
+      .f2.on{
+        opacity: 0;
+      }
+
+      /* 흐르는 박스 최초위치 */
+
+      /* 애니메이션 호출 */
+      .f2 .tbx{
+          /* 애니메이션 이시이지반방마 */
+          animation: txtFlow1 9s linear infinite;
+      }
+
+      /* 글자 흐르기 키프레임 1 */
+      @keyframes txtFlow2 {
+          to{
+              left: 0;
+          }
+      }
+
+/* cube, 기타기타 */
+.more{
+  width: 100%;
+  position: relative;
+}
+
+/* 큐브 */
+.cube{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 999;
+  transform-style: preserve-3d;
+
+  /* 입체를 잘보이게 x,y축으로 약간 회전하기 */
+  transform: rotateX(10deg) rotateY(30deg);
+}
+
+/* 큐브각면 공통 */
+.cube span{
+  position: absolute;
+  /* 앱솔루트는 span도 자동block */
+  width: 100%;
+  height: 100%;
+  /* 부모는? .cube */
+  /* opacity: 0; */
+  border-radius: 3px;
+}
+
+/* bocube */
+.bocube{
+  position: relative;
+}
+
+/* 큐브1 */
+.cube1{
+  /* top: -38vw; */
+  right: calc(90% - 0vw);
+  top: -230px;
+}
+
+.cube1 span{
+  outline: 1px solid rgb(255, 230, 0) ;
+  border: 2px solid rgb(255, 0, 0);
+}
+
+/* 앞면 */
+.cube1 span:nth-child(1){
+  background: url(../balsamic/img/moonlordboss.jpg) no-repeat right/auto 105%;
+  /* 화면방향(Z축) */
+  transform: translateZ(40px);
+}
+
+/* 2. 오른쪽면 */
+.cube1 span:nth-child(2){
+  background: url(../balsamic/img/기계지렁이.jpeg) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(90deg)translateZ(40px);
+}
+/* 3. 뒷면 */
+.cube1 span:nth-child(3){
+  background: url(../balsamic/img/플렌테라.jpg) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(180deg)translateZ(40px);
+}
+/* 4. 왼쪽면 */
+.cube1 span:nth-child(4){
+  background: url(../balsamic/img/공작.jpeg) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(-90deg)translateZ(40px);
+}
+/* 5. 윗면 */
+.cube1 span:nth-child(5){
+  background: url(../balsamic/img/queenbee.jpg) no-repeat top/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateX(90deg)translateZ(40px) rotate(90deg);
+  
+}
+/* 6. 아랫면 */
+.cube1 span:nth-child(6){
+  background: url(../balsamic/img/eyes.jpg) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateX(-90deg)translateZ(40px);
+}
+
+/* 애니메이션 클래스 */
+.cube-ani1{
+  /* 애니메이션: 이시이지반방마 */
+  animation: cubeAni 5s linear infinite;
+}
+
+/* 회전키프레임 */
+@keyframes cubeAni {
+  to{
+      transform: rotateX(370deg) rotateY(-330deg);
+  }
+}/* 키프레임 */
+
+/* bacubep */
+.bacube{
+  height: 50vw;
+  position: relative;
+}
+
+/* 큐브2 */
+.cube2{
+  top: 10vw;
+  left: 5vw;  
+  width:45vw;
+  height: 30vw;
+  position: relative;
+}
+
+.cube2 span{
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 5px solid rgb(235, 114, 1);
+}
+
+/* 애니메이션 클래스 */
+.cube-ani2{
+  /* 애니메이션: 이시이지반방마 */
+  animation: cubeAni2 15s linear infinite;
+}
+
+/* 회전키프레임 */
+@keyframes cubeAni2 {
+0%{
+  transform: rotateX(0deg);
+}
+25%{
+  transform: rotateX(0deg);
+}
+
+30%{
+  transform: rotateX(90deg);
+}
+50%{
+  transform: rotateX(90deg);
+}
+
+55%{
+  transform: rotateX(180deg);
+}
+75%{
+  transform: rotateX(180deg);
+}
+
+80%{
+  transform: rotateX(270deg);
+}
+95%{
+  transform: rotateX(270deg);
+}
+
+100%{
+  transform: rotateX(360deg);
+}
+}
+/* 키프레임
+
+/* icube */
+.icube{
+  position: relative;
+}
+
+/* 큐브3 */
+.cube3{
+  width: 50px;
+  height: 50px;
+  top: -230px;
+  left: calc(90% - 0vw);
+  position: absolute;
+}
+
+/* 앞면 */
+.cube3 span:nth-child(1){
+  background: url(../balsamic/img/테라프리즈마.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform: translateZ(40px) rotate(90deg) rotate(-90deg);
+}
+
+/* 2. 오른쪽면 */
+.cube3 span:nth-child(2){
+  background: url(../balsamic/img/낫-removebg-preview.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(90deg)translateZ(40px);
+}
+/* 3. 뒷면 */
+.cube3 span:nth-child(3){
+  background: url(../balsamic/img/별의_진노-removebg-preview.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(180deg)translateZ(40px);
+}
+/* 4. 왼쪽면 */
+.cube3 span:nth-child(4){
+  background: url(../balsamic/img/프리즈마-removebg-preview.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateY(-90deg)translateZ(40px);
+}
+/* 5. 윗면 */
+.cube3 span:nth-child(5){
+  background: url(../balsamic/img/활-removebg-preview.png) no-repeat center/contain;
+  /* 화면방향(Z축) */
+  transform:  rotateX(90deg)translateZ(40px) rotate(90deg);
+  
+}
+/* 6. 아랫면 */
+.cube3 span:nth-child(6){
+  background: url(../balsamic/img/지팡이-removebg-preview.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateX(-90deg)translateZ(40px) rotate(90deg);
+}
+/* 7. wndrks면 */
+.cube3 span:nth-child(7){
+  background: url(../balsamic/img/법사_책-removebg-preview.png) no-repeat center/cover;
+  /* 화면방향(Z축) */
+  transform:  rotateX(-180deg)rotate(90deg);
+}
+
+/* 애니메이션 클래스 */
+.cube-ani3{
+  /* 애니메이션: 이시이지반방마 */
+  animation: cubeAni3 3s ease-in-out infinite alternate;
+}
+
+
+/* 회전키프레임 */
+@keyframes cubeAni3 {
+  to{
+      transform: rotateX(370deg) rotateY(-330deg) /* rotateZ(360deg) */;
+  }
+}/* 키프레임 */
+
+/* 회사랑 내 소개 */
+.rint{
+    width: 100%;
+    /* margin-top: 60vh; */
+    height: 70vh;
+}
+
+.rint .pro{
+  width: 100%;
+  height: 20vh;
+  background-color: #000;
+  text-shadow: 2px 2px 2px rgb(0, 213, 255);
+}
+
+.rint .pro span{
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 10vh;
+  color: #fff;
+  line-height: 20vh;
+}
+
+/* 리로직 로고 */
+.relo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    position: relative;
+}
+
+/* plus */
+.plus{
+    height: 50px;
+    margin: 0 50px;
+}
+
+/* Bell */
+.bell{
+  position: relative;
+  height: 120px;
+  width: 191px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  position: relative; top: 50%; left: 50%;
+}
+
+/* 머리 */
+.bhead{
+  width: 160px;
+  height: 130px;
+  border: 5px solid #000;
+  border-radius: 50%;
+  border-bottom: none;
+  position: relative;
+  left: 20px;
+}
+
+/* 눈 */
+.beye{
+  width: 60px;
+  height: 35px;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  position: relative;
+  left: 25px;
+  top: 20px;
+}
+
+/* 입 */
+.bmo1{
+  width: 45px;
+  height: 5px;
+  background-color: #000;
+  position: relative;
+  left: 35px;
+  top: 27px;
+  transform: rotate(-11deg);
+}
+
+.bmo2{
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  position: relative;
+  left: 34px;
+  top: 33px;
+  transform: rotate(30deg);
+}
+
+.bmo3{
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  position: relative;
+  left: 55px;
+  top: 23px;
+  transform: rotate(-47deg);
+}
+
+/* 왼팔1 */
+.la1{
+  width: 5px;
+  height: 45px;
+  background-color: #000;
+  position: absolute;
+  transform: rotate(-40deg);
+  top: 80px;
+  left: 30px;
+}
+
+/* 왼팔2 */
+.la2{
+  width: 5px;
+  height: 45px;
+  background-color: #000;
+  position: absolute;
+  transform: rotate(-20deg);
+  top: 80px;
+  left: 23px;
+}
+
+/* 오팔1 */
+.ra1{
+  width: 5px;
+  height: 45px;
+  background-color: #000;
+  position: absolute;
+  transform: rotate(-40deg);
+  top: 80px;
+  left:120px;
+}
+
+/* 오팔2 */
+.ra2{
+  width: 5px;
+  height: 45px;
+  background-color: #000;
+  position: absolute;
+  transform: rotate(-20deg);
+  top: 80px;
+  left: 112px;
+}
+
+.bell span{
+  color: #000;
+  text-align: center;
+  font-size: 3rem;
+  position: relative;
+}
+
+/* 벨 공전 애니메이션 */
+.outer{
+  position: relative;
+  margin: 10%;
+  width: 1rem; 
+  height: 1rem;
+}
+
+.satellite_box{
+  position: absolute; 
+  animation: forwardRotate 1s linear infinite; 
+    top: -69px;
+    left: -112px;
+}
+.bell{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.satellite_box span{
+  font-size: 2rem;
+  position: relative;
+  font-weight: bold;
+  left: 75px;
+  bottom: -119px;
+}
+
+@keyframes forwardRotate {
+  from { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+}
+
+/* 슬라임 */
+.slime1{
+  position: absolute;
+  height: 30px;
+  bottom: 250px;
+  left: 5vw;
+  animation: bounce_frames .3s linear infinite alternate;
+}
+.slime2{
+  position: absolute;
+  height: 30px;
+  bottom: 250px;
+  right: 8vw;
+  animation: bounce_frames infinite;
+  animation-delay: .5s !important;
+}
+
+.bounce {
+  animation: bounce_frames 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: 4;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce_frames {
+  from {transform: translate3d(0, 0, 0);}
+  to {transform: translate3d(0, 50px, 0);}
+}
+
+/* 눈사람 */
+.snow{
+  position: absolute;
+  height: 60px;
+  bottom: 203px;
+  right: 15vw;
+  animation: snowAni 4s linear  infinite;
+  z-index: -1;
+}
+
+.rint{
+  position: relative;
+}
+
+@keyframes snowAni {
+  0% {
+    right: 15vw;
+  }
+	20% {
+    right: 20vw;
+  }
+	40% {
+    right: 20vw;
+  }
+	60% {
+    transform: rotateY(0deg);
+  }
+  60.01%{
+    transform: rotateY(180deg);
+    right: 20vw;
+  }
+
+	80% {
+    right: 20vw;
+    transform: rotateY(180deg);
+  }
+	100% {
+    right: 15vw;
+    transform: rotateY(180deg);
+  }
+}
+
+/* 토끼 */
+.info .rab{
+  position: absolute;
+  height: 45px;
+  bottom: 203px;
+  left: -5%;
+  animation: rabAni 20s linear infinite;
+  transform: rotateY(180deg);
+  z-index: 9;
+}
+
+@keyframes rabAni {
+to{
+  left: 100%;
+  transform: translateX(180deg);
+}
+}/* 키프레임 */
+
+/* 집 */
+.house{
+  position: absolute;
+  height: 150px;
+  bottom: 208px;
+  left: 41vw;
+  z-index: -1;
+}
+
+/* 푸터 */
+footer{
+  width: 100vw;
+}
+
+.grass{
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  background: url(../balsamic/img/네비게이션\ 용\ 사진.png) repeat-x;
+  top: -10px;
+}
+
+.info{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(39, 39, 39);
+    position: absolute;
+}
+
+/* 하단 네비 */
+.info ul{
+    display: flex;
+    justify-content: space-evenly;
+    transform: translateY(-5px);
+}
+
+.info ul li a{
+  color: #fff;
+  display: block;
+  height: 4vh;
+  line-height: 4vh;
+}
+
+.info ul li a:hover{
+  text-decoration: underline;
+}
+
+/* 하단 이미지 */
+.jour img{
+  position: relative;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+/* 어드레스 */
+address{
+  color: #fff;
+    text-align: center;
+    transform: translateY(110px);
+  }
+  
+  address span{
+  font-size: 0.7rem;
+  }
+
+/* sns */
+.sns{
+  position: absolute;
+  bottom: 5px;
+  right: 6vw;
+  /* 플렉스박스 */
+  display: flex;
+}
+
+.sns li{
+  width: 34px;
+  height: 34px;
+  background: url(../balsamic/img/sprites_logo.png) no-repeat;
+  margin: 0 2px;
+  /* 필터: 흑백 */
+  filter: grayscale(100%);
+  /* 손가락모양 */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* 오버시 칼라 */
+.sns li:hover{
+  filter: grayscale(0);
+}
+
+/* 페이스북 */
+.sns li:first-child{
+  background-position: -509px -430px;
+}
+/* 트의터 */
+.sns li:nth-child(2){
+  background-position: -551px -430px;
+}
+/* 인스타 */
+.sns li:nth-child(3){
+  background-position: -592px -429px;
+}
+
+/* top */
+.container1 {
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+  z-index: 999999;
+}
+
+a.button1 {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  border-radius: 15px;
+  transition: all 0.2s ;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #01dd77;
+}
+
+.btngreen1 {
+  background: #54c944;
+}
+
+.btngreen1.btnBorder1 {
+  box-shadow: 0px 0px 0px 0px #eeff00;
+}
+
+.btngreen1.btnBorder1:hover {
+  box-shadow: 0px 0px 0px 5px #0a6500;
+}
+
+/* bottom */
+.container2 {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 999999;
+}
+
+a.button2 {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  color: #FFF;
+  border-radius: 15px;
+  transition: all 0.2s ;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #04ade0;
+}
+
+.btngreen2 {
+  background: #446ec9;
+}
+
+.btngreen2.btnBorder2 {
+  box-shadow: 0px 0px 0px 0px #002fff;
+}
+
+.btngreen2.btnBorder2:hover {
+  box-shadow: 0px 0px 0px 5px #010d7c;
+}
+
+/* 로딩박스 */
+.LDbx{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000000000;
+  background-color: rgba(255, 255, 255);
+  text-align: center;
+  line-height: 100vh;
+}
+
+.LDbx img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  /* Center slide text vertically */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mySwiper .swiper-wrapper .slide2 img{
+  object-position: top;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  transform: translateX(-40vw);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  border: 1px solid #fff;
+}
+
+html:root{
+  --swiper-theme-color: rgb(255, 136, 0);
+}
+
+
+.lalala .swiper-pagination-bullet {
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1);
+}

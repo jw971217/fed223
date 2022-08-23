@@ -1,0 +1,531 @@
+@charset "utf-8";
+/* new PJ 메인 페이지 미디어 쿼리 */
+
+/************* 1140px 이하 시작 *************/
+@media screen and (max-width: 1140px) {
+
+header ul li a{
+    padding: 0;
+}
+
+.gnb ul li{
+    width: 100%;
+    display: block;
+}
+
+.lalala .start span{
+    font-size: 2.5rem;
+}
+
+.oj{
+    flex-wrap: wrap;
+
+}
+
+.job .oj .lo{
+    width: 50%;
+}
+
+.wmrs{
+    left: 0;
+}
+
+.toss{
+    margin: 0 auto;
+}
+
+.lo span{
+    margin: 0 auto;
+}
+
+/* 워닝 부분 */
+.animated-title{
+    line-height: 0.2;
+}
+
+.gnb::after {
+    display: none;
+}
+
+.rint{
+    overflow: hidden;
+    height: 60vh;
+}
+
+body .gnb{
+    display: block;
+    left: 200%;
+}
+
+body.on .top .gnb {
+    left: 50%;
+}
+
+.ham{
+    transition: .5s;  
+}
+
+/* 로고 가운대로 오기 */
+.head a{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+
+/* .head h1{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -35%);
+} */
+
+header h1 img{
+    margin-top: 0px;
+
+}
+
+/* 10. 햄버거버튼 보이기 */
+.ham{
+    display: block;
+    z-index: 99999999;
+}
+/* 9. GNB메뉴 변경 */
+.gnb {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 95vh;
+    margin-top: calc(5vh + 2px);
+    background-color: #ffffff;
+    /* 처음에 안보임! */
+    display: none;
+}
+.gnb ul{
+    /* 세로방향 */
+    flex-direction: column;
+    /* 위에서 20% 보이는 위치로 이동! */
+}
+.gnb>ul>li>a{
+    font-size: 2rem;
+    /* line-height: 10vw; */
+    /* 메뉴6개 - 보이는 화면 높이값의 60% 차지 */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    /* border-bottom: 1px solid rgb(238, 255, 0);
+    border-top: 1px solid rgb(238, 255, 0); */
+}
+
+/* 상위메뉴 오버시 밑줄없앰! */
+.gnb>ul>li:hover>a{
+    border-bottom-color: transparent;
+}
+
+.gnb>ul>li>a>span::after{
+    background-color: rgb(255, 0, 0);
+    /* width: 100vw; */
+}
+
+/* 11. GNB메뉴 보이기 */
+body.on .top .gnb{
+    display: block;
+}
+
+body.on .container{   
+    z-index: 99999;
+}
+
+/* 13. GNB메뉴 보일때 스크롤 없앰! */
+body.on{
+    overflow: hidden;
+}
+
+.more{
+    display: none;
+}
+
+body.on .lang{
+    right: calc(50% - 100px);
+    top: 85vh;
+    transform: scale(1.43);
+}
+
+.lang{
+    right: -100%;
+    top: 84.9vh;
+    transition: .3s;
+}
+
+body.on .log{
+    top: 85vh;
+    right: calc(50% + 28px);
+}
+
+.log{
+    right: -100%;
+    top: 85vh;
+    transform: scale(1.43);
+}
+
+      /*왼쪽버튼*/
+      .ab1 {
+        left: 10px;
+    }
+    
+    /*오른쪽버튼*/
+    .ab2 {
+        right: 10px;
+    }
+
+.abtn{
+    transform: scale(.5) translateY(-50%);
+}
+
+  /* 서브메뉴 */
+  .smenu{
+    position: relative;
+    width: 100%;
+    transition: .3s;
+  }
+
+  /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+  .gnb>ul>li>a:hover{
+    height: 70px;
+  }
+
+  .smenu ol{
+    width: 100%;
+}
+
+  .smenu ol li{
+    width: 100%;
+    /* border-top: 1px solid rgb(255, 255, 255); */
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+  .smenu ol li:hover{
+ background-color: rgb(238, 238, 238);
+}
+
+.smenu ol li:first-child{
+    border-top: 2px solid rgb(0, 0, 0);
+}
+
+/*서브메뉴 li */
+.smenu a{
+    line-height: 30px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 가상요소로 밑줄 */
+  .smenu>ol>li>a>span::after{
+    /* background-color: rgb(255, 153, 0); */
+    display: none;
+  }
+
+/* 상단 메뉴 글자에 밑줄 애니 */
+.head>ul>li>a>span{
+    position: relative;
+    /* 부모자격 */
+}
+
+.gnb:hover>ul>li .smenu {
+    height: 0;
+}
+
+.gnb:hover>ul>li:hover>.smenu{
+    height: 80px;
+}
+
+.gnb>ul>li>a {
+    transition: none;
+    line-height: 70px;
+}
+
+.rab{
+    display: none;
+}
+
+.f1{
+    top:200px;
+}
+
+.f2{
+    top: 450px;
+}
+
+        /* 흘러가는 글자박스 */
+        .fbx{
+          border: 5px solid red;
+        }
+        
+      
+      /* 하위 li */
+      .tbx li{
+          font-size: 30px;
+          line-height: 28px;
+          padding: 2px 15px 0;
+      }
+
+}
+/************* 1140px 이하 끝 *************/
+
+/************* 870px 이하 시작 *************/
+@media screen and (max-width: 870px) {
+/* 언어 영역 안 보이게 하기 */
+
+/* 겜 스타트 버튼 작게 만들기 */
+.lalala .start{
+    width: 150px;
+    height: 150px;
+    bottom: -100px;
+}
+
+.lalala .start span{
+    font-size: 1.8rem;
+  }
+
+  .cont .lalala{
+    height: 40vh;
+  } 
+
+  #container>section {
+    height: 40vh;
+}
+
+  /* build 글자가 너무 붙어 있어서 때 줌 */
+.build{
+    margin-top: 20px;
+    position: relative;
+    display: block;
+}
+
+/* 화살표 위치 재조정 */
+.cont .int h3{
+    top: 110px;
+}
+
+/* 그림과 글자들 수직 방향으로 만들기 */
+.gint{
+    flex-direction: column;
+}
+
+/* 글자와 그림 순서 바꾸기 */
+.gint1, .gint3{
+    display: flex;
+    flex-direction: column-reverse
+}
+
+/* 글자와 그림 크기 재조정 */
+.gint img{
+    width: 90vw;
+}
+
+.gint .word span{
+    width: 80vw;
+}
+
+/* 파도치는 글자들 크기 재조정 */
+.test_obj span {
+    font-size: 12vw;
+}
+
+/* 직업 선택창 수직화 */
+.job{
+    flex-direction: column;
+    align-content: center
+}
+
+.oj{
+    flex-wrap: wrap;
+    
+}
+
+.job .oj .lo{
+    width: 100%;
+}
+
+.wmrs{
+    left: 0;
+}
+
+.toss{
+    margin: 0 auto;
+}
+
+.lo span{
+    margin: 0 auto;
+}
+
+/* 회사랑 내 소개 글자 및 그림들 크기 조정 */
+.rint .pro span{
+    font-size: 12vw;
+}
+
+.relo{
+    height: 500px;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.satellite_box{
+    left: -80px;
+}
+
+@keyframes snowAni {
+    0% {
+      right: 30vw;
+    }
+      20% {
+      right: 35vw;
+    }
+      40% {
+      right: 35vw;
+    }
+      60% {
+      transform: rotateY(0deg);
+    }
+    60.01%{
+      transform: rotateY(180deg);
+      right: 35vw;
+    }
+  
+      80% {
+      right: 35vw;
+      transform: rotateY(180deg);
+    }
+      100% {
+      right: 30vw;
+      transform: rotateY(180deg);
+    }
+}
+
+.house{
+    display: none;
+}
+
+.info ul{
+/* 플랙스박스 */
+display: flex;
+/* 랩핑박스 */
+flex-wrap: wrap;
+
+/* 수평정렬 */
+justify-content: space-evenly;
+/* 수직정렬(여러줄) */
+align-content: center;
+margin-top: 10px;
+}
+
+/* brk뒤의 li 마진탑 */
+.t7 li.brk~li{
+margin-top: 5px;
+}
+
+/* 자체 응용 - 줄바꿈을 위한 li */
+/* 원리는 줄바꿈을 할 부분에서 가로크기 100%를 차지하게 해서 줄바꿈 효과를 준다. */
+.t7 li.brk{
+/* width: 100%; */
+flex-basis: 100%;
+/* flex-basis는 width와 같다. */
+
+/* 기존디자인을 없애고 안보이게 처리함 */
+height: 0;
+border: none;
+}
+
+.jour img{
+    bottom: 0px;
+}
+
+.sns{
+    bottom: 20px;
+    left: calc(50% - 80px);
+    position: absolute;
+    width: 160px;
+}
+
+address{
+    top: -6vh;
+    position: relative;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+    .good{
+        top:-12.6vh;
+    }
+
+
+    .relo{
+        height: 400px;
+    }
+
+.rint{
+    height: 75vh;
+}
+
+      /*왼쪽버튼*/
+      .ab1 {
+        left: 10px;
+    }
+    
+    /*오른쪽버튼*/
+    .ab2 {
+        right: 10px;
+    }
+    
+    /*블릿버튼*/
+    .indic {
+        display: flex;
+        /* 플렉스박스 */
+        position: absolute;
+        bottom: 10px;
+        left: 7vw;
+    }
+
+    .www .wswsws span{
+        font-size: 12vw;
+    }
+
+    .fbx{
+        top: 50px;
+    }
+
+    .rab{
+        display: none;
+    }
+
+    .info{
+        margin-top: 10vh;
+    }
+
+    .f1{
+        top: 200px;
+    }
+    
+    .f2{
+        top: 350px;
+    }
+
+}
+/************* 870px 이하 끝 *************/
+
+/************* 420px 이하 끝 *************/
+@media screen and (max-width: 420px) {
+    .f1{
+        top: 100px;
+    }
+    
+    .f2{
+        top: 150px;
+    }
+}
+/************* 420px 이하 끝 *************/

@@ -1,0 +1,819 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&Dancing+Script&display=swap');
+
+/* font-family: 'Gowun Dodum', sans-serif;
+*/
+html{
+    font-size: 10px;
+    /* /* width: 100vw;
+    height: 100vh; */
+    overflow: hidden;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+/* 전체배경 */
+body {
+    background-image: linear-gradient(to bottom, rgb(224, 224, 224) 30%, rgb(255, 241, 202) 70%);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: -2;
+}
+
+*{
+    /* outline: 1px dashed coral; */
+}
+
+/* 로고 */
+.head{
+    z-index: 99999999;
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+    position: absolute;
+    width: 100vw;
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+    width: 100vw;
+    height: 3rem;
+    font-weight: bold;
+}
+
+h1 a{
+    line-height: 3rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+}
+
+.btn{
+    position: absolute;
+    right: 2vw;
+    top: -2px;
+}
+
+.btn span{
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+/* 유저 */
+.user{
+    position: absolute;
+    font-size: 1.5rem;
+    left: 10px;
+    top: 12px;
+}
+
+/* 네비게이션 */
+/* 11. GNB메뉴 보이기 */
+body.on .gnb{
+    right: 0;
+}
+
+
+/* GNB메뉴박스 */
+.gnb {
+        transition: .5s;
+        background-color: rgba(172, 37, 37, 0);
+        /* 포지션이 있어야 z-index적용됨.
+        gnb 하위메뉴가 위에 오도록 z-index를 높인다.
+        */
+        /* 왼쪽부터 시작하도록 크기지정 */
+        width: 200px;
+        /* height: 700px; */
+        /* 너무 위에 붙어있기에 띄어줌 */
+        /* z-index: -3; */
+        margin-top: 3rem;
+        position: absolute;
+        right: -100%;
+        /* display: none; */
+        z-index: 999;
+        background-color: #fff;
+        border-radius: 0 0 0 15px;
+      }
+      /* ul 초기화 */
+      .gnb ul {
+        /* 수직방향 진행 */
+        flex-direction: column;
+      }
+  
+      /* 상위 li 리스트요소 */
+      .gnb>ul>li{
+        /* float: left; */
+        width: 200px;
+        /* height: 100%; */
+        /* outline: 1px dashed blue; */
+        text-align: center;
+        /* height: 40px; */
+        /* box-sizing: border-box; */
+        overflow: hidden;
+      }
+      
+
+      /* li사이에 구분선 넣기 */
+      .gnb>ul>li+li::before{
+        /* border-left: 1px solid #000; */
+        content: '';
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 20px;
+        background-color: rgb(194, 0, 0);
+        /* 젠틀앱솔루트: 부모박스 안에 그대로 있음 */
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+      
+      /* li 하위 a요소 */
+      .gnb>ul>li>a{
+        /* a요소 확장 */
+        width: 100%;
+        height: 100%;
+        display: block;
+        color: #000;
+        text-decoration: none;
+        font-size: 17px;
+        line-height: 40px;
+        /* 트랜지션:속시이지 */
+        transition: .4s; 
+        font-weight: bold;
+      }
+
+      .gnb>ul>li>a:last-child{
+        border-radius: 0 0 0 15px;
+      }
+
+      /* 부모li에 마우스 오버시 상위메뉴 a요소 변경 */
+      .gnb>ul>li:hover>a{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+
+      /* 
+        [ 부모요소로부터 상속되는 속성 ]
+        글자체, 글자색, 글자크기, 글자정렬 등 글자관련 속성들
+      */
+
+      /* 상단 메뉴 글자에 밑줄 애니 */
+      .gnb>ul>li>a>span{
+        position: relative;
+        /* 부모자격 */
+      }
+
+      /* 가상요소로 밑줄 */
+      .gnb>ul>li>a>span::after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        /* 부모는? 싸고있는 span */
+        width: 0%; /* 마우스 오버시 100% */
+        height: 2px;
+        background-color: rgb(194, 0, 0);
+        /* 트랜지션: 속시이지 - 돌아올 때 지연시간 없음 */
+        transition: width .1s ease-out;
+      }
+
+      /* 상위메뉴 오버시 가상요소 밑줄애니 */
+      .gnb>ul>li:hover>a>span::after{
+        width: 100%;
+        /* 오버시에 기다리는 시간 없애기 */
+        transition-delay: 0.4s;
+      }
+
+      /* 서브메뉴 */
+      .smenu{
+        /* position: absolute; */
+        /* -> 앱솔루트가 아니면 자리를 차지한다.
+        서브메뉴가 밀고 나가도록 주석처리
+        */
+        width: 200px;
+        /* 서브메뉴박스 숨기기 */
+        height: 0; /* 1 */
+        overflow: hidden; /* 2 */
+        background-color: #dbcab3;
+        border-radius: 0 0 5px 5px;
+        /* 주의사항 : 높이값 0으로 숨기는 박스는 위아래 패딩, 보더는
+        숨겨지지 않으므로 쓰지 않는다
+        디자인은 하위요소에서 할것 */
+        /* 트랜지션 */
+        transition: 0.4s;
+      }
+
+      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
+      .gnb>ul>li:nth-child(2):hover .smenu{
+        height: 146px;
+      }
+      /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
+      .gnb>ul>li:nth-child(3):hover .smenu{
+        height: 110px;
+      }
+
+      /* 서브메뉴 ol */
+      .smenu ol{
+        padding: 15px;
+        padding-top: 0;
+      }
+      /*서브메뉴 li */
+      .smenu li{
+      }
+
+      .smenu a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        line-height: 35px;
+        /* 트랜지션 */
+        transition: 0.2s;
+        font-weight: bold;
+      }
+
+      /* 서브메뉴 오버시 */
+      .smenu a:hover{
+        background-color: #f3e8d9;
+        color: rgb(194, 0, 0);
+      }
+
+main{
+    /* width: 100%;
+    height: 100%; */
+    overflow: hidden;
+    /* position: absolute; */
+}
+
+.cont{
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    position: absolute;
+}
+
+/* 돌아가는 카드 */
+.rk{
+    top: -400px;
+    position: absolute;
+    left: 50px;
+    animation: ffAni 4s linear  infinite ;
+    z-index: -9;
+}
+
+@keyframes ffAni {
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+.fk{
+    background: url(../images/RWS_Tarot_00_Fool.jpg) no-repeat center/contain;
+    width: 200px;
+    height: 350px;
+    transform: rotate(-30deg);
+    border: 3px solid #000;
+    z-index: 23;
+}
+
+.bk{
+    background: url(../images/back.jpg_small) no-repeat center/contain;
+    width: 200px;
+    height: 350px;
+    transform: rotate(-30deg);
+    top: -353px;
+    position: relative;
+    z-index: -1;
+}
+
+/* chu */
+.chu{
+    position: absolute;
+    top: 70%;
+    left: 5vw;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    border: 3px solid #000;
+    width: 430px;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 10px;
+    background-color: #fff;
+    background: url(../images/e4c01b7f860d853cf586316a6e894dd4_t.jpeg);
+    z-index: 99;
+}
+
+.chu:hover a{
+    text-shadow: 1px 1px 1px rgb(139, 0, 0);
+    box-shadow: inset 0px 0px 0px rgb(100, 0, 0);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.chu a{
+    z-index: 99;
+    display: block;
+    transition: .4s;
+}
+
+/* 동글 도는 카드들 */
+/* 아래 화살표 */
+.wheel{
+    overflow-y: hidden;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+}
+
+.one{
+    position: absolute;
+    top: calc(50% - 25px);
+    right: 30vw;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    animation: rkAni 8s ease-in-out infinite alternate;
+}
+
+.one div img{
+    box-shadow: 1px 1px 3px#000;
+}
+
+.one img{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    left: calc(50% - 25px);
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.one .fool img{
+    top: -200px;
+}
+
+.rotate{
+    top: -175px;
+    left: 25px;
+    height: 200px;
+    position: absolute;
+    transform-origin: center bottom;
+}
+
+/* 세계 */
+.wor{
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    animation: rrkAni 8s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+
+.wor p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: center;
+    transition: .5s;
+    position: absolute;
+    left: -10px;
+    top: 90px;
+    opacity: 0;
+    text-shadow: 3px 3px 5px rgb(131, 0, 0);
+    transition: .3s ease-in;
+}
+
+.wor img{
+    position: absolute;
+    top: -25px;
+}
+
+.one img:hover{
+    transform: scale(120%);
+}
+
+/* 바보 */
+.rotate1{
+    transform: rotate(0deg);
+}
+.one .rotate1 .fool img{
+    top: -50px;
+}
+
+/* 마술사 */
+.rotate2{
+    transform: rotate(30deg);
+}
+.one .rotate2 .mage img{
+    top: -50px;
+}
+
+/* 여교황 */
+.rotate3{
+    transform: rotate(60deg);
+}
+.one .pri img{
+    top: -50px;
+}
+
+/* 여제 */
+.rotate4{
+    transform: rotate(90deg);
+}
+.one .emp img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 황제 */
+.rotate5{
+    transform: rotate(120deg);
+}
+.one .emper img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 교황 */
+.rotate6{
+    transform: rotate(150deg);
+}
+.one .hir img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 연인 */
+.rotate7{
+    transform: rotate(180deg);
+}
+.one .love img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 전차 */
+.rotate8{
+    transform: rotate(210deg);
+}
+.one .cha img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 힘 */
+.rotate9{
+    transform: rotate(240deg);
+}
+.one .str img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 은둔자 */
+.rotate10{
+    transform: rotate(270deg);
+}
+.one .her img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 운명의 수레바퀴 */
+.rotate11{
+    transform: rotate(300deg);
+}
+.one .wheel img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 정의 */
+.rotate12{
+    transform: rotate(330deg);
+}
+.one .jus img{
+    top: -50px;
+    left: -25px;
+}
+
+/* 매달린 남자 */
+.rotate13{
+    transform: rotate(0deg);
+}
+.one .hang img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 죽음 */
+.rotate14{
+    transform: rotate(40deg);
+}
+.one .death img{
+    top: -200px;
+    left: -25px;
+}
+/* 절제 */
+.rotate15{
+    transform: rotate(80deg);
+}
+.one .tem img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 악마 */
+.rotate16{
+    transform: rotate(120deg);
+}
+.one .dev img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 탑 */
+.rotate17{
+    transform: rotate(160deg);
+}
+.one .tower img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 별 */
+.rotate18{
+    transform: rotate(200deg);
+}
+.one .star img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 달 */
+.rotate19{
+    transform: rotate(240deg);
+}
+.one .moon img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 해 */
+.rotate20{
+    transform: rotate(280deg);
+}
+.one .sun img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 심판 */
+.rotate21{
+    transform: rotate(320deg);
+}
+.one .judge img{
+    top: -200px;
+    left: -25px;
+}
+
+/* 애니메이션 영역 */
+.roro{
+    animation: rrkAni 7s ease-in-out infinite forwards alternate;
+}
+
+@keyframes rkAni {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rrkAni {
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+/* 푸터 */
+.info{
+    height: 3rem;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(73, 73, 73);
+    border-top: 2px solid rgb(255, 255, 255);
+}
+
+/* 어드레스 */
+address{
+    text-align: center;
+}
+
+address span{
+    color: #fff;
+    text-align: center;
+    line-height: 4.5rem;
+}
+
+
+
+/* sns */
+.sns{
+    position: absolute;
+    top: 7px;
+    right: 1vw;
+    /* 플렉스박스 */
+    display: flex;
+  }
+  
+  .sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../balsamic/img/sprites_logo.png) no-repeat;
+    margin: 0 2px;
+    /* 필터: 흑백 */
+    filter: grayscale(100%);
+    /* 손가락모양 */
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  /* 오버시 칼라 */
+  .sns li:hover{
+    filter: grayscale(0);
+  }
+  
+  /* 페이스북 */
+  .sns li:first-child{
+    background-position: -509px -430px;
+  }
+  /* 트의터 */
+  .sns li:nth-child(2){
+    background-position: -551px -430px;
+  }
+  /* 인스타 */
+  .sns li:nth-child(3){
+    background-position: -592px -429px;
+  }
+
+/* 햄버거버튼 */
+.ham{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    /* span이 대신 보임 */
+    display: none;
+    padding-top: 5px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-5px);
+    cursor: pointer;
+    display: block;
+  }
+
+  /* 햄버거 가상요소 */
+  .ham span{
+    transition: .2s;
+    width: 25px;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    border-radius: 5px;
+  }
+  
+  .ham span:first-child{
+    top: 10px;
+  }
+
+  .ham span:nth-child(2){
+    top: 2px;
+    right: -10px;
+  }
+
+  .ham span:last-child{
+    top: -6px;
+  }
+  
+  body.on .ham span:first-child{
+    top: 0px;
+    width: 28px;
+    transform: rotate(45deg);
+  }
+
+  body.on  .ham span:nth-child(2){
+    right:-20px;
+    opacity: 0;
+  }
+
+  body.on .ham span:last-child{
+    top: 0px;
+    width: 28px;
+    transform: rotate(-45deg);
+  }
+
+  /* .selected{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    left: 50vw;
+    top: 50vw;
+    transform: translate(-50px, -100px);
+  } */
+
+  .dc p{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 82%;
+    z-index: 9999999;
+    text-shadow: 0px 0px 10px rgb(131, 0, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.th span{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 10%;
+    z-index: 9999999;
+    text-shadow: 0px 0px 10px rgb(0, 9, 131);
+    left: 50%;
+    transform: translateX(-100%);
+    text-align: center;
+}
+
+.these{
+    display: flex;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 25%;
+    z-index: 9999999;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.these span:nth-child(1){
+    text-shadow: 0px 0px 10px rgba(81, 255, 0, 0.274);
+}
+.these span:nth-child(2){
+    text-shadow: 0px 0px 10px rgba(81, 255, 0, 0.575);
+    padding: 0 50px;
+}
+.these span:nth-child(3){
+    /* transform:translatex(-100px);
+    left: 50vw;
+    position: absolute; */
+    text-shadow: 0px 0px 10px rgb(81, 255, 0);
+}
+
+.exp{
+    position: absolute;
+    right: 0;
+    width: 20%;
+    margin-top: 100px;
+}
+
+.exp span{
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.3vw;
+    line-height: 2;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+/* 미디어 쿼리 */
+
+/************* 1140px 이하 시작 *************/
+@media screen and (max-width: 1140px) {
+
+.one{
+    filter: blur(2px);
+}
+
+.chu{
+    left: calc(50% - 155px);
+}
+
+.cont{
+    overflow: hidden;
+}
+
+}
+/************* 1140px 이하 끝 *************/

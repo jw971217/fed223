@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+
+
+
+.cube span:nth-child(1){
+    /* 화면방향(Z축) */
+    transform: translateZ(150px) rotate(90deg);
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+@keyframes frAni {
+    to{
+        transform: rotate(-90deg) translateZ(150px) ;
+        transform-origin: center center;
+    }
+}
+
+
+@keyframes frrAni {
+    to{
+        transform: rotateX(90deg) translateZ(150px) translateY(100px);
+        background-color: rgb(38, 0, 255);
+        position: relative;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

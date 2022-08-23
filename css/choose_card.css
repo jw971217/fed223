@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* 전체배경 */
+body {
+    background-image: linear-gradient(to bottom, rgb(224, 224, 224) 30%, rgb(255, 241, 202) 70%);
+    width: 100vw;
+    height: 100vh;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+body *{
+    /* outline: 1px solid coral; */
+}
+
+/* 카드 관련 질문과 화살표 */
+.thi{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 25%;
+    z-index: 9999999;
+    text-shadow: 0px 0px 10px rgb(131, 0, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.thi span{
+    color: #fff;
+    white-space: nowrap;
+}
+
+.sc p{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 70%;
+    z-index: 9999999;
+    text-shadow: 0px 0px 10px rgb(131, 0, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: none;
+}
+
+/* 아래 화살표 */
+.thi h3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10vh;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 5px 2px 4px rgb(134, 134, 134);
+    animation: motionAni 1.2s linear 0s infinite alternate;
+  }
+  
+  .thi h3 a{
+    animation: motionAni 1.2s linear 0s infinite alternate;
+  
+  }
+  
+  @keyframes motionAni {
+    0% {
+      margin-top: 0px;
+      color: rgb(156, 0, 0);
+    }
+      20% {
+      margin-top: 10px;
+      color: rgb(131, 0, 0);
+    }
+      40% {
+      margin-top: 0px;
+      color: rgb(0, 0, 0);
+    }
+      60% {
+      margin-top: 10px;
+      color: rgb(156, 0, 0);
+    }
+      80% {
+      margin-top: 0px;
+      color: rgb(131, 0, 0);
+    }
+      100% {
+      margin-top: 0px;
+      color: rgb(0, 0, 0);
+    }
+  }
+
+/* 카드 관련 서식 */
+.axis, .axis2, .axis3,.axis5 {
+    width: 100px;
+    height:100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transform-style: preserve-3d;
+}
+
+.card1{
+    width: 100px;
+    height: 180px;
+    z-index: -1;
+}
+
+/* axis */
+.axis img:nth-child(1){
+    transform: translate(-300px, -200px) rotateY(80deg)  ;
+}
+.axis img:nth-child(2){
+    transform: translate(-650px, 100px) translateZ(100px) rotateY(-50deg)   scale(.5);
+}
+.axis img:nth-child(3){
+    transform: translate(-550px, 200px) rotateY(-40deg)   scale(.9);
+}
+.axis img:nth-child(4){
+    transform: translate(400px, -100px) rotateY(70deg)   scale(.7);
+}
+.axis img:nth-child(5){
+    transform: translate(-300px, 30px) rotateY(30deg)   scale(.6);
+}
+.axis img:nth-child(6){
+    transform: translate(750px, -400px) rotateY(-60deg)   scale(.7);
+}
+.axis img:nth-child(7){
+    transform: translate(-400px, -350px) rotateY(90deg)  scale(.8);
+}
+
+/* axis2 */
+.axis2 img:nth-child(1){
+    transform: translate(-400px, -400px) rotateY(-90deg)  scale(.8);
+}
+.axis2 img:nth-child(2){
+    transform: translate(300px, -200px) rotateY(30deg)  scale(.7);
+}
+.axis2 img:nth-child(3){
+    transform: translate(250px, 50px) rotateY(10deg)  scale(.6);
+}
+.axis2 img:nth-child(4){
+    transform: translate(-200px, -160px) rotateY(0deg)  scale(.7);
+}
+.axis2 img:nth-child(5){
+    transform: translate(-90px, -300px) rotateY(90deg)  scale(.8);
+}
+.axis2 img:nth-child(6){
+    transform: translate(-500px, -260px) rotateY(45deg)  scale(.7);
+}
+.axis2 img:nth-child(7){
+    transform: translate(500px, 300px) rotateY(60deg)  scale(.9);
+}
+.axis2 img:nth-child(8){
+    transform: translate(-500px, 200px) rotateY(10deg)  scale(.6);
+}
+.axis2 img:nth-child(9){
+    transform: translate(-200px, 350px) rotateY(90deg)  scale(.7);
+}
+.axis2 img:nth-child(10){
+    transform: translate(200px, 200px) rotateY(50deg)  scale(.7);
+}
+
+/* axis3 */
+.axis3 img:nth-child(1){
+    transform: translate(-400px, -350px) rotateY(90deg)  scale(.8);
+}
+.axis3 img:nth-child(2){
+    transform: translate(-380px, 320px) rotateY(230deg)  scale(.8);
+}
+.axis3 img:nth-child(3){
+    transform: translate(700px, -100px) rotateY(40deg)  scale(.8);
+}
+.axis3 img:nth-child(4){
+    transform: translate(200px, 250px) rotateY(90deg)  scale(.8);
+}
+.axis3 img:nth-child(5){
+    transform: translate(-600px, -200px) rotateY(90deg)  scale(.8);
+}
+.axis3 img:nth-child(6){
+    transform: translate(-500px, 450px) rotateY(90deg)  scale(.8);
+}
+.axis3 img:nth-child(7){
+    transform: translate(400px, 100px) rotateY(90deg)  scale(.8);
+}
+
+/* axis5 */
+.axis5 img:nth-child(1){
+    z-index: 9999999;
+    transform: translateZ(0px) translateX(0px) translateY(0px) rotateY(360deg);
+}
+
+/* 카드 에니메이션 관련 */
+.card{
+    position: absolute;
+    transition: animation 4s;
+}
+
+.card.on{
+    animation: caAni 4s ease-in-out forwards;
+}
+
+.axis{
+    animation: roAni 10s linear infinite;
+    transform: rotateY(0deg);
+}
+
+.axis2{
+    /* display: none; */
+    animation: roAni2 10s linear infinite;
+    transform: rotateY(45deg);
+}
+
+.axis3{
+    /* display: none; */
+    animation: roAni3 10s linear infinite;
+    transform: rotateY(90deg);
+}
+
+@keyframes roAni {
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes roAni2 {
+    to{
+        transform: rotateY(405deg) ;
+    }
+}
+@keyframes roAni3 {
+    to{
+        transform: rotateY(450deg) ;
+    }
+}
+
+@keyframes caAni {
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* slelect card 글자 */
+.sel{
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni 1s ease-in infinite alternate;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni{
+    to{
+        text-shadow: 0 0 5px rgb(255, 0, 0);
+    }
+}/* 키프레임 */
+
+
+

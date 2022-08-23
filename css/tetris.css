@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+/* 전체배경 */
+body {
+    background-image: linear-gradient(to bottom, rgb(255, 234, 0) 30%, rgb(0, 208, 255) 70%);
+}
+*{
+    outline: 1px dashed coral;
+}
+
+.map{
+    width: 100vh;
+    height: 100vh;
+    left: calc(50% - 50vh);
+    position: absolute;
+}
+
+.map div .cube{
+    width: 10vh;
+    height: 10vh;
+    position: relative;
+    background-color: #fff;
+    float: left;
+}
+
+
+/* ㄴ 모양 구조물 */
+.map .l{
+    position: relative;
+    top: 90vh;
+}
+
+.map .l .cube{
+    background-color: rgb(255, 0, 0);
+}
+
+.map .l .cube:nth-child(2){
+    top: -10vh;
+    left: -10vh;
+}
+
+.map .l .cube:nth-child(3){
+    left: -10vh;
+}
+
+.map .l .cube:nth-child(4){
+    left: -10vh;
+}
+
+/* ㅣ 모양 구조물 */
+.map .i{
+    position: relative;
+    top: 60vh;
+    left: -10vh;
+}
+
+.map .i .cube{
+    background-color: rgb(102, 255, 0);
+}
+
+.map .i .cube:nth-child(1){
+
+}
+
+.map .i .cube:nth-child(2){
+    top: 10vh;
+    left: -10vh;
+}
+
+.map .i .cube:nth-child(3){
+    top: 20vh;
+    left: -20vh;
+}
+
+.map .i .cube:nth-child(4){
+    top: 30vh;
+    left: -30vh;
+}
+
+/* ㅁ 모양 구조물 */
+
+/* ㅗ 모양 구조물 */
+
+
+
