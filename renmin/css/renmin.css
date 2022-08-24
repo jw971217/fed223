@@ -41,10 +41,22 @@ html, body{
 
 .fp-controlArrow.fp-prev{
     border-color: transparent #f00 transparent transparent;
+    transition: .3s;
 }
 
 .fp-controlArrow.fp-next{
     border-color: transparent transparent transparent #f00;
+    transition: .3s;
+}
+
+.fp-controlArrow.fp-prev:hover{
+  border-color: transparent #EEEBDD transparent transparent;
+  scale: .6;
+}
+
+.fp-controlArrow.fp-next:hover{
+  border-color: transparent transparent transparent #EEEBDD;
+  scale: .6;
 }
 
 /* gnb */
