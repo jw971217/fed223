@@ -11,6 +11,7 @@ html, body{
 }
 
 .slide{
+  position: relative;
 }
 
 /* arrow unvisible */
@@ -385,22 +386,42 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 
-.slide1 span{
-  /* flex-direction: column;
-  align-items: flex-start; */
+.txt1{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 25vh;
+  left: 5vw;
 }
 
+.txt1 span{
+  color: #e6ca7e;
+  font-size: 3.5rem;
+  margin: 30px;
+  font-weight: bold;
+}
 
+.txt2{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 52vh;
+  right: 13vw;
+}
 
+.txt2 span{
+  color: #c50002;
+  font-size: 2.5rem;
+  margin: 8px;
+  font-weight: bold;
+}
 
-
-
-
-
-
-
+.txt2 span:last-child{
+  font-size: 2.2rem;
+}
 
 .slide2{
     /* background: url(../img/ruc_bg_507.jpg) no-repeat center/cover; */
