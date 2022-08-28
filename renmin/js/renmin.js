@@ -38,3 +38,6 @@ $(()=>{
     });
 
 });
+
+
+$('.fp-tableCell').removeClass('vertical-align: middle;');

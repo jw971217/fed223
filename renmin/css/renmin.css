@@ -440,13 +440,16 @@ body {
   width: 100%;
   color: #fff;
   font-size: 10px;
-}
-
-.fp-tableCell{
   height: 100px !important;
   justify-content: space-around;
   display: flex;
+}
 
+.flex{
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  width: 100%;
 }
 
 .add, .mnu{
@@ -472,7 +475,7 @@ body {
   display: flex;
 }
 
-.uli li{
+.uli>li{
   margin-left: 15px;
   font-size: 1.4rem;
 }
