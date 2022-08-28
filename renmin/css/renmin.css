@@ -349,16 +349,16 @@ body {
     color: rgb(0, 0, 0);
   }
   
-  .map{
-    text-align: center;
-    position: absolute;
-    bottom: 12vh;
-    left: 0;
+.map{
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 95px;
 }
 
 .map iframe{
-    border-radius: 5%;
-    margin: 5%;
+  border-radius: 5%;
+  margin: 2%;
 }
 /* gnb end */
 
@@ -377,24 +377,42 @@ body {
   height: 120vh;
 } */
 
+
+/* slide1 */
 .slide1{
     /* background: url(../img/ruc_bg_506.jpg) no-repeat center/cover; */
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_506.jpg);
+    background-image: url(../img/85.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+
+.slide1 span{
+  /* flex-direction: column;
+  align-items: flex-start; */
+}
+
+
+
+
+
+
+
+
+
+
+
 .slide2{
     /* background: url(../img/ruc_bg_507.jpg) no-repeat center/cover; */
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_507.jpg);
+    background-image: url(../img/building.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
 
 }
 .slide3{
     /* background: url(../img/ruc_bg_510.jpg) no-repeat center/cover; */
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_510.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_506.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -418,13 +436,17 @@ body {
     background-color: #000;
 }
 
-.info, .fp-tableCell{
-    height: 100px !important;
-    display: flex;
-    color: #fff;
-    font-size: 10px;
-    width: 100%;
-    justify-content: space-around;
+.info{
+  width: 100%;
+  color: #fff;
+  font-size: 10px;
+}
+
+.fp-tableCell{
+  height: 100px !important;
+  justify-content: space-around;
+  display: flex;
+
 }
 
 .add, .mnu{
