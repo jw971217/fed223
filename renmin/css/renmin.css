@@ -22,21 +22,21 @@ html, body{
   transition: width .4s ease-out;
 }
 
-.fp-viewing-0-0 .nav1{
+[class*="fp-viewing-0"] .nav1{
   width: 70px;
 }
 
-.fp-viewing-1-0 .nav2{
-  width: 70px;
-
-}
-
-.fp-viewing-2-0 .nav3{
+[class*="fp-viewing-1"] .nav2{
   width: 70px;
 
 }
 
-.fp-viewing-3-0 .nav4{
+[class*="fp-viewing-2"] .nav3{
+  width: 70px;
+
+}
+
+[class*="fp-viewing-3"] .nav4{
   width: 70px;
 
 }
