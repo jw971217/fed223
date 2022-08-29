@@ -4,6 +4,46 @@ html, body{
   font-size: 10px;
 }
 
+.navi1{
+  position: fixed;
+  right: 20px;
+  top: 50px;
+  z-index: 999;
+  transform: scaleX(-1);
+}
+
+.navi1 span{
+  display: block;
+  width: 50px;
+  height: 5px;
+  margin: 5px 5px 5px 0;
+  background-color: #000;
+  border: 1px solid #fff;
+  transition: width .4s ease-out;
+}
+
+.fp-viewing-0-0 .nav1{
+  width: 70px;
+}
+
+.fp-viewing-1-0 .nav2{
+  width: 70px;
+
+}
+
+.fp-viewing-2-0 .nav3{
+  width: 70px;
+
+}
+
+.fp-viewing-3-0 .nav4{
+  width: 70px;
+
+}
+
+
+
+
 /* fullpage area */
 .fullpage{
     position: relative;
@@ -13,6 +53,8 @@ html, body{
 .slide{
   position: relative;
 }
+
+
 
 /* arrow unvisible */
 /* 
