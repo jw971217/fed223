@@ -426,7 +426,7 @@ body {
     /* background: url(../img/ruc_bg_506.jpg) no-repeat center/cover; */
     background-image: url(../img/85.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     position: relative;
 }
@@ -435,7 +435,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 25vh;
+  top: 32vh;
   left: 5vw;
 }
 
@@ -450,7 +450,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 52vh;
+  top: 60vh;
   right: 13vw;
 }
 
@@ -477,15 +477,49 @@ body {
     /* background: url(../img/ruc_bg_510.jpg) no-repeat center/cover; */
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_506.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
 }
 
 
 
-.fp-slide{
-  height: 120vh !important;
+
+
+
+
+
+
+
+
+
+.slide4{
+  background-image: url(../img/ruc_bg_510.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
 }
+
+.slide7{
+  background-image: url(../img/ruc_bg_507.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+
+.slide10{
+  background-image: url(../img/640-12.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+
+
 
 
 
