@@ -372,18 +372,19 @@ header .nav ul li{
 } 
 
 /* 네번째 페이지 */
+.four{
+}
+
 .song{
-    height: 100%;
     position: relative;
+    height: 100%;
 }
 
 .song iframe{
-    width: 90%;
-    height: 90%;
     margin: 20px auto;
+    width: 90%;
+    height: 50vh;
     display: block;
-    width:885px;
-    height:498px;
 }
 
 .song span{
