@@ -136,8 +136,6 @@ header .nav ul li{
         transition: 0.3s ease-out;
       }
 
-
-
 /* 20세기 로고 */
 .foxlogo{
     width: 120px;
@@ -157,15 +155,19 @@ header .nav ul li{
 
 /* 첫번쩨 페이지 */
 /* 큰 그림 */
+.pospos{
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+}
+
 .wall{
-    height: 100%;
     position: relative;
 }
 
 .one .wall img{
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /* 스트리밍 */
@@ -216,6 +218,11 @@ header .nav ul li{
     display: block;
     text-align: center;
     height: 40px;
+    transition: .5s;
+}
+
+.wall .dis a:hover{
+    background-color: #d2ad59;
 }
 
 
@@ -271,11 +278,11 @@ header .nav ul li{
 
 /* 세번째 페이지 */
 .three{
-    /* display: flex; */
 }
 
 .char{
     height: 30vh;
+    margin: 4% 0%;
     padding: 1%;
 }
 
@@ -366,8 +373,8 @@ header .nav ul li{
 
 /* 네번째 페이지 */
 .song{
-    height: 500px;
-
+    height: 100%;
+    position: relative;
 }
 
 .song iframe{
