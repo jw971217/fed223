@@ -272,7 +272,7 @@ body {
 /* navi */
 .navi {
     margin-top: 0px;
-    background-color: rgb(255, 197, 197);
+    background-color: rgb(255, 225, 223);
     z-index: 999;
     width: 100%;
     height: 100vh;
@@ -353,6 +353,10 @@ body {
 /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
 .navi>ul>li:nth-child(3):hover .smenu{
     height: 185px;
+}
+/* 상위메뉴 li 오버시 서브메뉴 보이기 - 4번 li */
+.navi>ul>li:nth-child(4):hover .smenu{
+    height: 85px;
 }
 
 /* 서브메뉴 ol */
