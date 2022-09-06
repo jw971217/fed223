@@ -513,6 +513,15 @@ body {
   position: relative;
 }
 
+.slide4 .txt{
+  background: #000;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  top: 30%;
+  position: relative;
+}
+
 .slide7{
   background-image: url(../img/ruc_bg_507.jpg);
   background-repeat: no-repeat;
