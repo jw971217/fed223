@@ -248,6 +248,10 @@ body {
     width: 50px;
 }
 
+.def{
+  cursor: default;
+}
+
 /* search */
 .search input{
   text-transform: uppercase;
@@ -432,6 +436,7 @@ body {
 }
 
 .txt1 span{
+  text-shadow: 2px 2px 5px black;
   color: #e6ca7e;
   font-size: 3.5rem;
   margin: 30px;
@@ -474,9 +479,24 @@ body {
     background-size: cover;
 }
 
+.txt3{
+  position: absolute;
+  top: 30vh;
+  right: 5vw;
+  width: 70%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column
+}
 
-
-
+.txt3 span{
+  text-shadow: 2px 2px 5px black;
+  color: #f7f6fb;
+  font-size: 3.5rem;
+  margin: 30px;
+  font-weight: bold;
+  margin: 10px;
+}
 
 
 
