@@ -593,6 +593,10 @@ body {
   align-items: flex-end;
 }
 
+.mnu span{
+  font-size: 1.2rem;
+}
+
 .uli{
   display: flex;
 }
@@ -608,4 +612,13 @@ body {
 
 .swiper-slide{
   text-align: start;
+}
+
+.coco{
+  cursor: pointer;
+}
+
+.cococo{
+  font-size: 1rem !important;
+  color: #fff;
 }
