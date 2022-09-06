@@ -465,7 +465,7 @@ body {
 
 .slide2{
     /* background: url(../img/ruc_bg_507.jpg) no-repeat center/cover; */
-    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.753) ),url(../img/building.jpg);
+    background-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.753) ),url(../img/building.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -473,7 +473,7 @@ body {
 }
 .slide3{
     /* background: url(../img/ruc_bg_510.jpg) no-repeat center/cover; */
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.123) ), url(../img/ruc_bg_506.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/ruc_bg_506.jpg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
