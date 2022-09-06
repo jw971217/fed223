@@ -348,11 +348,11 @@ body {
 
 /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
 .navi>ul>li:nth-child(2):hover .smenu{
-    height: 155px;  
+    height: 115px;  
 }
 /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
 .navi>ul>li:nth-child(3):hover .smenu{
-    height: 85px;
+    height: 185px;
 }
 
 /* 서브메뉴 ol */
@@ -380,18 +380,15 @@ body {
 
 
 /* map */
-.load{
-    color: rgb(0, 0, 0);
-  }
-  
 .map{
+  width: 100%;
   text-align: center;
   position: absolute;
-  left: 0;
   bottom: 95px;
 }
 
-.map iframe{
+.map iframe{  
+  width: 95%;
   border-radius: 5%;
   margin: 2%;
 }
@@ -415,7 +412,6 @@ body {
 
 /* slide1 */
 .slide1{
-    /* background: url(../img/ruc_bg_506.jpg) no-repeat center/cover; */
     background-image: url(../img/85.jpg);
     background-repeat: no-repeat;
     background-position: top;
