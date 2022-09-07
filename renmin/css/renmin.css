@@ -513,6 +513,107 @@ body {
   position: relative;
 }
 
+.slide6{
+  width: 100%;
+  height: 100%;
+  /* background-color: #666; */
+}
+
+.slide6 ul{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slide6 ul>li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.3;
+  transition: opacity .3s;
+}
+
+/* li에 마우스 오버시 반투명 커버 투명도0 */
+.slide6 ul>li:hover::before {
+  opacity: 0;
+}
+
+.slide6 ul>li:nth-child(1) {
+  background: url(../img/renwenlou_blue.png) no-repeat;
+  background-position-x: 48%;
+  /* background-size: cover; */
+}
+.slide6 ul>li:nth-child(2) {
+  background: url(../img/jingji_red.png) ;
+  background-position-x: 90%;
+  background-size: cover;
+  
+}
+.slide6 ul>li:nth-child(3) {
+  background: url(../img/renda_yellow.png) ;
+  background-position-x: 60%;
+  background-size: cover;
+}
+.slide6 ul>li:nth-child(4) {
+  background: url(../img/muse_green.png) ;
+  background-position-x: 40%;
+  background-size: cover;
+}
+.slide6 ul>li:nth-child(5) {
+  background: url(../img/liber_white.png) ;
+  background-position-x: 60%;
+  background-size: cover;
+}
+
+.slide6 ul li{
+  position: relative;
+  flex: 1;
+  transition: .3s ease-in-out;  background-size: cover;
+}
+
+.slide6 ul>li:hover {
+  flex: 1.8;
+}
+
+.rbox{
+  width: 70%;
+  height: 30%;
+  background-color: rgba(255, 255, 255, 0.274);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.rbox span{
+  font-size: 3rem;
+  white-space: nowrap;
+}
+
+.rbox:nth-child(1){
+  text-shadow: 1px 1px 5px rgba(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .slide7{
   background-image: url(../img/ruc_bg_507.jpg);
   background-repeat: no-repeat;
