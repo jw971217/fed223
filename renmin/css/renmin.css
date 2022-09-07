@@ -508,44 +508,51 @@ body {
   position: absolute;
   opacity: .7;
   border: 1px solid gray;
+  transition: .3s;
 }
 
 .slide4 .cir:hover{
   z-index: 2;
+  scale: 1.1;
 }
 
 .slide4 .cir1{
   width: 30vw;
   height: 30vw;
-  background-color: #cdf0d5;
+  /* background-color: #cdf0d5; */
   left: 5%;
   bottom: 5%;
+  background-image: linear-gradient( 45deg, #88E0EF, #161E54, #FF5151, #FF9B6A);
 }
 .slide4 .cir2{
   width: 20vw;
   height: 20vw;
-  background-color: #A5F1E9;
+  /* background-color: #A5F1E9; */
+  background-image: linear-gradient( -135deg, #CDF0EA, #F9F9F9, #ECC5FB, #FAF4B7);
 }
 .slide4 .cir3{
   width: 40vw;
   height: 40vw;
-  background-color: #ECC5FB;
+  /* background-color: #ECC5FB; */
   right: 0;
   bottom: 0%;
+  background-image: linear-gradient( -100deg, #65C18C, #C1F4C5, #FFBED8, #FF7BA9);
 }
 .slide4 .cir4{
   width: 25vw;
   height: 25vw;
-  background-color: lightpink;
+  /* background-color: lightpink; */
   right: 35%;
   bottom: 0%;
+  background-image: linear-gradient( 180deg, #544179, #6166B3, #32C1CD, #17D7A0);
 }
 .slide4 .cir5{
   width: 30vw;
   height: 30vw;
-  background-color: #FAF4B7;
+  /* background-color: #FAF4B7; */
   top: 2%;
   left: 30%;
+  background-image: linear-gradient( 45deg, #B9FFF8, #6FEDD6, #FF9551, #FF4A4A);
 }
 
 
@@ -555,14 +562,22 @@ body {
 
 
 /* slide5 */
-.slide5{
-  /* background-color: #666; */
-}
+/* .slide5{
+} */
 
 .tri{
   position: absolute;
 }
 
+.tri img{
+  
+}
+
+.slide5 .tri2 img{
+  transform: rotate(180deg);
+}
+
+/* left */
 .tri1 {
   width: 0px;
   height: 0px;
@@ -570,31 +585,24 @@ body {
   border-left: 0px solid transparent;
   border-right: 50vw solid transparent;
 }
+/* right */
 .tri2 {
   width: 0px;
   height: 0px;
-  border-bottom: 50vw solid #d4ffc3;
-  border-left: 0vw solid transparent;
-  border-right: 50vw solid transparent;
-  transform: rotate(180deg);
+  border-bottom: 50vw solid #bbf1ff;
+  border-left: 50vw solid transparent;
+  border-right: 0vw solid transparent;
+  left: 50%;
 }
+/* top */
 .tri3 {
   width: 0px;
   height: 0px;
-  border-bottom: 50vw solid #bbf1ff;
-  border-left: 0vw solid transparent;
-  border-right: 50vw solid transparent;
-  left: 50%;
+  border-top: 100vw solid #cdffc0;
+  border-left: 100vw solid transparent;
+  border-right: 100vw solid transparent;
 }
-.tri4 {
-  width: 0px;
-  height: 0px;
-  border-bottom: 50vw solid #f0cbff;
-  border-left: 0vw solid transparent;
-  border-right: 50vw solid transparent;
-  transform: rotate(180deg);
-  left: 50%;
-}
+
 
 
 
@@ -735,7 +743,21 @@ body {
 
 
 .slide7{
+  background-image: url(../img/ruc_bg_506.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+.slide8{
   background-image: url(../img/ruc_bg_507.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+.slide9{
+  background-image: url(../img/renwenlou.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
