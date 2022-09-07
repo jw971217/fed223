@@ -498,20 +498,106 @@ body {
   margin: 10px;
 }
 
-
-
-
-
-
-
-
+/* slide4 */
 .slide4{
-  background-image: url(../img/ruc_bg_510.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  position: relative;
+  background-color: #F0EBE3;
 }
+
+.slide4 .cir{
+  border-radius: 50%;
+  position: absolute;
+  opacity: .7;
+  border: 1px solid gray;
+}
+
+.slide4 .cir:hover{
+  z-index: 2;
+}
+
+.slide4 .cir1{
+  width: 30vw;
+  height: 30vw;
+  background-color: #cdf0d5;
+  left: 5%;
+  bottom: 5%;
+}
+.slide4 .cir2{
+  width: 20vw;
+  height: 20vw;
+  background-color: #A5F1E9;
+}
+.slide4 .cir3{
+  width: 40vw;
+  height: 40vw;
+  background-color: #ECC5FB;
+  right: 0;
+  bottom: 0%;
+}
+.slide4 .cir4{
+  width: 25vw;
+  height: 25vw;
+  background-color: lightpink;
+  right: 35%;
+  bottom: 0%;
+}
+.slide4 .cir5{
+  width: 30vw;
+  height: 30vw;
+  background-color: #FAF4B7;
+  top: 2%;
+  left: 30%;
+}
+
+
+
+
+
+
+
+/* slide5 */
+.slide5{
+  /* background-color: #666; */
+}
+
+.tri{
+  position: absolute;
+}
+
+.tri1 {
+  width: 0px;
+  height: 0px;
+  border-bottom: 50vw solid #ffcece;
+  border-left: 0px solid transparent;
+  border-right: 50vw solid transparent;
+}
+.tri2 {
+  width: 0px;
+  height: 0px;
+  border-bottom: 50vw solid #d4ffc3;
+  border-left: 0vw solid transparent;
+  border-right: 50vw solid transparent;
+  transform: rotate(180deg);
+}
+.tri3 {
+  width: 0px;
+  height: 0px;
+  border-bottom: 50vw solid #bbf1ff;
+  border-left: 0vw solid transparent;
+  border-right: 50vw solid transparent;
+  left: 50%;
+}
+.tri4 {
+  width: 0px;
+  height: 0px;
+  border-bottom: 50vw solid #f0cbff;
+  border-left: 0vw solid transparent;
+  border-right: 50vw solid transparent;
+  transform: rotate(180deg);
+  left: 50%;
+}
+
+
+
 
 .slide6{
   width: 100%;
@@ -596,6 +682,7 @@ body {
   top: 45%;
   font-weight: bold;
   color: #fff;
+  line-height: 1.2;
 }
 
 .slide6 ul li:nth-child(1) .rbox span{
@@ -603,7 +690,7 @@ body {
 }
 
 .slide6 ul li:nth-child(2) .rbox span{
-  top: 40%;
+  top: 38%;
   text-shadow: 0px 0px 5px rgba(255, 29, 29, 0.411);
 }
 
