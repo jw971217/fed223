@@ -494,6 +494,26 @@ body {
   margin: 10px;
 }
 
+.txt4{
+  position: absolute;
+  top: 10vh;
+  /* right: 10vw; */
+  width: 80%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+}
+
+.txt4 span{
+  text-shadow: 2px 2px 10px black;
+  color: #f7f6fb;
+  font-size: 3.5rem;
+  margin: 30px;
+  font-weight: bold;
+  margin: 10px;
+}
+
 /* slide4 */
 .slide4{
   background-color: #F0EBE3;
@@ -611,11 +631,16 @@ body {
   transform: translateX(100%);
 }
 
-.tri span{
-  font-size: 3rem;
+.tri>span{
+  font-size: 4rem;
   position: absolute;
-  right: 0;
-  
+  top: -97vh;
+  right: 2vw;
+  writing-mode: vertical-rl;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 5px rgb(255, 255, 255);
 }
 
 
@@ -651,7 +676,7 @@ body {
 .slide6 ul>li:nth-child(1) {
   background: url(../img/renwenlou_blue.png) no-repeat;
   background-position-x: 48%;
-  /* background-size: cover; */
+  background-size: cover;
 }
 .slide6 ul>li:nth-child(2) {
   background: url(../img/jingji_red.png) ;
