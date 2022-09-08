@@ -16,6 +16,7 @@ $(()=>{
         slidesPerView: 'auto',
         initialSlide: 1,
         resistanceRatio: 0,
+        touchRatio: 0,//드래그 금지
         slideToClickedSlide: true,
         on: {
             slideChangeTransitionStart: function () {
