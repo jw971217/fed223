@@ -349,7 +349,7 @@ body {
     height: 0;
     overflow: hidden;
     background-color: rgb(139, 0, 0);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
@@ -803,7 +803,7 @@ body {
   position: relative;
 }
 .slide9{
-  background-image: url(../img/renwenlou.png);
+  background-image: url(../img/ruc_bg_510.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -811,7 +811,7 @@ body {
 }
 
 .slide10{
-  background-image: url(../img/640-12.png);
+  background-image: url(../img/renwenlou.png);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
