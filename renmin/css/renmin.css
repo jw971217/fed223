@@ -586,6 +586,17 @@ body {
   right: 0;
   bottom: 0%;
   background-image: linear-gradient( -100deg, #65C18C, #C1F4C5, #FFBED8, #FF7BA9);
+  overflow: hidden;
+}
+
+.cir3 img{
+  opacity: .2;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.cir3:hover img{
+  opacity: 1;
 }
 
 .slide4 .cir4{
@@ -594,6 +605,7 @@ body {
   right: 35%;
   bottom: 0%;
   background-image: linear-gradient( 180deg, #544179, #6166B3, #32C1CD, #17D7A0);
+  justify-content: space-evenly;
 }
 
 .slide4 .cir5{
@@ -604,6 +616,17 @@ body {
   background-image: linear-gradient( 45deg, #B9FFF8, #6FEDD6, #FF9551, #FF4A4A);
 }
 
+.redred{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slide4 .cir5 img{
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  transform: translate(-300%, -50%);
+}
 
 
 
