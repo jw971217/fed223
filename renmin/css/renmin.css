@@ -496,8 +496,8 @@ body {
 
 .txt4{
   position: absolute;
-  top: 10vh;
-  /* right: 10vw; */
+  top: 0vh;
+  left: 30vw;
   width: 80%;
   text-align: justify;
   display: flex;
