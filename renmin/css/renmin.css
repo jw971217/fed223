@@ -530,8 +530,13 @@ body {
   height: 75vh;
 }
 
-.ncont span{
-  height: 600px;
+.tit{
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 0px 0px 1px #720000;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
