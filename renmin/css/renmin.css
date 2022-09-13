@@ -874,38 +874,55 @@ table, th, td, tr{
   text-shadow: 0px 0px 5px rgb(255, 255, 255);
 }
 /* gallery */
-.slide7{
-
+.slide7, .slide8, .slide9{
+  background-color: rgb(213, 212, 212);
 }
 
 .wall1{
   width: 0;
   height: 0;
-  border-bottom: 100px solid pink;
-  border-right: 100px solid transparent;
+  border-bottom: 5vh solid pink;
+  border-right: 100vw solid transparent;
+  margin-top: 1vh;
 }
 
 .wall2{
-
+  width: 100vw;
+  height: 64vh;
+  background-color: pink;
 }
 
+.wall3{
+  width: 0;
+  height: 0;
+  border-top: 29vh solid pink;
+  border-right: 100vw solid transparent;
+}
 
+.wall4{
+  margin-top: 6vh;
+}
 
+.wall5{
+  width: 0;
+  height: 0;
+  border-bottom: 5vh solid pink;
+  border-left: 100vw solid transparent;
+  margin-top: 1vh;
+}
 
+.wall6{
+  width: 0;
+  height: 0;
+  border-top: 29vh solid pink;
+  border-left: 100vw solid transparent;
+}
 
 .slide8{
-  background-image: url(../img/ruc_bg_507.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  position: relative;
+
 }
 .slide9{
-  background-image: url(../img/ruc_bg_510.jpg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  position: relative;
+
 }
 
 .slide10{
