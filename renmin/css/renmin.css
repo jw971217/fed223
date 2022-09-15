@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+
+/* font-family: 'Hi Melody', cursive; */
+
 html, body{
   font-size: 10px;
 }
@@ -914,31 +918,54 @@ table, th, td, tr{
   rotate: 20deg;
 }
 
-.gal img{
+.photo{
+  /* text-align: center; */
+  position: absolute;
+  /* left: 50%;
+  top: 50%; */
+  /* width: 100%;
+  height: 100%; */
+  width: auto;
+}
+
+.photo img{
   transition: 1s;
-  padding: 30px 20px 60px 20px;
+  padding: 30px 15px 60px 15px;
   background-color: #fff;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0 #000);
-}
-
-/* .photo{
+  /* box-shadow:  5px 5px 5px rgba(0, 0, 0 #000); */
   position: relative;
-  
-} */
-
-
-.gal img:nth-child(1){
-  width: 20%;
-
-}
-.gal img:nth-child(2){
-  width: 20%;
-}
-.gal img:nth-child(3){
-  width: 20%;
 }
 
-.gal img:hover{
+
+.photo span{
+  font-family: 'Hi Melody', cursive;
+  font-size: 3rem;
+  position: absolute;
+  bottom: 15px;
+  left: 7%;
+}
+
+
+.gal img{
+  width: 20%;
+}
+.gal .photo:nth-child(1){
+  left: 15%;
+  top: 5%;
+  rotate: -20deg;
+}
+.gal .photo:nth-child(2){
+  left: 25%;
+  bottom: 15%;
+  rotate: 10deg;
+}
+.gal .photo:nth-child(3){
+  left: 25%;
+  top: 5%;
+  rotate: -20deg;
+}
+
+.gal .photo:hover{
   z-index: 9;
 
 }
