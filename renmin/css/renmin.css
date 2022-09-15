@@ -881,22 +881,39 @@ table, th, td, tr{
   text-shadow: 0px 0px 5px rgb(255, 255, 255);
 }
 /* gallery */
-.slide7, .slide8, .slide9{
-  background-color: #bfbfbf;
+.slide7{
+  background: url(../img/desk333.jpg) repeat;
 }
 
-.wall1{
+.wall{
   width: 100vw;
-  height: 20vh;
-  background-color: #ddd;
-}
-
-.wall2{
-  background-color: #464646;
-  width: 100vw;
-  height: 20vh;
+  height: 10vh;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
   position: absolute;
-  bottom: 0;
+  top: 3vh;
+}
+
+
+.gal img{
+  transition: 1s;
+}
+
+.gal img:nth-child(1){
+  width: 20%;
+
+}
+.gal img:nth-child(2){
+  width: 20%;
+}
+.gal img:nth-child(3){
+  width: 20%;
+}
+
+.gal img:hover{
+  z-index: 9;
+
 }
 
 .slide8{
