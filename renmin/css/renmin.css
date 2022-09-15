@@ -444,8 +444,9 @@ body {
   height: 35px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 45%;
-  bottom: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3%;
 }
 
 .wheel{
@@ -885,20 +886,46 @@ table, th, td, tr{
   background: url(../img/desk333.jpg) repeat;
 }
 
-.wall{
-  width: 100vw;
-  height: 10vh;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
+.camera{
   position: absolute;
-  top: 3vh;
+  left: -250px;
+  top: -250px;
 }
 
+.note{
+  position: absolute;
+  right: -150px;
+  bottom: -150px;
+  scale: 0.6;
+}
+
+.pen{
+  position: absolute;
+  right: -50px;
+  bottom: -100px;
+  scale: .8;
+}
+
+.keyboard{
+  position: absolute;
+  right: -650px;
+  top: -200px;
+  scale: .6;
+  rotate: 20deg;
+}
 
 .gal img{
   transition: 1s;
+  padding: 30px 20px 60px 20px;
+  background-color: #fff;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0 #000);
 }
+
+/* .photo{
+  position: relative;
+  
+} */
+
 
 .gal img:nth-child(1){
   width: 20%;
