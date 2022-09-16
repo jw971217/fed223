@@ -1,21 +1,43 @@
 @charset "utf-8";
 /* renmin 페이지 미디어 쿼리 */
 
+/************* 1490px 이하 시작 *************/
+@media screen and (max-width: 1490px) {
+.txt1{
+    top: 20vh;
+}
+.txt1 span{
+  width: 60%;
+  line-height: 3;
+  margin-top: -3vh;
+}
+.txt2{
+    top: 50vh;
+    right: 10vw;
+}
+.gal .photo:nth-child(5){
+    right: 30%;
+}
+}
+/************* 1490px 이하 끝 *************/
+
+
 /************* 1140px 이하 시작 *************/
 @media screen and (max-width: 1140px) {
-.txt1 span{
-  width: 30%;
-  color: #00fc86;
-}
+
+
+
 
 }
 /************* 1140px 이하 끝 *************/
+
 
 /************* 870px 이하 시작 *************/
 @media screen and (max-width: 870px) {
 
 }
 /************* 870px 이하 끝 *************/
+
 
 /************* 420px 이하 끝 *************/
 @media screen and (max-width: 420px) {
