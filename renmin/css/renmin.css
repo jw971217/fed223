@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Hi+Melody&family=Song+Myung&display=swap');
 
+
 /* 
 font-family: 'Hi Melody', cursive;
 font-family: 'Song Myung', serif;
@@ -482,6 +483,10 @@ body {
   /* background-size: cover; */
 }
 
+.newspaper{
+  scroll-behavior: auto;
+}
+
 .slide2 .date{
   position: absolute;
   width: 75%;
@@ -522,7 +527,7 @@ body {
   background-color: #000;
   position: relative;
   left: 50%;
-  transform: translate(-50%, 5.8vh);
+  transform: translate(-50%, 6vh);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -762,16 +767,24 @@ table, th, td, tr{
 .tri>span{
   font-size: 1.6vw;
   position: absolute;
-  top: -97vh;
-  right: 2vw;
+  top: -96vh;
+  right: 4vw;
   writing-mode: vertical-rl;
   letter-spacing: 5px;
   font-weight: bold;
   color: rgb(0, 0, 0);
   text-shadow: 1px 1px 5px rgb(255, 255, 255);
+  font-family: 'Song Myung', serif;
 }
 
-
+.tri>i{
+  font-size: 7rem;
+  position: absolute;
+  top: -90vh;
+  right: 10vw;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 5px rgb(255, 255, 255);
+}
 
 .slide6{
   width: 100%;
