@@ -3,44 +3,103 @@
 
 /************* 1490px 이하 시작 *************/
 @media screen and (max-width: 1490px) {
-.txt1{
-    top: 20vh;
-}
-.txt1 span{
-  width: 60%;
-  line-height: 3;
-  margin-top: -3vh;
-}
-.txt2{
-    top: 50vh;
-    right: 10vw;
-}
-.gal .photo:nth-child(5){
-    right: 30%;
-}
+    .txt1{
+        top: 20vh;
+    }
+    .txt1 span{
+    width: 60%;
+    line-height: 3;
+    margin-top: -3vh;
+    }
+    .txt2{
+        top: 50vh;
+        right: 10vw;
+    }
+    .gal .photo:nth-child(5){
+        right: 30%;
+    }
 }
 /************* 1490px 이하 끝 *************/
 
 
 /************* 1140px 이하 시작 *************/
 @media screen and (max-width: 1140px) {
-
-
-
-
+    .slide2{
+        overflow-y: scroll;
+    }
+    .ncont{
+        column-count: 3;
+        width: 88%;
+    }
+    .slide2 .date{
+        width: 80%;
+    }
+    .cate{
+        width: 88%;
+    }
+    .daily .nlogo{
+        left: 10%;
+    }
+    .daily .nlogo img{
+        width: 5rem;
+      }
+    .daily span{
+        font-size: 7rem;
+      }
 }
 /************* 1140px 이하 끝 *************/
 
 
 /************* 870px 이하 시작 *************/
 @media screen and (max-width: 870px) {
-
+    .txt1{
+        top: 30vh;
+    }
+    .txt1 span{
+        font-size: 2rem;
+        width: 70%;
+    }
+    .txt2{
+        top: 80vh;
+        right: 10vw;
+    }
+    .slide2 .date{
+        width: 70%;
+    }
+    .ncont{
+        column-count: 2;
+    }
+    .daily .nlogo{
+        left: 7%;
+    }
+    .daily .nlogo img{
+        width: 2rem;
+      }
+    .daily span{
+        font-size: 4rem;
+      }
 }
 /************* 870px 이하 끝 *************/
 
 
 /************* 420px 이하 끝 *************/
 @media screen and (max-width: 420px) {
-
+    .menu{
+        width: 100%;
+        max-width: 80%;
+    }
+    .navi1{
+        top: calc(100vh - 50px);
+    }
+    .ncont{
+        column-count: 1;
+    }
+    .daily{
+        text-align: right;
+        width: 95%;
+      }
+      .slide2 .date{
+        width: 60%;
+    }
 }
 /************* 420px 이하 끝 *************/
