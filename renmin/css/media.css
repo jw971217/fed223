@@ -173,5 +173,13 @@
       .slide2 .date{
         width: 60%;
     }
+    .slide4 .cir2{
+        left: 15%;
+        top: 15%;
+    }
+    .slide4 .cir3{
+        right: 10%;
+        bottom: 10%;
+    }
 }
 /************* 420px 이하 끝 *************/
