@@ -16,25 +16,108 @@
     <script src="./js/swiper-bundle.min.js"></script>
 </head>
 <body>
+    
     <!-- header -->
     <header>
         <div class="head">
-
+            
             <!-- logo -->
             <div class="logo">
-                
+                <a href="#">
+                    <img src="./img/Renmin-University-of-China-logo.png" alt="Renmin University of China logo">
+                    <span>
+                        R.U.C
+                    </span>
+                </a>
             </div>
-
+            
             <!-- hambergur btn -->
-            <div class="ham">
+            <div class="ham" onclick="document.body.classList.toggle('on')">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
             <!-- gnb -->
-            <div class="gnb"></div>
+            <div class="gnb">
 
+                <!-- search -->
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                
+
+                <!-- navi -->
+                <div class="navi">
+                    <ul>
+                        <li>
+                            <a href="https://jw971217.github.io/fed223/renmin/renmin.html"><span>Home</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="def"><span>About</span></a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/history-en">학교 소개</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/university-leadership-en">행정 소개</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://news.ruc.edu.cn/archives/category/media">Photo &#x0026; Documentary</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="def"><span>Schools</span></a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/humanities-en">인문학</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/socialsciences-en">사회과학</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/economics-en">경제학</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/lawandpolitics-en">법률 &#x0026; 정치</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/scienceandtechnology-en">과학 &#x0026; 기술</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="def"><span>Visit RUC</span></a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/forinternationalstudents-en">For International Students</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://www.ruc.edu.cn/forinternationalemployees-en">For International Employees</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- map -->
+                    <div class="map">
+
+                        <!-- iframe -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.738175432784!2d116.31662581538242!3d39.96960617941954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f0515cd8efeee5%3A0x683ff95c7513165f!2z7KSR6rWt7J2466-864yA7ZWZ!5e0!3m2!1sko!2skr!4v1661156432469!5m2!1sko!2skr" width="90%" height="270px" style="border:2px solid #F47C7C;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
             </div>
         </div>
     </header>

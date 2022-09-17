@@ -1,27 +1,245 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+
+/* 
+font-family: 'Playfair Display', serif;
+*/
+body{
+    overflow-x: hidden;
+}
 .head{
     width: 100vw;
-    height: 50px;
-    background-color: red;
+    height: 30px;
+    background-color: rgb(255, 139, 139);
     border-bottom: 2px solid #fff;
 }
 
+.logo{
+    margin-left: 10px;
+}
+.logo a img{
+    height: 30px;
+}
+.logo a span{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    color: #8a0017; 
+    position: absolute;
+    padding: 0 5px;
+}
+
+.ham{
+    display: block;
+    width: 22px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
 .ham span{
-    width: 30px;
-    height: 3px;
+    width: 22px;
+    height: 2px;
     border-radius: 3px;
     background-color: #fff;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    top: 5px;
+    transition: .3s;
 }
 
 .ham span:nth-child(2){
-    top: 20px;
+    top: 12px;
 }
 
 .ham span:nth-child(3){
-    top: 30px;
-    width: 20px;
+    top: 20px;
+    width: 16px;
+    left: 6px;
 }
+
+body.on .ham span:nth-child(1){
+    rotate: 45deg;
+    width: 22px;
+    top: 13px;
+}
+body.on .ham span:nth-child(2){
+    opacity: 0;
+}
+body.on .ham span:nth-child(3){
+    rotate: -45deg;
+    width: 22px;
+    top: 13px;
+    left: 0px;
+}
+
+/* gnb start */
+.gnb{
+    position: absolute;
+    transition: .3s;
+    left: 100%;
+    opacity: .5;
+}
+
+body.on .gnb{
+    left: 0%; 
+    opacity: 1;
+}
+
+.def{
+  cursor: default;
+}
+
+/* search */
+.search{
+    background-color: rgb(255, 93, 93);
+    text-align: center;
+}
+
+.search input{
+  text-transform: uppercase;
+  text-align: center;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 10px 0 10px 32px;
+}
+
+.search button{
+    height: 17px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.search button i{
+    color: rgb(190, 0, 0);
+}
+
+/* navi */
+.navi {
+    margin-top: 0px;
+    background-color: #FFF2F2;
+    z-index: 999;
+    width: 100vw;
+    height: calc(100vh - 70px);
+}
+
+.navi>ul>li{
+    width: 100%;
+    text-align: center;
+}
+
+/* li vertical line */
+.navi>ul>li+li::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: rgb(255, 0, 0);
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+/* li a */
+.navi>ul>li>a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 40px;
+    transition: .4s; 
+}
+
+/* a:hover */
+.navi>ul>li:hover>a{
+    background-color: rgb(139, 0, 0);
+    color: #FFF2F2;
+}
+
+/* text underline */
+.navi>ul>li>a>span, .mnu>ul>li>a{
+    position: relative;
+}
+
+/* text underline */
+.navi>ul>li>a>span::after, .mnu>ul>li>a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #fff;
+    transition: width .2s ease-out;
+}
+
+/* 상위메뉴 오버시 가상요소 밑줄애니 */
+.navi>ul>li:hover>a>span::after, .mnu>ul>li:hover>a::after{
+    width: 100%;
+    transition-delay: 0.3s;
+}
+
+/* 서브메뉴 */
+.smenu{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(139, 0, 0);
+    transition: 0.3s;
+}
+
+/* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
+.navi>ul>li:nth-child(2):hover .smenu{
+    height: 115px;  
+}
+/* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
+.navi>ul>li:nth-child(3):hover .smenu{
+    height: 185px;
+}
+/* 상위메뉴 li 오버시 서브메뉴 보이기 - 4번 li */
+.navi>ul>li:nth-child(4):hover .smenu{
+    height: 85px;
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    padding: 15px;
+    padding-top: 0;
+}
+
+.smenu a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #FFF2F2;
+    text-decoration: none;
+    line-height: 35px;
+    transition: 0.2s;
+}
+
+/* 서브메뉴 오버시 */
+.smenu a:hover{
+    background: #EF9F9F;
+    color: rgb(0, 0, 0);
+}
+
+/* map */
+.map{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+}
+
+.map iframe{  
+  width: 95%;
+  border-radius: 10px;
+  margin: 0.5%;
+}
+/* gnb end */
