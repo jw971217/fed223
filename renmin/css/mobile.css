@@ -411,10 +411,24 @@ object-position: top;
 /* news end */
 
 /* school information start */
+.bianda2{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(89, 0, 255);
+}
+
+.biandaon2 .newspaper{
+    z-index: 99;
+    opacity: 1;
+    width: 100%;
+    /* background-color: #fff; */
+}
 
 .newspaper{
     background: url(../img/newspaper.png);
     padding-bottom: 100px;
+    opacity: 0;
+    width: 0;
   }
   
   .newspaper .date{
