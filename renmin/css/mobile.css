@@ -260,16 +260,10 @@ body.on .gnb{
 /* swiper start */
 html, body, main, .cont, header, .head, footer, .info{
 position: relative;
-/* overflow: hidden; */
-/* height: 100%; */
 }
 
 html, body{
   height: 100%;
-}
-
-body {
-  /* height: 1000px; */
 }
 
 .swiper {
@@ -318,22 +312,6 @@ object-position: top;
 /* swiper end */
 
 /* news start */
-.bianda{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    position: relative;
-}
-
-body.biandaon{
-  /* height: 720px; */
-}
-
-.biandaon .bianda{
-    width: 100%;
-    z-index: 99;
-}
-
 .biandaon .ff{
     /* height: auto; */
     /* background-color: #fff; */
@@ -410,19 +388,11 @@ body.biandaon{
 /* news end */
 
 /* school information start */
-.bianda2{
-    width: 50px;
-    height: 50px;
-    background-color: rgb(89, 0, 255);
-    position: relative;
-}
-
 .biandaon2 .newspaper, .biandaon2 .bianda2{
-    z-index: 99;
     display: block;
-}
-
-.newspaper{
+  }
+  
+  .newspaper{
     background: url(../img/newspaper.png);
     padding-bottom: 100px;
     display: none;
@@ -509,31 +479,218 @@ body.biandaon{
   }
 /* school information end */
 
+/* school xuanyao start */
+.biandaon3 .bianda3, .biandaon3 .xuanyao{
+  display: block;
+  /* left: -1.5vw; */
+}
+
+.xuanyao{
+  width: 100vw;
+  z-index: 99;
+  display: none;
+}
+
+/* iden start */
+.iden{
+  display: flex;
+  flex-direction: column;
+  /* height: 200vw; */
+  align-items: center;
+}
+
+.iden1, .iden2, .iden3{
+  width: 95vw;
+  background-color: rgb(255, 211, 153);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 134, 134);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+.iden1 span:first-child, .iden2 span:first-child, .iden3 span:first-child{
+  font-size: 2rem;
+}
+
+/* iden end */
+
+/* teach start */
+.teach{
+  text-align: center;
+}
+
+.teach .penta{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.teach span:first-child{
+  font-size: 2rem;
+}
+
+.teach .penta div{
+  width: 45vw;
+  height: 25vw;
+  background-color: rgba(255, 192, 203, 0.363);
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.teach .penta .rac{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+}
+
+/* .teach .penta .rac span, .teach .penta .rac i{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+} */
 
 
+.teach div:nth-child(3){
+  width: 95%;
+  height: 30vw;
+  background-color: white;
+}
 
+.teach div:nth-child(3) span{
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: rgba(255, 60, 60, 0.445);
+  display: inline-block;
+  line-height: 30vw;
+  font-weight: bold;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* teach end */
 
+/* jianzhu start */
+.jianzhu{
+  width: 100vw;
+  height: 150vw;
+}
 
+.jianzhu ul{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
 
+.jianzhu ul>li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: .3s;
+}
 
+/* li에 마우스 오버시 반투명 커버 투명도0 */
+.jianzhu ul>li:hover::before {
+  opacity: 0;
+}
 
+.jianzhu ul>li:nth-child(1) {
+  background: url(../img/renwenlou_blue.png) no-repeat;
+  background-position-x: 48%;
+  background-size: cover;
+}
+.jianzhu ul>li:nth-child(2) {
+  background: url(../img/jingji_red.png) ;
+  background-position-x: 90%;
+  background-size: cover;
+  
+}
+.jianzhu ul>li:nth-child(3) {
+  background: url(../img/renda_yellow.png) ;
+  background-position-x: 60%;
+  background-size: cover;
+}
+.jianzhu ul>li:nth-child(4) {
+  background: url(../img/muse_green.png) ;
+  background-position-x: 40%;
+  background-size: cover;
+}
+.jianzhu ul>li:nth-child(5) {
+  background: url(../img/liber_white.png) ;
+  background-position-x: 60%;
+  background-size: cover;
+}
+
+.jianzhu ul li{
+  position: relative;
+  flex: 1;
+  transition: .3s ease-in-out;  
+  background-size: cover;
+}
+
+.jianzhu ul>li:hover {
+  flex: 3;
+}
+
+.jianzhu ul li:nth-child(1) .rbox span{
+  text-shadow: 0px 0px 5px rgba(0, 47, 255, 0.589);
+}
+
+.jianzhu ul li:nth-child(2) .rbox span{
+  top: 38%;
+  text-shadow: 0px 0px 5px rgba(255, 29, 29, 0.411);
+}
+
+.jianzhu ul li:nth-child(3) .rbox span{
+  text-shadow: 0px 0px 5px rgba(225, 0, 255, 0.411);
+}
+
+.jianzhu ul li:nth-child(4) .rbox span{
+  text-shadow: 0px 0px 5px rgba(0, 99, 25, 0.411);
+}
+
+.jianzhu ul li:nth-child(5) .rbox span{
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.411);
+}
+
+.ubox{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  font-family: 'Song Myung', serif;
+}
+/* jianzhu end */
+/* school xuanyao end */
 
 /* footer */
-.footer{
-  /* height: 170px; */
-  width: 100vw;
-  /* background-color: #000; */
+footer{
+  /* width: 100vw; */
+  position: absolute;
+  bottom: 0;
 }
 
 .info{
   width: 100%;
   color: #fff;
   font-size: 10px;
-  /* height: 170px; */
   justify-content: space-around;
   display: flex;
   background-color: #000;
-  bottom: 0;
 }
 
 .flex{
@@ -541,7 +698,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 background-color: #000;
-/* height: 100px; */
 width: 100%;
 }
 
@@ -593,3 +749,50 @@ color: rgb(131, 131, 131);
 .pb{
   padding-bottom: 10px;
 }
+
+
+/* bian flex start */
+.bianflex{
+  display: flex;
+  justify-content: space-evenly;
+}
+/* bian flex end */
+
+/* bianda start */
+.bianda, .bianda2, .bianda3{
+  margin: 20px 0;
+  width: 30vw;
+  height: 50px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bianda{
+  background-color: #FFCC1D;
+}
+.bianda2{
+  background-color: #116530;
+}
+.bianda3{
+  background-color: #E8E8CC;
+}
+
+.biandaon .bianda,
+.biandaon2 .bianda2,
+.biandaon3 .bianda3{
+  border-radius: 10px;
+  transition: .3s;
+  width: 100vw;
+  z-index: 99;
+  position: absolute;
+}
+
+.biandaon .bianda div,
+.biandaon3 .bianda3 div{
+background-color: #fff;
+}
+/* bianda end */
