@@ -13,6 +13,7 @@ font-family: 'Gugi', cursive;
 
 html, body{
     overflow-x: hidden;
+    font-size: 10px;
 }
 .head{
     width: 100vw;
@@ -62,6 +63,11 @@ html, body{
     top: 20px;
     width: 16px;
     left: 6px;
+}
+
+body.on{
+  height: 100vh;
+  overflow: hidden;
 }
 
 body.on .ham span:nth-child(1){
@@ -252,14 +258,18 @@ body.on .gnb{
 /* gnb end */
 
 /* swiper start */
-html, body, .cont {
+html, body, main, .cont, header, .head, footer, .info{
 position: relative;
-height: 100%;
+/* overflow: hidden; */
+/* height: 100%; */
+}
+
+html, body{
+  height: 100%;
 }
 
 body {
-margin: 0;
-padding: 0;
+  /* height: 1000px; */
 }
 
 .swiper {
@@ -312,6 +322,11 @@ object-position: top;
     width: 50px;
     height: 50px;
     background-color: red;
+    position: relative;
+}
+
+body.biandaon{
+  /* height: 720px; */
 }
 
 .biandaon .bianda{
@@ -320,20 +335,19 @@ object-position: top;
 }
 
 .biandaon .ff{
-    opacity: 1;
-    width: 100%;
+    /* height: auto; */
     /* background-color: #fff; */
+    display: flex;
+    width: 100vw;
 }
 
 .ff{
-    transition: .5s;
-    opacity: 0;
     display: flex;
     flex: 1;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 0;
-    /* height: 0; */
+    position: relative;
+    display: none;
 }
 
 .news{
@@ -346,21 +360,6 @@ object-position: top;
   .news:last-child{
     width: 98%;
   }
-
-  /* .news::-webkit-scrollbar {
-    width: 5px;
-  }
-  .news::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-  }
-  .news::-webkit-scrollbar-track {
-    background-color: grey;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-  } */
   
 .nt{
     text-align: center;
@@ -415,20 +414,19 @@ object-position: top;
     width: 50px;
     height: 50px;
     background-color: rgb(89, 0, 255);
+    position: relative;
 }
 
-.biandaon2 .newspaper{
+.biandaon2 .newspaper, .biandaon2 .bianda2{
     z-index: 99;
-    opacity: 1;
-    width: 100%;
-    /* background-color: #fff; */
+    display: block;
 }
 
 .newspaper{
     background: url(../img/newspaper.png);
     padding-bottom: 100px;
-    opacity: 0;
-    width: 0;
+    display: none;
+    width: 100vw;
   }
   
   .newspaper .date{
@@ -510,3 +508,88 @@ object-position: top;
     margin: 0 auto;
   }
 /* school information end */
+
+
+
+
+
+
+
+
+
+
+/* footer */
+.footer{
+  /* height: 170px; */
+  width: 100vw;
+  /* background-color: #000; */
+}
+
+.info{
+  width: 100%;
+  color: #fff;
+  font-size: 10px;
+  /* height: 170px; */
+  justify-content: space-around;
+  display: flex;
+  background-color: #000;
+  bottom: 0;
+}
+
+.flex{
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #000;
+/* height: 100px; */
+width: 100%;
+}
+
+.add, .mnu{
+display: flex;
+flex-direction: column;
+align-items: start;
+margin-top: 15px;
+}
+
+.add{
+  font-size: 1.4rem;
+}
+
+.add span{
+  margin-top: 15px;
+}
+
+.uli{
+display: flex;
+}
+
+.uli>li{
+margin-left: 15px;
+font-size: 1.4rem;
+}
+
+.uli li a{
+color: #fff;
+}
+
+.add span:last-child{
+  /* font-size: 1.2rem; */
+  color: rgb(126, 126, 126);
+}
+
+.add span:nth-child(3){
+  color: #fff;
+}
+.add:last-child{
+  align-items: center;
+}
+
+.coco{
+cursor: pointer;
+color: rgb(131, 131, 131);
+}
+
+.pb{
+  padding-bottom: 10px;
+}
