@@ -269,6 +269,8 @@ html, body{
 .swiper {
 width: 100vw;
 height: 50vw;
+user-select: none;
+-webkit-user-drag: none;
 }
 
 .swiper-slide {
@@ -331,12 +333,8 @@ object-position: top;
 .news{
     border-radius: 10px;
     border: 1px solid rgb(109, 0, 0);
-    width: 48vw;
+    width: 98vw;
     margin-top: 20px;
-  }
-
-  .news:last-child{
-    width: 98%;
   }
   
 .nt{
@@ -586,7 +584,7 @@ object-position: top;
   flex-direction: column;
 }
 
-.jianzhu ul>li::before {
+/* .jianzhu ul>li::before {
   content: '';
   position: absolute;
   top: 0;
@@ -597,10 +595,9 @@ object-position: top;
   transition: .3s;
 }
 
-/* li에 마우스 오버시 반투명 커버 투명도0 */
 .jianzhu ul>li:hover::before {
   opacity: 0;
-}
+} */
 
 .jianzhu ul>li:nth-child(1) {
   background: url(../img/renwenlou_blue.png) no-repeat;
@@ -679,7 +676,7 @@ object-position: top;
 
 /* footer */
 footer{
-  /* width: 100vw; */
+  width: 100vw;
   position: absolute;
   bottom: 0;
 }
@@ -791,8 +788,24 @@ color: rgb(131, 131, 131);
   position: absolute;
 }
 
-.biandaon .bianda div,
-.biandaon3 .bianda3 div{
+.biandaon .bianda .ff,
+.biandaon3 .bianda3 .xuanyao{
 background-color: #fff;
 }
+
+.biandaon .bianda::after,
+.biandaon2 .bianda2::after,
+.biandaon3 .bianda3::after{
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #f00;
+}
+
+
 /* bianda end */
