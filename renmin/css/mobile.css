@@ -341,6 +341,10 @@ object-position: top;
     width: 98vw;
     margin-top: 20px;
   }
+
+.news:last-child{
+  margin-bottom: 10px;
+}
   
 .nt{
     text-align: center;
@@ -702,7 +706,7 @@ object-position: top;
 /* footer */
 footer{
   width: 100vw;
-  position: relative;
+  position: absolute;
   bottom: 0;
 }
 
@@ -819,6 +823,12 @@ color: rgb(131, 131, 131);
 .biandaon,
 .biandaon2,
 .biandaon3{
+  position: relative;
+}
+
+.biandaon footer,
+.biandaon2 footer,
+.biandaon3 footer{
   position: relative;
 }
 
