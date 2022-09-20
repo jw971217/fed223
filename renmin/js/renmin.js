@@ -67,7 +67,7 @@ $(document).ready(function(){
   });
 
 // device window size alert
-  $(window).resize(function (){
+  $(window).onload.resize(function (){
     // width값을 가져오기
     var width_size = window.outerWidth;
     
@@ -75,6 +75,5 @@ $(document).ready(function(){
     if (width_size <= 1024) {
         // alert('현재 브라우저 크기가 너무 작습니다. 자동으로 모바일 화면으로 넘어갑니다.');
         $(location).attr("href", "https://jw971217.github.io/fed223/renmin/renmin_mobile.html");
-        location.reload();
     }
   });
