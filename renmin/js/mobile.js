@@ -46,3 +46,14 @@ $(document).ready(function(){
     var date=now.getDate();//일
     $(datee).eq(2).text(date);
   });
+
+  // device window size alert
+  $(window).resize(function (){
+    // width값을 가져오기
+    var width_size = window.outerWidth;
+    
+    // 1000 이상인지 if문으로 확인
+    if (width_size >= 1000) {
+      alert('현재 브라우저 크기가 너무 큽니다. 설정에서 PC 화면으로 이동해주세요.\n우측 상단 햄버거 버튼>PC Page');
+    }
+  });
