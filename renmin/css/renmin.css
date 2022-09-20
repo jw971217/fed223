@@ -397,7 +397,7 @@ body {
 .slide1{
   background-image: url(../img/85.jpg);
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: right;
   background-size: cover;
   position: relative;
 }
@@ -1273,38 +1273,14 @@ table, th, td, tr{
 /* renmin 페이지 미디어 쿼리 */
 
 /************* 1490px 이하 시작 *************/
-@media screen and (max-width: 1490px) {
-  .txt1{
-      top: 20vh;
-  }
-  .txt1 span{
-  width: 60%;
-  line-height: 3;
-  margin-top: -3vh;
-  }
-  .txt2{
-      top: 50vh;
-      right: 10vw;
-  }
-  .gal .photo:nth-child(5){
-      right: 30%;
-  }
-  .ff{
-      flex-wrap: wrap;
-      align-content: space-around;
-  }
-  .news{
-      width: 15%;
-  }
-  .slide4 .cir2 img{
-      width: 100%;
-  }
+@media screen and (max-width: 1800px) {
+
 }
 /************* 1490px 이하 끝 *************/
 
 
-/************* 1140px 이하 시작 *************/
-@media screen and (max-width: 1140px) {
+/************* 1026px 이하 시작 *************/
+@media screen and (max-width: 1490px) {
   .slide2{
       overflow-y: scroll;
   }
@@ -1331,126 +1307,37 @@ table, th, td, tr{
       width: 30%;
       height: 40%;
   }
+  .slide4 .cir{
+    scale: 1.5;
+  }
+
+  .slide4 .cir:hover{
+    scale: 1.6;
+  }
   .slide4 .cir2{
-      left: 5%;
-      top: 5%;
+      left: 10%;
+      top: 10%;
   }
   .slide4 .cir4{
       right: 40%;
-      bottom: 15%;
-  }
-  .slide4 .cir5{
-      left: 40%;
-      top: 3%;
-  }
-  .slide4 .cir span{
-      font-size: 1.6rem;
-  }
-}
-/************* 1140px 이하 끝 *************/
-
-
-/************* 870px 이하 시작 *************/
-@media screen and (max-width: 870px) {
-  .txt1{
-      top: 30vh;
-  }
-  .txt1 span{
-      font-size: 2rem;
-      width: 70%;
-  }
-  .txt2{
-      top: 80vh;
-      right: 10vw;
-  }
-  .slide2 .date{
-      width: 70%;
-  }
-  .ncont{
-      column-count: 2;
-  }
-  .daily .nlogo{
-      left: 7%;
-  }
-  .daily .nlogo img{
-      width: 2rem;
-    }
-  .daily span{
-      font-size: 4rem;
-    }
-    .news{
-      width: 80%;
-      height: 18%;
-  }
-  .slide4 .cir{
-      scale: 1.5;
-  }
-  .slide4 .cir span{
-      font-size: 1.3rem;
-  }
-  .slide4 .cir:hover{
-      scale: 1.6;
-  }
-  .slide4 .cir4{
       bottom: 40%;
   }
   .slide4 .cir5{
       left: 60%;
+      top: 10%;
   }
-}
-/************* 870px 이하 끝 *************/
-
-
-/************* 620px 이하 시작 *************/
-@media screen and (max-width: 620px) {
-  .slide4 .cir{
-      scale: 2.3;
-  }
-  .slide4 .cir:hover{
-      scale: 2.4;
-  }    
   .slide4 .cir span{
-      font-size: 7px;
+      font-size: 1.6rem;
   }
-  .slide4 .cir4{
-      bottom: 48%;
+
+  .gal .photo:nth-child(5){
+    right: 33%;
   }
-  .slide4 .cir1, .slide4 .cir3{
-      bottom: 10%;
+
+  .tri span{
+    font-size: 3rem;
   }
-  .slide4 .cir1{
-      left: 15%;
-  }
-}
-/************* 620px 이하 끝 *************/
 
 
-/************* 420px 이하 시작 *************/
-@media screen and (max-width: 420px) {
-  .menu{
-      width: 100%;
-      max-width: 80%;
-  }
-  .navi1{
-      top: calc(100vh - 50px);
-  }
-  .ncont{
-      column-count: 1;
-  }
-  .daily{
-      text-align: right;
-      width: 95%;
-    }
-    .slide2 .date{
-      width: 60%;
-  }
-  .slide4 .cir2{
-      left: 15%;
-      top: 15%;
-  }
-  .slide4 .cir3{
-      right: 10%;
-      bottom: 10%;
-  }
 }
-/************* 420px 이하 끝 *************/
+/************* 1026px 이하 끝 *************/
