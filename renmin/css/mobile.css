@@ -60,16 +60,16 @@ main{
     border-radius: 3px;
     background-color: #fff;
     position: absolute;
-    top: 5px;
+    top: 6px;
     transition: .3s;
 }
 
 .ham span:nth-child(2){
-    top: 12px;
+    top: 14px;
 }
 
 .ham span:nth-child(3){
-    top: 20px;
+    top: 22px;
     width: 16px;
     left: 6px;
 }
