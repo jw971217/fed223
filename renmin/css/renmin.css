@@ -473,10 +473,6 @@ body {
   background: url(../img/newspaper.png);
 }
 
-.newspaper{
-  scroll-behavior: auto;
-}
-
 .slide2 .date{
   position: absolute;
   width: 75%;
@@ -926,7 +922,6 @@ table, th, td, tr{
 }
 
 .photo img{
-  /* padding: 30px 15px 60px 15px; */
   position: relative;
   width: 100%;
   user-select: none;
@@ -942,7 +937,6 @@ table, th, td, tr{
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  /* cursor: grab; */
 }
 
 .gal .photo:nth-child(1){
@@ -961,7 +955,7 @@ table, th, td, tr{
   rotate: -20deg;
 }
 .gal .photo:nth-child(4){
-  right: 25%;
+  right: 15%;
   top: 10%;
   rotate: 10deg;
 }
@@ -1020,20 +1014,6 @@ table, th, td, tr{
   border-radius: 20px;
   transition: .3s;  
   overflow-y: auto;
-}
-.news::-webkit-scrollbar {
-  width: 5px;
-}
-.news::-webkit-scrollbar-thumb {
-  background-color: #2f3542;
-  border-radius: 10px;
-  background-clip: padding-box;
-  border: 2px solid transparent;
-}
-.news::-webkit-scrollbar-track {
-  background-color: grey;
-  border-radius: 10px;
-  box-shadow: inset 0px 0px 5px white;
 }
 
 .news:hover{
@@ -1276,9 +1256,6 @@ table, th, td, tr{
 /* renmin 페이지 미디어 쿼리 */
 /************* 1026px 이하 시작 *************/
 @media screen and (max-width: 1490px) {
-  .slide2{
-      overflow-y: scroll;
-  }
   .ncont{
       column-count: 3;
       width: 88%;
