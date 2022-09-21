@@ -370,6 +370,7 @@ object-position: top;
     margin: 2px 0;
     padding: 5px 0;
     border-bottom: 2px dashed black;
+    font-size: 1.6rem;
   }
   
   .nct a:first-child, .nct a:last-child{
