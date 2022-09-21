@@ -819,10 +819,9 @@ color: rgb(131, 131, 131);
   line-height: 50px;
   font-size: 2rem;
   font-weight: bold;
-  transition: .3s ease-out;
+  transition: .2s ease-out;
   user-select: none;
   -webkit-user-drag: none;
-  box-shadow: 2px 2px 2px rgb(192, 87, 87);
 }
 
 .bianda .bigtitle, 
