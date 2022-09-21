@@ -1271,14 +1271,6 @@ table, th, td, tr{
 }
 
 /* renmin 페이지 미디어 쿼리 */
-
-/************* 1490px 이하 시작 *************/
-@media screen and (max-width: 1800px) {
-
-}
-/************* 1490px 이하 끝 *************/
-
-
 /************* 1026px 이하 시작 *************/
 @media screen and (max-width: 1490px) {
   .slide2{
@@ -1303,28 +1295,22 @@ table, th, td, tr{
   .daily span{
       font-size: 7rem;
     }
-  .news{
-      width: 30%;
-      height: 40%;
-  }
-  .slide4 .cir{
-    scale: 1.5;
-  }
 
-  .slide4 .cir:hover{
-    scale: 1.6;
-  }
   .slide4 .cir2{
-      left: 10%;
-      top: 10%;
+      left: 5%;
+      top: 5%;
+  }
+  .slide4 .cir3{
+      right: 20%;
+      /* bottom: 3%; */
   }
   .slide4 .cir4{
-      right: 40%;
-      bottom: 40%;
+      right: 50%;
+      bottom: 50%;
   }
   .slide4 .cir5{
-      left: 60%;
-      top: 10%;
+      left: 70%;
+      top: 0%;
   }
   .slide4 .cir span{
       font-size: 1.6rem;
@@ -1335,9 +1321,14 @@ table, th, td, tr{
   }
 
   .tri span{
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
-
+  .txt1{
+    top: 20vh;
+  }
+  .txt2{
+    top: 70vh;
+  }
 }
 /************* 1026px 이하 끝 *************/
