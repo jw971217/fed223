@@ -920,12 +920,17 @@ table, th, td, tr{
   text-align: center;
   user-select: none;
   -webkit-user-drag: none;
+  padding: 30px 15px 60px 15px;
+  background-color: #fff;
+  border: 1px solid rgb(77, 77, 77);
 }
 
 .photo img{
-  padding: 30px 15px 60px 15px;
-  background-color: #fff;
+  /* padding: 30px 15px 60px 15px; */
   position: relative;
+  width: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .photo span{
@@ -934,20 +939,12 @@ table, th, td, tr{
   position: absolute;
   bottom: 15px;
   width: 100%;
-  left: 55%;
-  width: 100%;
+  left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
   /* cursor: grab; */
 }
 
-.gal img{
-  width: 100%;
-  border: 1px solid rgb(77, 77, 77);
-  /* cursor: grab; */
-  user-select: none;
-  -webkit-user-drag: none;
-}
 .gal .photo:nth-child(1){
   left: 25%;
   top: 15%;
