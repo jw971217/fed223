@@ -336,7 +336,7 @@ object-position: top;
 
 .news{
     border-radius: 10px;
-    border: 1px solid rgb(109, 0, 0);
+    border: 1px solid rgb(255, 51, 170);
     width: 98vw;
     margin-top: 20px;
   }
@@ -383,7 +383,7 @@ object-position: top;
   .nct img{
     width: 90vw;
     height: 48vw;
-    border: 3px solid rgb(255, 109, 24);
+    border: 2px solid rgb(255, 136, 106);
     border-radius: 5px;
     margin: 0 auto;
   }
@@ -509,17 +509,34 @@ object-position: top;
 
 .iden1, .iden2, .iden3{
   width: 95vw;
-  background-color: rgb(255, 211, 153);
   border-radius: 10px;
-  border: 1px solid rgb(255, 134, 134);
+  border: 1px solid #FFEEAF;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin: 10px 0;
+  box-shadow: 2px 2px 5px rgb(112, 112, 112);
 }
+
+.iden1{
+  background-color: #FFFBE7;
+}
+.iden2{
+  background-color: #B9F8D3;
+}
+.iden3{
+  background-color: #40DFEF;
+}
+
+.iden1 span,
+.iden2 span,
+.iden3 span{
+  font-size: 1.6rem;
+}
+
 .iden1 span:first-child, .iden2 span:first-child, .iden3 span:first-child{
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: bold;
 }
 
@@ -543,9 +560,27 @@ object-position: top;
 .teach .penta div{
   width: 45vw;
   height: 25vw;
-  background-color: rgba(255, 192, 203, 0.363);
   margin: 10px 0;
   border-radius: 10px;
+}
+.teach .penta div:nth-child(1){
+background-color: #FFF5E4;
+box-shadow: 2px 2px 5px rgb(112, 112, 112);
+}
+.teach .penta div:nth-child(2){
+  background-color: #FFC4C4;
+  box-shadow: 2px 2px 5px rgb(112, 112, 112);
+}
+.teach .penta div:nth-child(3) span{
+  box-shadow: 2px 2px 5px rgb(112, 112, 112);
+}
+.teach .penta div:nth-child(4){
+  background-color: #f77992;
+  box-shadow: 2px 2px 5px rgb(112, 112, 112);
+}
+.teach .penta div:nth-child(5){
+  background-color: #fc7ca6fd;
+  box-shadow: 2px 2px 5px rgb(112, 112, 112);
 }
 
 .teach .penta .rac{
@@ -565,7 +600,7 @@ object-position: top;
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  background-color: rgba(255, 60, 60, 0.445);
+  background-color: #ffa4a4;
   display: inline-block;
   line-height: 30vw;
   font-weight: bold;
@@ -787,6 +822,7 @@ color: rgb(131, 131, 131);
   transition: .3s ease-out;
   user-select: none;
   -webkit-user-drag: none;
+  box-shadow: 2px 2px 2px rgb(192, 87, 87);
 }
 
 .bianda .bigtitle, 
@@ -795,16 +831,18 @@ color: rgb(131, 131, 131);
   white-space: nowrap;
   display: block;
   pointer-events: auto;
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
 }
 
 .bianda{
-  background-color: #FFCC1D;
+  background-color: #FFA1C9;
 }
 .bianda2{
-  background-color: #116530;
+  background-color: #F94892;
 }
 .bianda3{
-  background-color: #E8E8CC;
+  background-color: #E60965;
 }
 
 .biandaon,
@@ -850,9 +888,7 @@ color: rgb(131, 131, 131);
   content: '×';
   position: absolute;
   left: 40%;
-  /* top: -4px; */
   font-size: 3rem;
-  /* background-color: #000; */
   width: 100vw;
   color: #fff;
   display: block;
