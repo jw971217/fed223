@@ -806,7 +806,7 @@ color: rgb(131, 131, 131);
   line-height: 50px;
   font-size: 2rem;
   font-weight: bold;
-  transition: .2s;
+  transition: .3s ease-out;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -850,7 +850,7 @@ color: rgb(131, 131, 131);
 .biandaon .bianda,
 .biandaon2 .bianda2,
 .biandaon3 .bianda3{
-  border-radius: 10px;
+  border-radius: 0px;
   width: 100vw;
   z-index: 99;
   position: relative;
