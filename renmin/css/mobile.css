@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Gugi&family=Hi+Melody&family=Song+Myung&display=swap');
 
 /* 
@@ -393,6 +391,7 @@ object-position: top;
   .nct span{
     line-height: 1.3;
     margin-top: 5px;
+    font-size: 1.6rem;
   }
 /* news end */
 
@@ -556,13 +555,6 @@ object-position: top;
   font-size: 1.6rem;
 }
 
-/* .teach .penta .rac span, .teach .penta .rac i{
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-} */
-
-
 .teach div:nth-child(3){
   width: 95%;
   height: 30vw;
@@ -595,21 +587,6 @@ object-position: top;
   height: 100%;
   flex-direction: column;
 }
-
-/* .jianzhu ul>li::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: .3s;
-}
-
-.jianzhu ul>li:hover::before {
-  opacity: 0;
-} */
 
 .jianzhu ul>li:nth-child(1) {
   background: url(../img/renwenlou_blue.png) no-repeat;
