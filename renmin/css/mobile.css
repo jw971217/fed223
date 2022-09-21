@@ -53,6 +53,7 @@ main{
     position: absolute;
     right: 10px;
     top: 0;
+    cursor: pointer;
 }
 .ham span{
     width: 22px;

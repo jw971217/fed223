@@ -918,6 +918,8 @@ table, th, td, tr{
   width: 15%;
   transition: .5s;
   text-align: center;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .photo img{
@@ -936,11 +938,15 @@ table, th, td, tr{
   width: 100%;
   transform: translateX(-50%);
   white-space: nowrap;
+  /* cursor: grab; */
 }
 
 .gal img{
   width: 100%;
   border: 1px solid rgb(77, 77, 77);
+  /* cursor: grab; */
+  user-select: none;
+  -webkit-user-drag: none;
 }
 .gal .photo:nth-child(1){
   left: 25%;
