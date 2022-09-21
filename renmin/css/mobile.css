@@ -404,8 +404,7 @@ object-position: top;
     background: url(../img/newspaper.png);
     padding-bottom: 100px;
     display: none;
-    width: 95vw;
-    margin-left: 2.5vw;
+    width: 100vw;
   }
   
   .newspaper .date{
@@ -457,7 +456,7 @@ object-position: top;
   .ncont{
     /* column-count: 4; */
     position: relative;
-    width: 95%;
+    width: 90%;
     left: 50%;
     transform: translate(-50%, 7.3vh);
     font-weight: bold;
