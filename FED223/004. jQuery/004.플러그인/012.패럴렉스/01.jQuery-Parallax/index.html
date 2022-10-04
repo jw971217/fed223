@@ -34,18 +34,91 @@
             $("#second").parallax("50%", 0.2);
 
             // 3. 앞쪽신발
-            $("#second .bg").parallax("60%", .6);
+            $("#second .bg").parallax("70%", .6);
             
             // 4. 색깔병
             $("#third").parallax("50%",0.5);
 
 
+            $("#second .story .bu").parallax("50%", 0.6);
 
-
-
+            
 
         }); //// jQB ////////////////////////////////////
     </script>
+
+    <style>
+
+.story{
+    position: relative;
+}
+
+    .bu{
+        width: 22vw;
+        height: 22vw;
+        text-align: center;
+        line-height: 22vw;
+        font-size: 3vw;
+        font-weight: bold;
+        position: absolute;
+        top: 10vh;
+        left: 50vw;
+    }
+
+    #rero{
+        animation: reroAni 5s linear infinite;
+        display: block;
+    }
+
+    @keyframes reroAni {
+        to{
+            transform: rotate(-360deg);
+        }
+    }
+
+    .bu1{
+        animation: bu1Ani 5s linear infinite;
+        box-shadow: 0px 0px 10px rgb(255, 0, 0);
+        text-shadow: 0px 0px 5px rgb(0, 255, 0);
+    }
+
+    @keyframes bu1Ani {
+        0%{
+            border-radius: 80% 79% 76% 79%;
+            transform: rotate(0deg);
+            scale: 1.05;
+        }
+        20%{
+            border-radius: 72% 82% 79% 80%;
+            transform: rotate(72deg);
+            scale: 1;
+        }
+        40%{
+            border-radius: 76% 78% 72% 70%;
+            transform: rotate(144deg);
+            scale: 0.95;
+        }
+        60%{
+            border-radius: 73% 82% 77% 76%;
+            transform: rotate(216deg);
+            scale: 1.05;
+        }
+        80%{
+            border-radius: 85% 76% 81% 73%;
+            transform: rotate(288deg);
+            scale: 0.95;
+        }
+        100%{
+            border-radius: 80% 79% 76% 79%;
+            transform: rotate(360deg);
+            scale: 1.05;
+        }
+    }
+  
+
+
+
+    </style>
 </head>
 
 <body>
@@ -70,6 +143,10 @@
     <div id="second">
         <div class="story">
             <div class="bg"></div>
+            <div class="bu1 bu">
+                <span id="rero">Red</span>
+            </div>
+
             <div class="float-right">
                 <h2>Multiple Backgrounds</h2>
                 <p>The multiple backgrounds applied to this section are moved in a similar way to the first section -- every time the user scrolls down the page by a pixel, the positions of the backgrounds are changed.</p>
